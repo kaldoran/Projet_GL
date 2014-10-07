@@ -23,10 +23,14 @@ Serveur :
     Partie Doit :
 	- Doit pouvoir partager des fichier par le protocol ftp ( port 21 - 22 )
 	    Serveur FTP
-	- Doit pouvoir crée un compte
-	- Doit pouvoir parametrer les personnes ayant acces aux fichiers
-	- Doit avoir un fichier public qui contient des informations
 	- Doit avoir une interface graphique
+	- Doit avoir un fichier public qui contient des informations
+
+	Les comptes :
+	- l'administrateur peut crée des comptes utilisateurs
+	- chaque compte donne acces à certain fichier
+	- l'administrateur doit pouvoir parametrer les acces aux fichiers pour chaque compte
+
 	
 	Partie Devrait :
 	- Devrait pouvoir changer le port
@@ -46,7 +50,7 @@ Serveur :
 Client :
     - Devrait pouvoir limiter le taux de transfere
     - Doit pouvoir changer sont mot de passe
-    
+    - Devrait gérer les bookmarks
    
 Git - Tuto rapide
 	
