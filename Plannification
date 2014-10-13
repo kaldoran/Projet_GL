@@ -6,19 +6,19 @@ Novembre :
 03/11 - Un document de spécification des exigences (au format IEEE 830-1998) -- Laoussing Kevin & Bascol Kevin & Reynaud Nicolas
 04/11 - Un cahier des tests de recette -- Bascol Kevin & Reynaud Nicolas
 /* 10/11 - Date a laquel les idées ne seront pas implémentées [ ou implémenté en dernière ] */ -- Tout le monde !
-15/11 - Un document de conception générale (en vous inspirant du format IEEE 1016-2009) -- 
-16/11 - Un cahier des tests d'intégration -- 
-23/11 - Un document de conception détaillée --
-26/11 - Le cahier de tests unitaires (sauf si les tests sont mis en oeuvre par une technique XUnit) -- 
+15/11 - Un document de conception générale (en vous inspirant du format IEEE 1016-2009) -- Laoussing Kevin & Reynaud Nicolas
+16/11 - Un cahier des tests d'intégration -- Bascol Kevin
+23/11 - Un document de conception détaillée -- Bascol Kevin & Laoussing Kevin & Reynaud Nicolas
+26/11 - Le cahier de tests unitaires (sauf si les tests sont mis en oeuvre par une technique XUnit) -- Reynaud Nicolas
 
 ----
 Decembre : 
 15/12 - Le code (commmenté) de l'implémentation -- Bascol Kevin & Laoussing Kevin & Reynaud Nicolas
-21/12 - Le cahier des tests d'intégration avec leurs résultats -- 
-28/12 - Le cahier des tests de recette avec leurs résultats -- 
+21/12 - Le cahier des tests d'intégration avec leurs résultats -- Reynaud Nicolas
+28/12 - Le cahier des tests de recette avec leurs résultats -- Bascol Kevin
 
 ----
 Janvier :
 07/01 - La documentation utilisateurs -- Reynaud Nicolas
-10/10 - j'fais l'bilan temps en temps -- 
+10/10 - j'fais l'bilan temps en temps -- Laoussing Kevin & Bascol Kevin & Reynaud Nicolas 
 
