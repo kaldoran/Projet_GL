@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="KouldNotShare" company="KouldNotKonect" manager="" phase="" project-start="20141001T000000Z" mrproject-version="2" calendar="2">
+<project name="KouldNotShare" company="KouldNotKonnect" manager="" phase="" project-start="20141001T000000Z" mrproject-version="2" calendar="1">
   <properties/>
   <phases/>
   <calendars>
@@ -33,7 +33,7 @@
     <task id="1" name="Document de plannification" note="" work="576000" start="20141001T000000Z" end="20141016T200000Z" work-start="20141001T080000Z" percent-complete="50" priority="0" type="normal" scheduling="fixed-work">
       <constraint type="must-start-on" time="20141001T000000Z"/>
     </task>
-    <task id="2" name="Document des sp&#xE9;cifications des exigences et cahier de test de recettes" note="" work="648000" duration="684000" start="20141017T000000Z" end="20141104T200000Z" work-start="20141017T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+    <task id="2" name="Document des sp&#xE9;cifications des exigences et cahier de test de recettes" note="" work="648000" duration="374400" start="20141017T000000Z" end="20141104T200000Z" work-start="20141017T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
       <constraint type="start-no-earlier-than" time="20141018T000000Z"/>
       <predecessors>
         <predecessor id="1" predecessor-id="1" type="FS"/>
@@ -51,7 +51,7 @@
         </predecessors>
       </task>
     </task>
-    <task id="5" name="Document de conception g&#xE9;n&#xE9;ral et cahier de test d'int&#xE9;gration" note="" work="360000" duration="432000" start="20141105T000000Z" end="20141116T200000Z" work-start="20141105T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+    <task id="5" name="Document de conception g&#xE9;n&#xE9;ral et cahier de test d'int&#xE9;gration" note="" work="360000" duration="230400" start="20141105T000000Z" end="20141116T200000Z" work-start="20141105T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
       <constraint type="start-no-earlier-than" time="20141105T000000Z"/>
       <predecessors>
         <predecessor id="1" predecessor-id="2" type="FS"/>
@@ -80,7 +80,7 @@
         </predecessors>
       </task>
     </task>
-    <task id="11" name="Impl&#xE9;mentation &amp; Test" note="" work="1188000" duration="1152000" start="20141126T200000Z" end="20141228T200000Z" work-start="20141127T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+    <task id="11" name="Impl&#xE9;mentation &amp; Test" note="" work="1188000" duration="633600" start="20141126T200000Z" end="20141228T200000Z" work-start="20141127T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
       <constraint type="start-no-earlier-than" time="20141126T000000Z"/>
       <predecessors>
         <predecessor id="1" predecessor-id="8" type="FS"/>
