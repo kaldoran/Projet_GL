@@ -121,19 +121,20 @@
     <resource id="3" name="Reynaud Nicolas" short-name="R.N" type="1" units="0" email="" note="" std-rate="0" calendar="2"/>
   </resources>
   <allocations>
-    <allocation task-id="17" resource-id="1" units="50"/>
+    <allocation task-id="17" resource-id="1" units="33"/>
     <allocation task-id="14" resource-id="1" units="100"/>
     <allocation task-id="12" resource-id="1" units="35"/>
     <allocation task-id="9" resource-id="1" units="33"/>
     <allocation task-id="7" resource-id="1" units="45"/>
     <allocation task-id="4" resource-id="1" units="25"/>
     <allocation task-id="3" resource-id="1" units="17"/>
-    <allocation task-id="17" resource-id="2" units="50"/>
+    <allocation task-id="17" resource-id="2" units="33"/>
     <allocation task-id="12" resource-id="2" units="35"/>
     <allocation task-id="9" resource-id="2" units="33"/>
     <allocation task-id="6" resource-id="2" units="23"/>
     <allocation task-id="3" resource-id="2" units="17"/>
     <allocation task-id="1" resource-id="2" units="100"/>
+    <allocation task-id="17" resource-id="3" units="33"/>
     <allocation task-id="16" resource-id="3" units="100"/>
     <allocation task-id="13" resource-id="3" units="100"/>
     <allocation task-id="12" resource-id="3" units="35"/>
