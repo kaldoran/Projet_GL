@@ -30,7 +30,7 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Document de plannification" note="" work="576000" start="20141001T000000Z" end="20141016T200000Z" work-start="20141001T080000Z" percent-complete="50" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="Document de plannification" note="" work="576000" start="20141001T000000Z" end="20141016T200000Z" work-start="20141001T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
       <constraint type="must-start-on" time="20141001T000000Z"/>
     </task>
     <task id="2" name="Document des sp&#xE9;cifications des exigences et cahier de test de recettes" note="" work="648000" duration="374400" start="20141017T000000Z" end="20141104T200000Z" work-start="20141017T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
