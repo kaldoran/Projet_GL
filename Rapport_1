@@ -54,3 +54,78 @@ Client :
    
 Git - Tuto rapide
 	
+
+
+=================================================================================================================================
+
+Partie du DSE
+
+#CLIENT
+	-Interface graphique (à definir la prochaine reunion)
+	
+	-Authentification (client vers serveur)==Nico
+
+	-Gestionnaire de marque-page == KB
+
+	-Creation de statistiques Client == KL
+
+	-limitation == KB
+		-Brider le taux de transfere de manière général
+		-pouvoir definir des tranches horaire de téléchargement (exemple : de 0H00 à 7h00 )
+
+	-Download == KL
+	-Upload == KL
+
+
+
+#SERVEUR
+	-Interface graphique(à definir la prochaine reunion)
+
+	-Authentification administrateur (machine local) : pour faire des modif, l'admin doit s'authentifier == Nico
+
+	-partage de fichier (l'administrateur choisit quel fichier/dossier il veut partager) == Nico
+
+	-Gestion des utilisateurs == NIC0
+		-Creation de compte utilisateur
+		-Création des utilisateurs temporaire   
+		-stockage login et password
+		-droit au téléchargement sur les fichiers
+		-Attribution d'un espace pour chaque utilisateur
+		-Pouvoir bannir une personne / ip / compte
+
+ 
+	-Creation de statistiques Serveur == KL
+
+	
+	
+	-limitation  == KB
+		-Brider le taux de transfere par utilisateur
+		-pouvoir definir des tranches horaire de téléchargement (exemple : de 0H00 à 7h00 )
+		-pouvoir filter les fichiers ( extension )
+	
+	- avoir un fichier public qui contient des informations == KL
+
+	- Creation de fichier log (savoir qui est connecté, à quel heure, les propriétaire de fichier) == KL
+
+	-Download == KL
+	-Upload   == KL
+
+#COMMUN
+	-Communication/réseau == KL
+
+	-Utilisation des dossiers (chaque utilisateur à un dossier)==KB
+		
+	-Download (établir une connexion entre client/serveur) == KL
+	-Upload == KL
+
+	- Cryptage Décryptage un envoi de fichier == KB
+
+
+
+exple de fichier de gestion de droits
+Nicolas:password@/home/Dossier_de_Nicolas/
+	
+
+
+
+
