@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{enumitem}
 
 \author{Kevin BASCOL, Kevin LAOUSSING, Nicolas REYNAUD}
 \title{Document des exigences}
@@ -30,10 +31,15 @@ Note : La SEL comporte l’ensemble des exigences logicielles pour une portion o
 Plusieurs aménagements d’une SEL sont possibles. La norme [IEEE830-1998] est la référence pour de plus amples explications ainsi que pour d’autres options d’organisation du document.]
 
 \subsection{Objectif du document}
-[Préciser les objectifs de ce document. La SEL doit décrire le comportement externe de l’application ou du sous-système identifié. Elle décrit aussi les exigences non-fonctionnelles et les autres facteurs nécessaires à une description complète et compréhensible des exigences pour le logiciel.]
+%[Préciser les objectifs de ce document. La SEL doit décrire le comportement externe de l’application ou du sous-système identifié. Elle décrit aussi les exigences non-fonctionnelles et les autres facteurs nécessaires à une description complète et compréhensible des exigences pour le logiciel.]%
+Le but de ce document est de décrire les spécifications requises pour la création d'un  client/serveur FTP pour les équipes de développement de logiciels.
+Le public visé par ce document comprend les futurs développeurs du projet et le personnel d'évaluation technique de l'organisation cliente.
+
+
 
 \subsection{Portée du document}
-[Une brève description de la portée de ce document, l’application qu’il décrit, les caractéristiques ou autres sous-systèmes auxquels l’application est associée, le ou les modèles de cas d’utilisation qu’il décrit ainsi que tout autre chose qui peut être influencée ou affectée par ce document.]
+%[Une brève description de la portée de ce document, l’application qu’il décrit, les caractéristiques ou autres sous-systèmes auxquels l’application est associée, le ou les modèles de cas d’utilisation qu’il décrit ainsi que tout autre chose qui peut être influencée ou affectée par ce document.]%
+Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou des entreprises l'échange des données de manière contrôler. Par exemple, chaque utilisateurs propriétaires d'un fichier stocké dans le serveur FTP du logiciel, pourront paramétrer les droits de téléchargements sur ce fichier, et ainsi ils disposeront du pouvoir de restreindre ou d'augmenter l'accessibilité de son fichier...
 
 \subsection{Définitions, acronymes et abréviations}
 [Énumérer les définitions de tous les termes, acronymes et abréviations nécessaires à la compréhension du document d’architecture logicielle. Cette information peut renvoyer à l’artéfact Glossaire du projet..]
@@ -90,8 +96,137 @@ Les fonctions d’un système de gestion peuvent être la maintenance d’un com
 \subsection{Fonctionnalités}
 [Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel. Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie. Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être, par utilisateur ou par sous-système. Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.
 Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil]
-\subsubsection{\textless Nom de l’exigence fonctionnelle 1\textgreater}
-[Description de l’exigence.]
+\subsubsection{\textless Communication en réseau\textgreater}
+
+\paragraph{\textbf{Procédure d'initialisation de la communication Client-Serveur}}
+
+\begin{itemize}[label = $\triangleright$]
+\item  Du démarrage jusqu'à sa fermeture, le serveur doit être à l'écoute sur le port \textbf{port 21}.
+
+\item Le client doit se connecter sur le \textbf{port 21} du serveur pour pouvoir échanger des données.
+
+\item Le client doit utiliser un port libre c'est-à-dire que son numéro de port doit être supérieur à 1024.
+
+\item Le client et le serveur doivent utiliser le protocole FTP pour échanger les données.
+
+\item Un témoin graphique (de type diode) doit signaler la réussite de la connexion si la connexion est établie. 
+\end{itemize}
+
+\paragraph{\textbf{Procédure en cas d'impossibilité d'initiation de la communication Client-Serveur}}
+
+\begin{itemize}[label = $\triangleright$]
+\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une communication avec le serveur à l'aide d'une fenêtre de dialogue affichant les messages suivant : 
+\indent
+
+\begin{itemize}
+\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
+-Vérifiez l'état de votre connexion Internet.\\
+-Vérifiez que le nom du serveur n'est pas erroné."\\}
+Si la source du problème provient du réseau (problème de routage, connexion coupée) ou si le serveur est inexistant.
+
+\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$: le serveur est surchargé."\\}
+Si le nombre de connexion autorisé par le serveur est atteint.
+
+\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
+$\textless nom\_du\_serveur\textgreater$ vous a banni !"\\}
+Si le client a été auparavant banni par le serveur. 
+\end{itemize}
+
+\item La fenêtre de dialogue doit avoir un bouton "Fermer" pour fermer celle-ci.
+
+\item La fenêtre de dialogue doit avoir un bouton "Ré-essayer" pour que le client puisse retenter une connexion avec le serveur avec les mêmes paramètres de communications que la tentative précédente.
+\end{itemize}
+
+
+\paragraph{\textbf{Procédure en cas de coupure de la communication Client-Serveur}}
+
+\begin{itemize}[label = $\triangleright$]
+\item Le client doit prévenir l'utilisateur si la communication avec le serveur est interrompue à l'aide d'une fenêtre de dialogue affichant le message suivant:\\
+\textit{"Connexion interrompue avec le serveur $\textless nom\_du\_serveur\textgreater$."}
+
+\item La fenêtre de dialogue doit avoir un bouton "Fermer".
+
+\item Le client et le serveur doivent automatiquement fermer le port qui était dédié à la communication interrompue.
+\end{itemize}
+
+\paragraph{\textbf{Paramètre de la communication Client-Serveur}}
+
+\begin{itemize}[label = $\triangleright$]
+\item Le serveur doit respecter la limite de débit de téléchargement configurée préalablement par son administrateur.
+\item Le client doit pouvoir télécharger les données avec le débit imposé par le serveur par défaut.
+\item L'utilisateur du client devrait pouvoir restreindre le débit de téléchargement à partir du débit maximal de téléchargement autorisé par le serveur. 
+\end{itemize}
+
+\paragraph{\textbf{Procédure de fermeture de la communication Client-Serveur}}
+
+\begin{itemize}[label = $\triangleright$]
+\item Le client doit \textbf{clôturer} la communication en cas d'\textbf{upload}.
+
+\item Le serveur doit \textbf{clôturer} la communication en cas de \textbf{download}. 
+\end{itemize}
+
+\subsubsection{Module de statistique}
+
+Le serveur et le client doivent contenir un module de statistique.
+
+
+\paragraph{\textbf{Serveur\\}}
+
+Ce module permettra à l'administrateur de contrôler les activités sur son serveur, et de pouvoir par la suite de modifier la configuration de son serveur pour mieux adapter celui-ci au besoin des utilisateur.
+
+Voici les exigences :
+
+\begin{itemize}[label = $\triangleright$]
+\item Le module de statistique doit mesurer la fréquence de connexion des utilisateurs clients.
+
+\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chaque fichier stocké dans le serveur.
+
+\item Le module de statistique doit comptabiliser le nombre d'opération de "download" par utilisateur.
+
+\item Le module de statistique doit comptabiliser le nombre d'opération de "upload" par utilisateur.
+
+\item Le module de statistique doit comptabiliser le nombre de téléchargement par tranche horaire (2 heures).
+
+\item Le module de statistique doit pouvoir afficher en temps réel en plus d'éditer un rapport toute les 2 semaines contenant les statistiques suivante:
+
+\indent
+\begin{itemize}
+\item le fichier le plus télécharger.
+
+\item l'utilisateur qui "upload" le plus de fichiers.
+
+\item l'utilisateur qui "download" le plus de fichiers.
+
+\item un histogramme qui trace la fréquence de téléchargement de tous les fichiers stockés dans le serveur.
+
+\item un histogramme qui trace le nombre d'opération de "download" et de "upload" de chaque utilisateur.
+
+\item un histogramme qui trace la moyenne du nombre d'opération de "download" et de "upload" par tranche de 2 heures.
+\end{itemize}
+
+\item Le rapport en temps réel doit d'être accessible via un bouton sur l'interface graphique du programme.
+
+\item Le rapport édité par le module de statistique doit être un fichier de format html (le navigateur pourra interpréter le fichier et tracer les graphiques).
+\end{itemize}
+
+\paragraph{\textbf{Client\\}}
+
+Ce module permettra à l'utilisateur de contrôler son activité sur le serveur FTP, et de contrôler les opérations faites sur ces fichiers par les autres utilisateurs.
+
+Voici les exigences :
+\begin{itemize}[label = $\triangleright$]
+\item Le module de statistique doit comptabiliser le nombre d'opération "download" de chacun de ses fichiers (les fichiers dont il est le propriétaire), par utilisateur (ceux qui téléchargent ses fichiers).
+\item Le module de statistique doit afficher un rapport en temps réel contenant: 
+
+\begin{itemize}
+\item le fichier le plus télécharger.
+
+\item l'utilisateur qui "download" le plus ses fichiers.
+
+\item un histogramme qui trace la fréquence de téléchargement de tous ses fichiers en fonction des utilisateurs qui les ont téléchargés.
+\end{itemize} 
+\end{itemize}
+
 
 \subsection{Spécification des cas d’utilisation}
 [Lorsqu’il y a une modélisation par cas d’utilisation, ceux-ci décrivent la majorité des exigences fonctionnelles du système ainsi que certaines exigences non-fonctionnelles. On peut référer au document de Spécification des cas d’utilisation.]
