@@ -1,0 +1,285 @@
+\documentclass[10pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{} 
+\lhead{\includegraphics{knkBebeVersion.png} \hspace{0.1cm} Kould Not Konect  \hspace{0.4cm} \vline}
+\chead{Document de Spécification des Exigences}
+\rhead{Kould Not Share}
+\rfoot{\thepage}
+
+\author{Kevin BASCOL, Kevin LAOUSSING, Nicolas REYNAUD}
+\title{Document de spécification des exigences}
+\date{3 Novembre 2014}
+
+\makeatletter
+\renewcommand{\thesection}{\@arabic\c@section}
+\makeatother
+
+\begin{document}
+
+\makeatletter
+	\begin{titlepage}
+	
+	\begin{figure}
+		\begin{minipage}[c]{.46\linewidth}
+		\end{minipage} \hfill
+		\begin{minipage}[c]{.20\linewidth}
+			\begin{center}
+				\includegraphics{knk.png}\\
+				{\large Kould Not Konect}
+			\end{center}
+		\end{minipage}
+	\vspace{1cm}
+	\end{figure}
+	
+	\centering
+		{\Huge \textbf{\@title}}\\
+		\hrule height 4pt
+		\vspace{1.5cm}
+		{\LARGE  Projet \textbf{Kould Not Share} v1.0}
+		
+		\vfill
+		
+		\@author\\
+		\@date 
+		\end{titlepage}
+\makeatother
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+
+\section{Introduction}
+
+\subsection{Objectif du document}
+Ce document présente les exigences logicielles et matérielles de la version 1.0 du projet Kould Not Share de l'entreprise Kould Not Share. Les responsables de ce projet sont Nicolas Reynaud, Kevin Laoussing et Kevin Bascol.
+
+\textcolor{magenta}{\subsection{Portée du document}
+[Une brève description de la portée de ce document, l’application qu’il décrit, les caractéristiques ou autres sous-systèmes auxquels l’application est associée, le ou les modèles de cas d’utilisation qu’il décrit ainsi que tout autre chose qui peut être influencée ou affectée par ce document.]}
+
+
+\subsection{Définitions, acronymes et abréviations}
+\begin{description}
+\item[KNK] Kould Not Konect.
+\item[KNS] Kould Not Share.
+\item[FTP] File Transfer Protocol, protocole de communication destiné à l'échange informatique de fichiers sur un réseau TCP/IP.
+\item[TCP/IP] Transmission Protocol/Internet Protocol, protocoles utilisés pour le transfert des données sur Internet.
+\item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
+\item[Client] Logiciel qui envoie des demandes à un serveur.
+\item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
+\end{description}
+
+\subsection{Références}
+
+\textcolor{red}{\subsection{Vue d’ensemble}
+[Cette section décrit le contenu du reste du document et explique comment le document est organisé.]}
+
+\section{Description générale}
+
+Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires.
+
+\subsection{Perspectives du produit}
+
+\textcolor{red}{\subsubsection{Interfaces système}
+[Décrire les interfaces qui permettent la communication avec d’autres systèmes.]}
+
+\textcolor{red}{\subsubsection{Interfaces utilisateurs}
+[Décrire les interfaces utilisateur ou référer au prototype d’interface utilisateur.]}
+
+\textcolor{red}{\subsubsection{Interfaces matérielles}
+[Définir les interfaces entre le logiciel et le matériel, incluant la structure logique, les adresses physiques, le comportement attendu, etc.]}
+
+\textcolor{red}{\subsubsection{Interfaces logicielles}
+[Décrire les interfaces logicielles avec les autres composants du système. Ce peut être des composants achetés. Des composants de d’autres applications qui sont réutilisés ou des composants développés pour des sous-systèmes hors de la protée de la présente SEL et qui interagissent avec le présent système..]}
+
+\textcolor{magenta}{\subsubsection{Interfaces de communication}
+[Décrire les interfaces de communication avec les autres systèmes comme les réseaux locaux, les serveurs distants, etc.]}
+
+\textcolor{red}{\subsubsection{Contraintes de mémoire}
+[Indiquer les besoins en mémoire primaire et secondaire.]}
+
+\subsection{Fonctions du produit}
+\begin{itemize}
+\item Permet de partager des dossiers entre un serveur et un ou plusieurs utilisateurs.
+\item Permet de définir les droits d'accès aux dossiers du serveur.
+\item Propose une interface claire et intuitive.
+\end{itemize}
+
+\subsection{Caractéristiques des utilisateurs}
+Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
+
+\subsection{Contraintes}
+
+\textcolor{red}{\subsection{Hypothèses et dépendances}
+[Décrire tout élément de faisabilité technique, disponibilité de sous-système ou de composant ou toute autre hypothèse liée au projet de laquelle dépend la viabilité du logiciel.]}
+
+\subsection{Exigences reportées}
+
+\section{Exigences spécifiques}
+
+\subsection{Fonctionnalités}
+
+\subsubsection{Côté client}
+\paragraph{Gestionnaire de marque-pages}
+	\begin{itemize}
+		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur. \textcolor{blue}{cf partie marque-page interface}
+		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur. \textcolor{blue}{cf formulaire création mp}
+		\item Un marque-page doit avoir la possibilité d'enregistrer aussi le mot de passe de l'utilisateur si ce dernier le veut. \textcolor{blue}{cf formulaire creation mp - partie spéciale mdp}
+		\item Le nom du marque-page doit être saisi par l'utilisateur. \textcolor{blue}{idem}
+	\end{itemize}
+	
+\paragraph{Limitations}
+	\begin{itemize}
+		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléchargement des fichiers. \textcolor{blue}{cf bouton limiter}
+		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
+		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléversement des fichiers. \textcolor{blue}{cf bouton limiter}
+		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléversement. \textcolor{blue}{cf curseur limitation}
+		\item Le programme devrait permettre à l'utilisateur de bloquer le téléchargement de fichiers depuis sa machine pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
+		\item Le programme devrait permettre à l'utilisateur de verrouiller le téléversement de fichiers depuis sa machine pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
+	\end{itemize}
+	
+\paragraph{Utilisation des dossiers}
+	\begin{itemize}
+		\item Le programme doit permettre à l'utilisateur de parcourir tous les sous-dossiers du répertoire qui lui a été fournit. \textcolor{blue}{cf affichage arborescence}
+		\item Le programme doit permettre à l'utilisateur de créer autant de sous-dossier qu'il veut dans le répertoire qui lui a été fourni. \textcolor{blue}{cf creation nouveau dossier}
+		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel sous-dossier du répertoire qui lui a été fourni.
+		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni. \textcolor{blue}{cf bouton ajout de fichier}
+		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel fichier dans les sous-dossiers du répertoire qui lui a été fourni. \textcolor{blue}{cf bouton suppression fichier}
+	\end{itemize}
+
+\subsubsection{Côté serveur}
+\paragraph{Limitations}
+	\begin{itemize}
+		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
+		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
+		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléversement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
+		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléversement. \textcolor{blue}{cf curseur limitation}
+		\item Le programme devrait permettre à l'administrateur de bloquer le téléchargement de fichiers pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
+		\item Le programme devrait permettre à l'administrateur de bloquer le téléversement de fichiers pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
+		\item Le programme doit empêcher les utilisateurs de téléverser les fichiers ayant une extension interdite \textcolor{blue}{cf liste ou mettre liste}
+	\end{itemize}
+	
+\paragraph{Utilisation des dossiers}
+	\begin{itemize}
+		\item Le programme doit permettre à l'administrateur de parcourir tous les dossiers sur le serveur. \textcolor{blue}{cf affichage arborescence}
+		\item Le programme doit permettre à l'administrateur de créer autant de dossier qu'il veut sur le serveur.\textcolor{blue}{cf bouton creation nouveau dossier}
+		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur. \textcolor{blue}{cf bouton suppression dossier}
+		\item Le programme doit permettre à l'administrateur de créer des fichiers dans n'importe quel dossier sur le serveur. \textcolor{blue}{cf bouton ajout de fichier}
+		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel fichier sur le serveur. \textcolor{blue}{cf bouton suppression fichier}
+	\end{itemize}
+
+\subsubsection{Commun aux deux côtés}
+\paragraph{Cryptage}
+	\begin{itemize}
+		\item Le programme devrait proposer une fonction de cryptage de fichiers au moment de les téléverser.\textcolor{blue}{cf bouton lors de l'upload}
+		\item Le programme devrait enregistrer la clé de cryptage de chaque fichier crypté. \textcolor{blue}{automatiquement ou selon l'utilisateur ?}
+		\item Le programme devrait permettre de décrypter les fichiers cryptés.
+		\item Le programme devrait utiliser la clé de cryptage correspondante pour décrypter un fichier. \textcolor{blue}{mettre champs pour clé avant dl ?}
+		\item Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur. \textcolor{blue}{cf même principe que pour id/mdp}
+	\end{itemize}
+
+\textcolor{red}{\subsection{Spécification des cas d’utilisation}
+[Lorsqu’il y a une modélisation par cas d’utilisation, ceux-ci décrivent la majorité des exigences fonctionnelles du système ainsi que certaines exigences non-fonctionnelles. On peut référer au document de Spécification des cas d’utilisation.]}
+
+\textcolor{red}{\subsection{Exigences supplémentaires}
+[Décrire les exigences qui ne sont pas incluses dans les cas d’utilisation ainsi que les exigences non-fonctionnelles. On peut référer au document de Spécifications supplémentaires.]}
+
+\textcolor{red}{\subsubsection{Utilisabilité}
+[Décrire les exigences qui affectent l’utilisabilité comme, par exemple:\\
+•	Le temps de formation nécessaire à un utilisateur normal ou expert avant d’être productif.\\
+•	Les temps d’exécution pour les tâches courantes\\
+•	Les exigences pour satisfaire aux standards d’utilisabilité d’interface graphique de, par exemple, Microsoft.]
+\paragraph{\textless Nom de l’exigence d’utilisabilité 1 \textgreater}
+[Description de l’exigence]}
+
+\textcolor{red}{\subsubsection{Fiabilité}
+[Décrire les exigences qui affectent la fiabilité comme, par exemple:\\
+•	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, mode d’opération lors de dégradation, etc.\\
+•	Durée moyenne de fonctionnement avant défaillance, exprimée en heures, en jours, en mois ou en années.\\
+•	Durée moyenne de rétablissement, qui est le délai moyen de réparation d'une unité fonctionnelle après une défaillance.\\
+•	Exactitude. précision, souvent définie par de normes, requise pour les extrants.\\
+•	Nombre maximum d’anomalies exprimé habituellement en KLOC, en défaut par millier de ligne de code ou par points de fonction.\\
+•	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie.]
+\paragraph{\textless Nom de l’exigence de fiabilité 1 \textgreater}
+[Description de l’exigence]}
+
+\textcolor{red}{\subsubsection{Performance}
+[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
+•	Temps de réponse par transaction (moyen, maximum)\\
+•	Débit (transactions par seconde)\\
+•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
+•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
+•	Utilisation de ressources (mémoire, disque, communications, etc.]
+\paragraph{\textless Nom de l’exigence de performance 1 \textgreater}
+[Description de l’exigence]}
+
+\textcolor{red}{\subsubsection{Maintenabilité}
+[Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
+\paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
+[Description de l’exigence]}
+
+
+\section{Contraintes de conception}
+\begin{description}
+\item[Langage:] JAVA.
+\item[Outil de developpement:] NetBean.
+\end{description}
+\textcolor{red}{\subsection{\textless Nom de la contrainte de conception 1 \textgreater}
+[Description de l’exigence]}
+
+
+\section{Sécurité}
+Devront se faire de manière sécurisée:
+\begin{itemize}
+\item L'enregistrement des mots de passe des utilisateurs dans la base de donnée.
+\item Les messages envoyés entre le serveur et chaque client.
+\item L'enregistrement des clés de cryptage.
+\end{itemize}
+
+
+
+\section{Exigences de documentation utilisateur et d’aide en ligne}
+Une documentation utilisateur complète doit être fournie avec le programme.
+
+
+\textcolor{red}{\section{Normes applicables}
+[Décrire par référence toutes normes applicables et les sections précises de ces normes qui s’appliquent au système. Cela inclut, par exemple, les normes de qualité, légales ou réglementaire, les normes industrielles d’utilisabilité, l’interopérabilité, les normes d’internationalisation, conformité au système d’exploitation, etc. ]}
+
+
+\section{Classification des exigences fonctionnelles}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|}
+	\hline
+	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
+	\hline
+	Utilisation des dossiers & Essentielle\\
+	\hline
+	Limitations & Souhaitable\\
+	\hline
+	Gestionnaire de marque-pages & Souhaitable\\
+	\hline
+	Cryptage & Optionnelle\\
+	\hline
+\end{tabular}
+\egroup
+
+
+\section{Annexes}
+
+\end{document}
