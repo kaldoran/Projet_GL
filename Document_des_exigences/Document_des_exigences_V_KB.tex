@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{enumitem}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{fancyhdr}
@@ -67,11 +68,11 @@
 \section{Introduction}
 
 \subsection{Objectif du document}
-Ce document présente les exigences logicielles et matérielles de la version 1.0 du projet Kould Not Share de l'entreprise Kould Not Share. Les responsables de ce projet sont Nicolas Reynaud, Kevin Laoussing et Kevin Bascol.
+Ce document présente les exigences logicielles et matérielles de la version 1.0 du projet Kould Not Share de l'entreprise Kould Not Konnect. Les responsables de ce projet sont Nicolas Reynaud, Kevin Laoussing et Kevin Bascol.
 
 \textcolor{magenta}{\subsection{Portée du document}
-[Une brève description de la portée de ce document, l’application qu’il décrit, les caractéristiques ou autres sous-systèmes auxquels l’application est associée, le ou les modèles de cas d’utilisation qu’il décrit ainsi que tout autre chose qui peut être influencée ou affectée par ce document.]}
-
+Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou des entreprises l'échange des données de manière contrôler. Par exemple, chaque utilisateurs propriétaires d'un fichier stocké dans le serveur FTP du logiciel, pourront paramétrer les droits de téléchargements sur ce fichier, et ainsi ils disposeront du pouvoir de restreindre ou d'augmenter l'accessibilité de son fichier...
+}
 
 \subsection{Définitions, acronymes et abréviations}
 \begin{description}
@@ -91,7 +92,7 @@ Ce document présente les exigences logicielles et matérielles de la version 1.
 
 \section{Description générale}
 
-Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires.
+Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.
 
 \subsection{Perspectives du produit}
 
@@ -135,8 +136,14 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 \subsection{Fonctionnalités}
 
 \subsubsection{Côté client}
+\paragraph{Authentification}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le programme devra permettra a un client de se connecter sur le client FTP.
+		\item Le nom d'utilisateur et le mot de passe seront définit par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
+	\end{itemize}
+
 \paragraph{Gestionnaire de marque-pages}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur. \textcolor{blue}{cf partie marque-page interface}
 		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur. \textcolor{blue}{cf formulaire création mp}
 		\item Un marque-page doit avoir la possibilité d'enregistrer aussi le mot de passe de l'utilisateur si ce dernier le veut. \textcolor{blue}{cf formulaire creation mp - partie spéciale mdp}
@@ -144,7 +151,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\end{itemize}
 	
 \paragraph{Limitations}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléchargement des fichiers. \textcolor{blue}{cf bouton limiter}
 		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
 		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléversement des fichiers. \textcolor{blue}{cf bouton limiter}
@@ -154,7 +161,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\end{itemize}
 	
 \paragraph{Utilisation des dossiers}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme doit permettre à l'utilisateur de parcourir tous les sous-dossiers du répertoire qui lui a été fournit. \textcolor{blue}{cf affichage arborescence}
 		\item Le programme doit permettre à l'utilisateur de créer autant de sous-dossier qu'il veut dans le répertoire qui lui a été fourni. \textcolor{blue}{cf creation nouveau dossier}
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel sous-dossier du répertoire qui lui a été fourni.
@@ -163,8 +170,23 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\end{itemize}
 
 \subsubsection{Côté serveur}
+\paragraph{Authentification}
+	\begin{itemize}[label = $\triangleright$]
+		\item a
+	\end{itemize}
+	
+\paragraph{Partage de fichiers}
+	\begin{itemize}[label = $\triangleright$]
+		\item a
+	\end{itemize}
+	
+\paragraph{Gestionnaire de comptes utilisateurs}
+	\begin{itemize}[label = $\triangleright$]
+		\item a
+	\end{itemize}
+
 \paragraph{Limitations}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
 		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
 		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléversement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
@@ -175,7 +197,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\end{itemize}
 	
 \paragraph{Utilisation des dossiers}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme doit permettre à l'administrateur de parcourir tous les dossiers sur le serveur. \textcolor{blue}{cf affichage arborescence}
 		\item Le programme doit permettre à l'administrateur de créer autant de dossier qu'il veut sur le serveur.\textcolor{blue}{cf bouton creation nouveau dossier}
 		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur. \textcolor{blue}{cf bouton suppression dossier}
@@ -185,12 +207,13 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 
 \subsubsection{Commun aux deux côtés}
 \paragraph{Cryptage}
-	\begin{itemize}
+	\begin{itemize}[label = $\triangleright$]
 		\item Le programme devrait proposer une fonction de cryptage de fichiers au moment de les téléverser.\textcolor{blue}{cf bouton lors de l'upload}
 		\item Le programme devrait enregistrer la clé de cryptage de chaque fichier crypté. \textcolor{blue}{automatiquement ou selon l'utilisateur ?}
 		\item Le programme devrait permettre de décrypter les fichiers cryptés.
 		\item Le programme devrait utiliser la clé de cryptage correspondante pour décrypter un fichier. \textcolor{blue}{mettre champs pour clé avant dl ?}
 		\item Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur. \textcolor{blue}{cf même principe que pour id/mdp}
+		\item Le programme devra crypter les mots de passe des utilisateurs
 	\end{itemize}
 
 \textcolor{red}{\subsection{Spécification des cas d’utilisation}
