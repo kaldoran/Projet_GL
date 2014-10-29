@@ -140,6 +140,15 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\begin{itemize}[label = $\triangleright$]
 		\item Le programme devra permettra a un client de se connecter sur le client FTP.
 		\item Le nom d'utilisateur et le mot de passe seront définit par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
+		\item Le programme doit proposer un champ pseudo.
+		\item Le programme doit proposer un champ mot de passe.
+		\item Le programme doit permettre d'envoyer les données. \textcolor{blue}{cf Bouton envoyer}
+		\item Le programme doit envoyé le mot de passe crypté au serveur. \textcolor{blue}{cf Protocoles}
+		\item Le programme doit indiqué le succès a l'aide la phrase "Bonjour [pseudo]".
+		\item Le programme doit indiqué si une erreur est survenu et le type d'erreur.
+		\subitem Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
+		\subitem Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
+		\item Le programme doit permettre l'auto-connexion au démarrage du programme.
 	\end{itemize}
 
 \paragraph{Gestionnaire de marque-pages}
@@ -172,7 +181,11 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 \subsubsection{Côté serveur}
 \paragraph{Authentification}
 	\begin{itemize}[label = $\triangleright$]
-		\item a
+		\item Le programme doit être capable de recevoir et détecter l'arrivée d'un pseudo et d'un mot de passe.
+		\item Le programme doit vérifié les informations qu'il à reçu.
+		\item Le programme doit indiqué au client le succès ou l'échec d'authentification.
+		\item L'administrateur doit pouvoir se connecter au serveur à l'aide d'identifiants spécifiques.
+		\item Le programme détecter que l'utilisateur est un administrateur et lui donner tout les droits.	
 	\end{itemize}
 	
 \paragraph{Partage de fichiers}
@@ -182,9 +195,81 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	
 \paragraph{Gestionnaire de comptes utilisateurs}
 	\begin{itemize}[label = $\triangleright$]
-		\item a
+		\item Le programme doit permettre a un administrateur de crée des comptes et de leurs attribuer des fichiers.
+		\item Le programme doit permettre de crée des utilisateurs temporaires.
+		\item Le programme doit se souvenir de tout les comptes crée.
+		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
+		\item Le programme doit permettre de bannir une personne
 	\end{itemize}
 
+\paragraph{Bannissement d'un compte}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le programme doit permettre de retirer les droits à une personne.
+		\item Le programme doit stocker cette perte de droits.
+		\item Le programme devrait permettre de bannir temporairement une personne.
+		\item Le programme devrait pouvoir permettre de donner la raison du bannissement.
+		\item Le programme devrait permettre un bannissement partiel d'un compte
+	\end{itemize}
+	
+\paragraph{Bannissement temporaire}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le programme devrait permettre de bannir un compte pour une durée déterminée.
+		\item Le programme devrait pouvoir donner le temps de bannissement restant.
+		\item Le programme devrait pouvoir associé une raison à se bannissement temporaire.
+	\end{itemize}
+	
+\paragraph{Bannissement partiel}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
+		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
+	\end{itemize}
+	
+\paragraph{Stockage des comptes}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
+		\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
+		\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+		\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+	\end{itemize}
+		
+	\subparagraph{Compte Administrateur}
+		\begin{itemize}[label = $\triangleright$]
+			\item Le compte Administrateur doit être UNIQUE
+			\item Le compte administrateur sera stocké dans un fichier à part
+			\item Le fichiers qui stockera le compte administrateur n'aura pas d'extension
+			\item Le nom du fichier qui stockera le compte administrateur aura pour nom .shadow \textcolor{blue}{cf linux}
+			\item Le compte administrateur sera stocké sous la forme : pseudo@motDePasse:/CheminDeReference
+			\item L'administrateur ne pourra distribuer les droits que à partir du Chemin de référence.
+			\item L'administrateur aura priorité ABSOLUE sur tous les comptes.
+			\item L'accès au compte administrateur doit se faire en accès direct à la machine. 
+			\item AUCUN accès au compte administrateur pourra être fait a partir d'un client.
+		\end{itemize}
+		
+	\subparagraph{Comptes normaux}
+		\begin{itemize}[label = $\triangleright$]
+			\item Le programme stockera les pseudos et les mots de passe dans un fichier .acc
+			\item Le stockage sera sous la forme : pseudo@motDePasse:/fichier\#/autrefichier
+		\end{itemize}
+	\subparagraph{Comptes temporaires}
+		\begin{itemize}[label = $\triangleright$]
+			\item les comptes temporaires seront stockés dans un fichier .acctmp
+			\item Le programme doit stocker le temps restant au compte.
+			\item A la fin du temps le programme devra supprimer le compte lors de la prochaine tentative de connexion.
+			\item Lors de la suppression le programme doit signaler a l'utilisateur que sont compte temporaire a été supprimé.
+			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
+		\end{itemize}
+	\subparagraph{Comptes bannis}
+		\begin{itemize}[label = $\triangleright$]
+			\item Le programme doit stocker les comptes bannis dans un fichier .accban
+			\item Le programme devrait indiqué la raison du bannissement au client lors des tentatives de connexion.
+			\item Le programme devrait pouvoir stocker le temps restant de bannissement.
+			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
+			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
+		\end{itemize}
+		
+
+	
 \paragraph{Limitations}
 	\begin{itemize}[label = $\triangleright$]
 		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
