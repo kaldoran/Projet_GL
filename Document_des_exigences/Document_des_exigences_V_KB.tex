@@ -153,29 +153,56 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 
 \paragraph{Gestionnaire de marque-pages}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur. \textcolor{blue}{cf partie marque-page interface}
-		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur. \textcolor{blue}{cf formulaire création mp}
-		\item Un marque-page doit avoir la possibilité d'enregistrer aussi le mot de passe de l'utilisateur si ce dernier le veut. \textcolor{blue}{cf formulaire creation mp - partie spéciale mdp}
-		\item Le nom du marque-page doit être saisi par l'utilisateur. \textcolor{blue}{idem}
+		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur.
+		\item Le programme devrait afficher un bouton "Bookmarks"
+		\item Cliquer sur le bouton "Bookmarks" devrait afficher la liste des marques-pages de l'utilisateur.
+		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur.
+		\item Un marque-page doit avoir la possibilité d'enregistrer aussi le mot de passe de l'utilisateur si ce dernier le veut.
+		\item Le programme devrait afficher un bouton "Mettre un marque-page".
+		\item Cliquer sur le bouton "Mettre un marque-page" devrait afficher un champ de saisie et une case à cocher.
+		\item Le champ de saisie devrait permettre à l'utilisateur d'enter le nom du marque-page.
+		\item La case à cocher devrait permettre à l'utilisateur de choisir si il veut enregistre son mot de passe ou non.
 	\end{itemize}
 	
 \paragraph{Limitations}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléchargement des fichiers. \textcolor{blue}{cf bouton limiter}
-		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
-		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléversement des fichiers. \textcolor{blue}{cf bouton limiter}
-		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléversement. \textcolor{blue}{cf curseur limitation}
-		\item Le programme devrait permettre à l'utilisateur de bloquer le téléchargement de fichiers depuis sa machine pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
-		\item Le programme devrait permettre à l'utilisateur de verrouiller le téléversement de fichiers depuis sa machine pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
+		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléchargement des fichiers.
+		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléchargement".
+		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléchargement.
+		\item Cliquer sur le bouton "Limiter vitesse de téléchargement" doit faire apparaitre un curseur permettant de donner la valeur de la limite.
+		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléversement des fichiers.
+		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléversement".
+		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléversement.
+		\item Cliquer sur le bouton "Limiter vitesse de téléversement" doit faire apparaitre un curseur permettant de donner la valeur de la limite.
+		\item Le programme devrait permettre à l'utilisateur de bloquer le téléchargement de fichiers depuis sa machine pour certaines plages horaires.
+		\item Pour cela le menu déroulant "Configuration" devrait proposer un bouton "Plages horaires téléchargement".
+		\item Cliquer sur le bouton "Plages horaires téléchargement" doit faire apparaitre une liste d'horaires à cocher.
+		\item Le programme devrait permettre à l'utilisateur de verrouiller le téléversement de fichiers depuis sa machine pour certaines plages horaires.
+		\item Pour cela le menu déroulant "Configuration" devrait proposer un bouton "Plages horaires téléversement".
+		\item Cliquer sur le bouton "Plages horaires téléversement" doit faire apparaitre une liste d'horaires à cocher.
 	\end{itemize}
 	
 \paragraph{Utilisation des dossiers}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme doit permettre à l'utilisateur de parcourir tous les sous-dossiers du répertoire qui lui a été fournit. \textcolor{blue}{cf affichage arborescence}
-		\item Le programme doit permettre à l'utilisateur de créer autant de sous-dossier qu'il veut dans le répertoire qui lui a été fourni. \textcolor{blue}{cf creation nouveau dossier}
+		\item Le programme doit afficher l'arborescence des dossiers auquel l'utilisateur a accès sur le serveur courant.
+		\item Le programme doit permettre à l'utilisateur de parcourir tous les sous-dossiers du répertoire qui lui a été fournit.
+		\item Cliquer sur un dossier de l'arborescence doit afficher les sous-dossiers et fichiers de ce dossier.
+		\item Le programme doit permettre à l'utilisateur de créer autant de sous-dossier qu'il veut dans le répertoire qui lui a été fourni.
+		\item Faire un clic droit sur un dossier doit afficher un menu de gestion de dossier.
+		\item Ce menu doit proposer un bouton "Nouveau sous-dossier".
+		\item Cliquer sur le bouton "Nouveau sous-dossier" doit afficher un champ de saisie.
+		\item Ce champ de saisie doit permettre à l'utilisateur d'entrer le nom du sous-dossier.
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel sous-dossier du répertoire qui lui a été fourni.
-		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni. \textcolor{blue}{cf bouton ajout de fichier}
-		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel fichier dans les sous-dossiers du répertoire qui lui a été fourni. \textcolor{blue}{cf bouton suppression fichier}
+		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
+		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de confirmation de la suppression.
+		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni.
+		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
+		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'utilisateur a fait un clic droit.
+		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel fichier dans les sous-dossiers du répertoire qui lui a été fourni.
+		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier.
+		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
+		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
+		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
 	\end{itemize}
 	
 \paragraph{Communication réseau}
@@ -396,24 +423,49 @@ Si le client a été auparavant banni par le serveur.
 	
 \paragraph{Limitations}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
-		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléchargement. \textcolor{blue}{cf curseur limitation}
-		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléversement des fichiers par les utilisateurs. \textcolor{blue}{cf bouton limiter}
-		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléversement. \textcolor{blue}{cf curseur limitation}
-		\item Le programme devrait permettre à l'administrateur de bloquer le téléchargement de fichiers pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
-		\item Le programme devrait permettre à l'administrateur de bloquer le téléversement de fichiers pour certaines plages horaires. \textcolor{blue}{cf bouton planning}
-		\item Le programme doit empêcher les utilisateurs de téléverser les fichiers ayant une extension interdite \textcolor{blue}{cf liste ou mettre liste}
+		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. 
+		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléchargement". 
+		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléchargement. 
+		\item Cliquer sur le bouton "Limiter vitesse de téléchargement" doit faire apparaitre un curseur permettant de donner la valeur de la limite.
+		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléversement des fichiers par les utilisateurs.
+		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléversement".
+		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléversement.
+		\item Cliquer sur le bouton "Limiter vitesse de téléversement" doit faire apparaitre un curseur permettant de donner la valeur de la limite.
+		\item Le programme devrait permettre à l'administrateur de bloquer le téléchargement de fichiers pour certaines plages horaires.
+		\item Pour cela le menu déroulant "Configuration" devrait proposer un bouton "Plages horaires téléchargement".
+		\item Cliquer sur le bouton "Plages horaires téléchargement" doit faire apparaitre une liste d'horaires à cocher.
+		\item Le programme devrait permettre à l'administrateur de bloquer le téléversement de fichiers pour certaines plages horaires.
+		\item Pour cela le menu déroulant "Configuration" devrait proposer un bouton "Plages horaires téléversement".
+		\item Cliquer sur le bouton "Plages horaires téléversement" doit faire apparaitre une liste d'horaires à cocher.
+		\item Le programme doit empêcher les utilisateurs de téléverser les fichiers ayant une extension interdite.
+		\item Le menu déroulant "Configuration" doit proposer un bouton "Extensions interdites".
+		\item Cliquer sur le bouton "Extensions interdites" doit afficher un champ de saisie.
+		\item Le champ de saisie doit être prérempli avec les extensions déjà interdites.
+		\item Un bouton "Valider" doit permettre de valider le contenu du champ de saisie.
 	\end{itemize}
 	
 \paragraph{Utilisation des dossiers}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme doit permettre à l'administrateur de parcourir tous les dossiers sur le serveur. \textcolor{blue}{cf affichage arborescence}
-		\item Le programme doit permettre à l'administrateur de créer autant de dossier qu'il veut sur le serveur.\textcolor{blue}{cf bouton creation nouveau dossier}
-		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur. \textcolor{blue}{cf bouton suppression dossier}
-		\item Le programme doit permettre à l'administrateur de créer des fichiers dans n'importe quel dossier sur le serveur. \textcolor{blue}{cf bouton ajout de fichier}
-		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel fichier sur le serveur. \textcolor{blue}{cf bouton suppression fichier}
-	\end{itemize}
-	
+		\item Le programme doit afficher l'arborescence des dossiers présents sur le serveur.
+		\item Le programme doit permettre à l'administrateur de parcourir tous les dossiers sur le serveur.
+		\item Cliquer sur un dossier de l'arborescence doit afficher les sous-dossiers et fichiers de ce dossier.
+		\item Le programme doit permettre à l'administrateur de créer autant de dossier qu'il veut sur le serveur.
+		\item Faire un clic droit sur un dossier doit afficher un menu de gestion de dossier.
+		\item Ce menu doit proposer un bouton "Nouveau sous-dossier".
+		\item Cliquer sur le bouton "Nouveau sous-dossier" doit afficher un champ de saisie.
+		\item Ce champ de saisie doit permettre à l'administrateur d'entrer le nom du sous-dossier.
+		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur.
+		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
+		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de dialogue demandant la confirmation de la suppression.
+		\item Le programme doit permettre à l'administrateur de créer des fichiers dans n'importe quel dossier sur le serveur.
+		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
+		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'administrateur a fait un clic droit.
+		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel fichier sur le serveur.
+		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier
+		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
+		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
+		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
+	\end{itemize}	
 \paragraph{Communication réseau}
 
 	\subparagraph{Procédure d'initialisation de la communication}
@@ -537,12 +589,17 @@ Si le client a été auparavant banni par le serveur.
 \subsubsection{Commun aux deux côtés}
 \paragraph{Cryptage}
 	\begin{itemize}[label = $\triangleright$]
-		\item Le programme devrait proposer une fonction de cryptage de fichiers au moment de les téléverser.\textcolor{blue}{cf bouton lors de l'upload}
-		\item Le programme devrait enregistrer la clé de cryptage de chaque fichier crypté. \textcolor{blue}{automatiquement ou selon l'utilisateur ?}
+		\item Le programme devrait proposer une fonction de cryptage de fichiers.
+		\item Le menu de gestion de fichier devrait proposer un bouton "Cryptage du fichier"
+		\item Le programme devrait enregistrer la clé de cryptage de chaque fichier crypté.
+		\item Cliquer sur le bouton "Cryptage du fichier" devrait crypter le fichier et enregistrer la clé de cryptage.
 		\item Le programme devrait permettre de décrypter les fichiers cryptés.
-		\item Le programme devrait utiliser la clé de cryptage correspondante pour décrypter un fichier. \textcolor{blue}{mettre champs pour clé avant dl ?}
-		\item Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur. \textcolor{blue}{cf même principe que pour id/mdp}
-		\item Le programme devra crypter les mots de passe des utilisateurs
+		\item Le programme devrait utiliser la clé de cryptage correspondante pour décrypter un fichier.
+		\item Avant de télécharger un fichier crypté dont la clé de cryptage n'est pas enregistrée, le programme devrait afficher un champ de saisie.
+		\item Ce champ de saisie devrait permettre à l'utilisateur d'entrer la clé de cryptage.
+		\item Lors de l'envoie de la clé de cryptage, le programme devrait enregistrer celle-ci.
+		\item \textcolor{blue}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
+		\item Le programme doit crypter les mots de passe des utilisateurs
 	\end{itemize}
 	
 \paragraph{Communication réseau}
