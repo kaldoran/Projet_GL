@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{report}
+	\documentclass[10pt,a4paper]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -96,18 +96,26 @@ Les fonctions d’un système de gestion peuvent être la maintenance d’un com
 \subsection{Fonctionnalités}
 [Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel. Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie. Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être, par utilisateur ou par sous-système. Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.
 Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil]
-\subsubsection{\textless Communication en réseau\textgreater}
+\subsubsection{Communication en réseau}
 
 \paragraph{\textbf{Procédure d'initialisation de la communication Client-Serveur}}
 
 \begin{itemize}[label = $\triangleright$]
 \item  Du démarrage jusqu'à sa fermeture, le serveur doit être à l'écoute sur le port \textbf{port 21}.
 
-\item Le client doit se connecter sur le \textbf{port 21} du serveur pour pouvoir échanger des données.
+\item Le client doit se connecter sur le \textbf{port 21} du serveur initialiser une procédure d'échange de fichiers.
+
+\item Le serveur doit allouer \textbf{un port d'échange supérieur à 1024} avec le client à chaque requête d'initialisation.
+
+\item Le serveur doit communiquer au client le port d'échange qu'il a alloué (cf exigence précédente.
+
+\item Le client doit se connecter au port d'échange alloué par le serveur (que le serveur aura précédemment communiqué : cf exigence précédente) pour échanger des données.
+
+\item Le client doit résilier la connexion au \textbf{port 21} une fois qu'il a réussi à ce connecter au port d'échange.
 
 \item Le client doit utiliser un port libre c'est-à-dire que son numéro de port doit être supérieur à 1024.
 
-\item Le client et le serveur doivent utiliser le protocole FTP pour échanger les données.
+\item Le client et le serveur doivent utiliser le \textbf{protocole FTP} pour échanger les données.
 
 \item Un témoin graphique (de type diode) doit signaler la réussite de la connexion si la connexion est établie. 
 \end{itemize}
@@ -115,16 +123,15 @@ Lorsque des outils de développement, tels des référentiels d’exigences ou d
 \paragraph{\textbf{Procédure en cas d'impossibilité d'initiation de la communication Client-Serveur}}
 
 \begin{itemize}[label = $\triangleright$]
-\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une communication avec le serveur à l'aide d'une fenêtre de dialogue affichant les messages suivant : 
-\indent
+\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port 21} à l'aide d'une fenêtre de dialogue affichant les messages suivant : 
 
 \begin{itemize}
-\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
+\item \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
 -Vérifiez l'état de votre connexion Internet.\\
 -Vérifiez que le nom du serveur n'est pas erroné."\\}
 Si la source du problème provient du réseau (problème de routage, connexion coupée) ou si le serveur est inexistant.
 
-\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$: le serveur est surchargé."\\}
+\item \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$: le serveur est surchargé."\\}
 Si le nombre de connexion autorisé par le serveur est atteint.
 
 \item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
@@ -132,9 +139,13 @@ $\textless nom\_du\_serveur\textgreater$ vous a banni !"\\}
 Si le client a été auparavant banni par le serveur. 
 \end{itemize}
 
-\item La fenêtre de dialogue doit avoir un bouton "Fermer" pour fermer celle-ci.
+\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port d'échange} à l'aide d'une fenêtre de dialogue affichant le message suivant : \\
+\textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$ sur le port $\textless numero\_du\_port\_echange\textgreater$ : Vérifiez vos règle de pare-feu."\\}
 
-\item La fenêtre de dialogue doit avoir un bouton "Ré-essayer" pour que le client puisse retenter une connexion avec le serveur avec les mêmes paramètres de communications que la tentative précédente.
+\item Les fenêtre de dialogue doivent avoir un bouton "Fermer", positionné à leur angle inférieur droit, pour fermer celles-ci.
+
+\item Les fenêtre de dialogue doivent avoir un bouton "Ré-essayer", positionné à leur angle inférieur droit à gauche du bouton fermer, pour que le client puisse retenter une connexion avec le serveur avec les mêmes paramètres de communications que la tentative précédente.
+
 \end{itemize}
 
 
@@ -149,13 +160,6 @@ Si le client a été auparavant banni par le serveur.
 \item Le client et le serveur doivent automatiquement fermer le port qui était dédié à la communication interrompue.
 \end{itemize}
 
-\paragraph{\textbf{Paramètre de la communication Client-Serveur}}
-
-\begin{itemize}[label = $\triangleright$]
-\item Le serveur doit respecter la limite de débit de téléchargement configurée préalablement par son administrateur.
-\item Le client doit pouvoir télécharger les données avec le débit imposé par le serveur par défaut.
-\item L'utilisateur du client devrait pouvoir restreindre le débit de téléchargement à partir du débit maximal de téléchargement autorisé par le serveur. 
-\end{itemize}
 
 \paragraph{\textbf{Procédure de fermeture de la communication Client-Serveur}}
 
@@ -170,7 +174,7 @@ Si le client a été auparavant banni par le serveur.
 Le serveur et le client doivent contenir un module de statistique.
 
 
-\paragraph{\textbf{Serveur\\}}
+\paragraph{\textbf{Module de statistique du Serveur\\}}
 
 Ce module permettra à l'administrateur de contrôler les activités sur son serveur, et de pouvoir par la suite de modifier la configuration de son serveur pour mieux adapter celui-ci au besoin des utilisateur.
 
@@ -187,9 +191,10 @@ Voici les exigences :
 
 \item Le module de statistique doit comptabiliser le nombre de téléchargement par tranche horaire (2 heures).
 
+\item Les tranches horaire devrait être configurable;
+
 \item Le module de statistique doit pouvoir afficher en temps réel en plus d'éditer un rapport toute les 2 semaines contenant les statistiques suivante:
 
-\indent
 \begin{itemize}
 \item le fichier le plus télécharger.
 
@@ -197,11 +202,11 @@ Voici les exigences :
 
 \item l'utilisateur qui "download" le plus de fichiers.
 
-\item un histogramme qui trace la fréquence de téléchargement de tous les fichiers stockés dans le serveur.
+\item un histogramme H1 qui trace le nombre de téléchargement de chaque fichier stocké dans le serveur.
 
-\item un histogramme qui trace le nombre d'opération de "download" et de "upload" de chaque utilisateur.
+\item un histogramme H2 qui trace le nombre d'opération de "download" et de "upload" de chaque utilisateur.
 
-\item un histogramme qui trace la moyenne du nombre d'opération de "download" et de "upload" par tranche de 2 heures.
+\item un histogramme H3 qui trace la moyenne du nombre d'opération de "download" et de "upload" par tranche de 2 heures.
 \end{itemize}
 
 \item Le rapport en temps réel doit d'être accessible via un bouton sur l'interface graphique du programme.
@@ -209,24 +214,158 @@ Voici les exigences :
 \item Le rapport édité par le module de statistique doit être un fichier de format html (le navigateur pourra interpréter le fichier et tracer les graphiques).
 \end{itemize}
 
-\paragraph{\textbf{Client\\}}
+\paragraph{\textbf{Module de statistique du client\\}}
 
 Ce module permettra à l'utilisateur de contrôler son activité sur le serveur FTP, et de contrôler les opérations faites sur ces fichiers par les autres utilisateurs.
 
 Voici les exigences :
 \begin{itemize}[label = $\triangleright$]
-\item Le module de statistique doit comptabiliser le nombre d'opération "download" de chacun de ses fichiers (les fichiers dont il est le propriétaire), par utilisateur (ceux qui téléchargent ses fichiers).
+
+\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chacun des fichiers de la propriété de l'utilisateur, par utilisateurs (ceux qui téléchargent les fichiers).
+
 \item Le module de statistique doit afficher un rapport en temps réel contenant: 
 
 \begin{itemize}
-\item le fichier le plus télécharger.
+\item Le fichier le plus télécharger.
 
-\item l'utilisateur qui "download" le plus ses fichiers.
+\item L'utilisateur qui "download" le plus ses fichiers.
 
-\item un histogramme qui trace la fréquence de téléchargement de tous ses fichiers en fonction des utilisateurs qui les ont téléchargés.
+\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
 \end{itemize} 
 \end{itemize}
 
+\paragraph{\textbf{Interface graphique du module statistique\\}}
+
+Cette partie décrit l'interface graphique du module de statistique.
+
+\subparagraph{\textbf{Partie commune des interfaces graphiques du client et serveur }}
+\begin{itemize}[label = $\triangleright$]
+
+\item Le module statistique doit être accessible à partir d'un bouton "Statistique" dans la barre d'outil de la fenêtre principale.
+
+\item Le "clic" sur le bouton "Statistique" doit ouvrir une fenêtre (la fenêtre qui contiendra les informations du module statistique).
+
+\item Le "clic" sur le bouton "Statistique" doit initialiser les calculs statistiques (cf exigence module statistique" permettant d'avoir les informations statistiques au moment de l'événement "clic". Cela permet à l'utilisateur d'afficher les informations statistiques en temps réel.
+
+\item La fenêtre doit avoir un titre "Statistique".
+
+\item La fenêtre doit avoir une barre d'outil.
+
+\item La barre d'outil doit avoir un bouton "Exporter" positionner à son extrémité gauche.
+
+\item Le "clic" sur le bouton "Exporter" doit permettre la génération d'un rapport de statistique contenant les informations qu'affiche la fenêtre, \textbf{en priorité les graphiques}, dans un format html.
+
+\item La fenêtre doit avoir un bouton "Fermer" dont l'emplacement sera l'angle inférieur droit de la fenêtre. 
+
+\item La barre
+\end{itemize}
+
+\subparagraph{\textbf{Interface graphique du client }}
+\begin{itemize}[label = $\triangleright$]
+
+\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
+
+\item La partie textuelle doit être la partie supérieur de la fenêtre.
+
+\item La partie graphique doit être la partie inférieur de la fenêtre.
+
+\item La partie textuelle doit contenir un champ de texte non-éditable indiquant le fichier de la propriété de l'utilisateur qui a été le plus télécharger.
+
+\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "download" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+
+\item La partie graphique doit contenir l'histogramme qui trace le nombre téléchargement de chaque fichier (cf exigence module de statistique du client).
+
+\item L'histogramme doit tracer des barres verticales.
+
+\item L'histogramme doit avoir autant de barre que de fichiers (de la propriété de l'utilisateur).
+
+\item Chaque barre doit être entièrement visible sur l'histogramme.
+
+\item Chaque barre doit être de couleur différente.
+
+\item Chaque barre doit être de hauteur proportionnel au nombre de téléchargement (cf exigence module de statistique).
+
+\item Chaque barre doit être de largeur inversement proportionnel au nombre de fichiers (de la propriété de l'utilisateur) : plus l'utilisateur partage de fichiers plus les barres seront fine.
+
+\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme.
+
+\item Les noms de fichier doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme.
+
+\item l'histogramme doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
+\end{itemize}
+
+\subparagraph{\textbf{Interface graphique du serveur }}
+\begin{itemize}[label = $\triangleright$]
+\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
+
+\item La partie textuelle doit être la partie supérieur de la fenêtre.
+
+\item La partie graphique doit être la partie inférieur de la fenêtre.
+
+\item La partie textuelle doit contenir un champ de texte non-éditable indiquant le fichier de la propriété de l'utilisateur qui a été le plus télécharger.
+
+\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "download" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+
+\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "upload" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+
+\item La partie graphique doit être diviser en trois sous-parties, une partie pour chaque histogramme (cf exigence module de statistique).
+
+\item L'histogramme H1 doit être positionné dans la partie inférieur de la partie graphique.
+
+\item L'histogramme H2 doit être positionné dans la partie supérieur gauche de la partie graphique.
+
+\item L'histogramme H3 doit être positionné dans la partie supérieur droit de la partie graphique.
+
+\item Les trois histogrammes doivent tracer des barres verticales.
+
+\item Chaque barre des 3 histogrammes doivent être entièrement visible.
+
+\item Chaque barre des 3 histogrammes doivent être de hauteur proportionnel à la valeur des ordonnées.
+
+\item Chaque barre des 3 histogrammes doivent être de largeur inversement proportionnel au nombre de barres.
+
+\item L'histogramme H1 doit avoir autant de barre que de fichiers (de la propriété de l'utilisateur).
+
+\item Chaque barre de l'histogramme H1 doit être de couleur différente.
+
+\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H1.
+
+\item Les noms de fichier doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H1.
+
+\item L'histogramme H1 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
+
+\item L'histogramme H2 doit avoir autant de couples de barres que d'utilisateurs ayant effectuer une opération de "download" et "upload" (de la propriété de l'utilisateur).
+
+\item L'histogramme H2 doit tracer des couples de barres de couleurs différentes. La couleur représente l'information "upload" et "download".
+
+\item Le nombre d'opération de "upload" et de "download" doit apparaître dans la même ordonnée de l'histogramme H2.
+
+\item Les noms de chaque utilisateur (ayant effectuer une opération de "upload" et "download") doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H2.
+
+\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
+
+\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
+
+\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
+
+\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H3.
+
+\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
+
+\end{itemize}
+
+
+\subsubsection{Download et Upload }
+
+\begin{itemize}[label = $\triangleright$]
+
+\item Le serveur doit respecter la limite de débit de téléchargement configurée préalablement par son administrateur.
+\item Le client doit pouvoir télécharger les données avec le débit imposé par le serveur par défaut.
+\item L'utilisateur du client devrait pouvoir restreindre le débit de téléchargement à partir du débit maximal de téléchargement autorisé par le serveur. 
+
+\item Le transfert de donnée devrait être crypté en fonction des configurations du serveur et/ou du client. La décision du cryptage du transfert de donnée du serveur est prioritaire sur la décision du client.(cf exigence cryptage).
+
+\end{itemize}
 
 \subsection{Spécification des cas d’utilisation}
 [Lorsqu’il y a une modélisation par cas d’utilisation, ceux-ci décrivent la majorité des exigences fonctionnelles du système ainsi que certaines exigences non-fonctionnelles. On peut référer au document de Spécification des cas d’utilisation.]
@@ -236,7 +375,7 @@ Voici les exigences :
 
 \subsubsection{Utilisabilité}
 [Décrire les exigences qui affectent l’utilisabilité comme, par exemple:\\
-•	Le temps de formation nécessaire à un utilisateur normal ou expert avant d’être productif.\\
+	Le temps de formation nécessaire à un utilisateur normal ou expert avant d’être productif.\\
 •	Les temps d’exécution pour les tâches courantes\\
 •	Les exigences pour satisfaire aux standards d’utilisabilité d’interface graphique de, par exemple, Microsoft.]
 \paragraph{\textless Nom de l’exigence d’utilisabilité 1 \textgreater}
