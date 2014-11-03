@@ -667,7 +667,6 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 			\item La fenêtre doit avoir un bouton "Fermer" dont l'emplacement sera l'angle inférieur droit de la fenêtre. 
 
-			item La barre
 		\end{itemize}
 	
 
@@ -677,19 +676,53 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 \subsubsection{Utilisabilité}
 \begin{itemize}
 	\item Le programme doit avoir une prise en main facile pour que n'importe qui puisse immédiatement comprendre comment se servir des fonctionnalité principales.
-	\item 
+	\item L'utilisateur après une formation d'une demie heure, ne doit pas faire plus 10 erreur de manipulation sur une durée de 4h.
+	\item L'utilisateur ne doit faire plus d'une erreur de manipulation après 40 heures de pratiques sur une durée de 100h.
 \end{itemize}
+\subsubsection{Fiabilité}
+%[Décrire les exigences qui affectent la fiabilité comme, par exemple:\\
+%•	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, %mode d’opération lors de dégradation, etc.\\
+%•	Durée moyenne de fonctionnement avant défaillance, exprimée en heures, en jours, en %mois ou en années.\\
+%•	Durée moyenne de rétablissement, qui est le délai moyen de réparation d'une unité fonctionnelle après une défaillance.\\
+%•	Exactitude. précision, souvent définie par de normes, requise pour les extrants.\\
+%•	Nombre maximum d’anomalies exprimé habituellement en KLOC, en défaut par millier de ligne de code ou par points de fonction.\\
+%•	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie.]
+\paragraph{Fiabilité du fonctionnement général du logiciel}
 
-\textcolor{red}{\subsubsection{Fiabilité}
-[Décrire les exigences qui affectent la fiabilité comme, par exemple:\\
-•	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, mode d’opération lors de dégradation, etc.\\
-•	Durée moyenne de fonctionnement avant défaillance, exprimée en heures, en jours, en mois ou en années.\\
-•	Durée moyenne de rétablissement, qui est le délai moyen de réparation d'une unité fonctionnelle après une défaillance.\\
-•	Exactitude. précision, souvent définie par de normes, requise pour les extrants.\\
-•	Nombre maximum d’anomalies exprimé habituellement en KLOC, en défaut par millier de ligne de code ou par points de fonction.\\
-•	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie.]
-\paragraph{\textless Nom de l’exigence de fiabilité 1 \textgreater}
-[Description de l’exigence]}
+	\begin{itemize}[label = $\triangleright$]
+		\item Le client ne doit pas présenter de bugs pendant les 5 premier mois après le déploiement.
+	
+		\item Le serveur doit être capable de fonctionner sans défaillance (c'est-à-dire sans que des bug  surgissent) avec 100 clients connectés simultanément pendant une durée de 24h.
+		
+		\item Le serveur doit être capable de fonctionner plus d'une semaine en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...).	
+		
+		\item Le serveur doit être capable de fonctionner plus de 48h en condition critique (c'est-à-dire bande passante faible, plus 200 clients connectés simultanément, plus de 100 téléchargement simultané, etc ...).
+	\end{itemize}
+	
+	
+\paragraph{Fiabilité des "Upload" et des "Download"}
+	\begin{itemize}[label = $\triangleright$]
+	
+		\item Le logiciel ne doit pas échouer plus de 2 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
+		
+		\item Le logiciel ne doit pas échouer plus de 20 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal, pour 100 utilisateurs.
+		
+		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
+	\end{itemize}		 
+
+\paragraph{Fiabilité des authentifications}
+
+	\begin{itemize}[label = $\triangleright$]
+	
+		\item Le logiciel ne doit pas échouer plus de 1 authentification sur 100 en condition normal.
+		
+		\item \textbf{Le logiciel ne doit jamais autorisé l'accès un client dont le pseudo et/ou mot de passe sont erroné.}
+		
+		\item Le logiciel ne doit jamais confondre les comptes utilisateurs lors d'une authentification.
+		
+		\item L'authentification de l'administrateur sur le serveur ne doit jamais échouer.
+		
+	\end{itemize}
 
 \textcolor{red}{\subsubsection{Performance}
 [Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
