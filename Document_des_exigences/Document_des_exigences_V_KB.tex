@@ -573,6 +573,55 @@ Si le client a été auparavant banni par le serveur.
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
 		\end{itemize}
+		
+\paragraph{Fichier d'historique des événements}
+
+Un fichier d'historique des événements, appelé aussi fichier "log", permettra au serveur d'enregistrer tous les interactions entre les clients et le serveur lui-même.
+
+	\subparagraph{Fonctionnalité}
+		\begin{itemize}[label = $\triangleright$]
+		
+			\item Le serveur doit éditer un fichier d'historique des événements tant que le serveur est en activité.
+		
+			\item Le serveur doit éditer un nouveau fichier d'historique des événements chaque jour, qui trace les événements passés de 00h00 à 23h59 et 59s.
+		
+			\item Les fichiers d'historique des événements doivent être des stockés dans un répertoire appelé "log", dans le répertoire du logiciel.
+		
+			\item Les fichiers d'historique des événements doivent être consultable à partir de l'interface graphique du serveur, en cliquant sur un bouton "log" positionné dans la barre d'outil.
+			
+		\end{itemize}
+		
+		\subparagraph{Interface graphique}
+			\begin{itemize}[label = $\triangleright$]
+		
+			\item Le bouton "log", suite à un événement "clic" doit ouvrir une fenêtre qui contient un champ de texte multi-ligne et non-éditable, affichant dans ce champ texte le contenu du fichier d'historique des événements de la journée courante.
+		
+			\item La fenêtre doit avoir pour titre "Historique des événements".
+		
+			\item La fenêtre doit avoir un calendrier sur lequel l'utilisateur peut cliquer sur une date \textbf{passé} pour consulter le fichier d'historique des événements correspondant.
+		
+			\item Le calendrier doit être positionné au-dessus du champ de texte.
+		
+			\item La fenêtre doit avoir un bouton "Fermer" positionné à son angle inférieur droit.
+			\item Le champ de texte devrait faire apparaître une barre de défilement verticale et une barre de défilement horizontale si le contenu du fichier d'historique des événements excède les dimensions en hauteur et/ou en largeur du champ de texte.
+		\end{itemize}
+		
+		\subparagraph{Syntaxe du fichier d'historique des événements}
+			\begin{itemize}[label = $\triangleright$]
+				\item Le fichier d'historique des événements doit être fichier de texte.
+				
+				\item Le fichier d'historique des événements doit être nommer de la manière suivante : "log\_file\_DD\_MM\_AAAA". Où DD est le jour, MM le mois et AAAA l'année de l'édition du fichier.
+				
+				\item Le fichier d'historique des événements doit avoir une extension ".log".
+				\item Une ligne du fichier d'historique des événements doit correspondre à un seul événement.
+				
+				\item La syntaxe d'un événement du fichier d'historique des événements doit etre la suivante : \\
+		\textit{"HH:MM:SS nom\_événement précision\_événement client\_ayant\_réalisé\_événement"}\\
+		HH:MM:SS :  l'heure du déclenchement de l'événement.\\
+		nom\_événement : le nom de l'événement (par exemple "Opération Upload", "Connexion").\\
+		précision\_événement : les objets en relation avec les événements (par exemple "Opération Upload \textbf{Document.pdf"}).\\
+		client\_ayant\_réalisé\_événement : le nom du client qui a déclenché l'événement.\\		
+	\end{itemize}
 
 \subsubsection{Commun aux deux côtés}
 \paragraph{Cryptage}
