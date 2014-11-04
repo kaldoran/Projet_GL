@@ -129,29 +129,48 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 
 \subsubsection{Côté client}
 \paragraph{Authentification}
-	\begin{enumerate}%[label = $\triangleright$]
+
+	\subparagraph{Interface graphique}
+	\begin{enumerate}
+		\item Le formulaire de connexion doit etre de type Pop-up.
+		\item Le formulaire se situera au milieu de la fenetre.
+		\item Le Pop-Up de connexion apparaitra des l'ouverture du logiciel.
+		\item Quand le Formulaire sera présent le bouton déconnexion sera desactivé / grisé
+		\item Le titre de ce Pop-up sera "Authentification"
+		\item Le titre devra être centré
+		\item Le titre sera suivi d'une barre ligne horizontale de couleur grise prenant au minimum 80\% du pop-up
+		\item Le formulaire doit avoir, a la suite de la barre horizontale trois champs permettant à l'utilisateur d'écrire
+		\item Les trois champs seront aligné avec les mots suivant : "Serveur", "Nom d'utilisateur" et "mot de passe" dans cette ordre 
+		\item Un bouton centré de type cliquable, nommé "Se connecter" sera présent en bas du pop-up.
+		\item En cas d'erreur un cadre aux bordures rouge apparaitra au dessus du champs concerné.
+		\item Le reste de l'application (barre d'action non incluse) sera grisé ( voile gris au dessus ) quand le pop-up est ouvert.
+	\end{enumerate}
+	
+	\subparagraph{Fonctionnalité}
+	\begin{enumerate}
 		\item Le programme devra permettra a un client de se connecter sur le client FTP.
 		\item Le nom d'utilisateur et le mot de passe seront définit par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
 		\item Le programme doit proposer un champ de texte éditable pour entrer un pseudo.
 		\item Le programme doit proposer un champ de texte éditable pour entrer mot de passe.
 		\item Le programme doit permettre d'envoyer les données d'authentification via un protocole sécurisé. \textcolor{blue}{cf Bouton envoyer}
 		\item Le programme doit envoyé le mot de passe crypté au serveur. \textcolor{blue}{cf Protocoles}
-		\item Le programme doit indiqué le succès a l'aide la phrase "Bonjour [pseudo]"\textcolor{green}{Où ?}.
+		\item Le programme doit indiqué le succès a l'aide la phrase "Bonjour [pseudo]" présent dans la barre des menus.
 		\item Le programme doit indiqué si une erreur est survenu et le type d'erreur\textcolor{green}{Où l'utilisateur voit cette indication ?}.
+		\item En cas d'erreur le programme devra indiquer l'erreur et redemander le mot de passe et/ou le login ( en fonction de l'erreur survenue )
+		\item En cas d'erreur sur l'adresse du serveur le programme doit indiquer l'erreur et redemander l'adresse du serveur.
+		\item Le programme doit vérifier que l'adresse du serveur est une adresse IP V4.
+		\item Le programme doit vérifier que le nom d'utilisateur ne dépasse pas 30 caractères.
+		\item Le programme doit vérifier que le nom d'utilisateur n'a pas moins de 3 caractères.
+		\item Le programme doit vérifier que le mot de passe comporte plus de 3 caractères.
+		\item Le programme doit vérifier que le mot de passe comporte moins de 50 caractères.
 		\subitem Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
 		\subitem Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
-		\item Le programme doit permettre l'auto-connexion au démarrage du programme\textcolor{green}{Où est-ce que l'utilisateur peut configurer l'auto-connexion?}.
+		\item Le programme doit permettre l'auto-connexion au démarrage du programme pour ce faire l'utilisateur pourra cocher une case.
 	
-	
-	\item \textcolor{green}{que se passe t-il si l'anthentification échoue?}
-	
-	\item \textcolor{green}{ si le login est erroné?}
-	
-	\item \textcolor{green}{ si le mot de passe est erroné ?}
 	\end{enumerate}
 
 \paragraph{Gestionnaire de marque-pages}
-	\begin{enumerate}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur.
 		\item Le programme devrait afficher un bouton "Bookmarks".\textcolor{green}{Où est positionné le bouton?}
 		\item Cliquer sur le bouton "Bookmarks" devrait afficher la liste des marques-pages de l'utilisateur.\textcolor{green}{Où la liste des marques-pages est affiché dans quoi ?}
@@ -684,7 +703,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 \subsection{Spécification des cas d’utilisation}
 
 
-\subsubsection{Utilisabilité}[label = $\triangleright$]
+\subsubsection{Utilisabilité}
 	\begin{enumerate}
 		\item Le programme doit avoir une prise en main facile pour que n'importe qui puisse immédiatement comprendre comment se servir des fonctionnalité principales.
 		\item L'utilisateur après une formation d'une demie heure, ne doit pas faire plus 10 erreurs de manipulation sur une durée de 4h.
