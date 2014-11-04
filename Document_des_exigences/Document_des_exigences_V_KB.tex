@@ -45,8 +45,12 @@
 	\end{figure}
 	
 	\centering
-		{\Huge \textbf{\@title}}\\
-		\hrule height 4pt
+		{
+		\hrule height 2pt
+		\vspace{0.7cm}
+		\Huge \textbf{\@title}}\\
+		\vspace{0.7cm}
+		\hrule height 2pt
 		\vspace{1.5cm}
 		{\LARGE  Projet \textbf{Kould Not Share} v1.0}
 		
@@ -106,11 +110,11 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 \subsection{Perspectives du produit}
 
 \subsection{Fonctions du produit}
-\begin{itemize}
+\begin{enumerate}
 \item Permet de partager des dossiers entre un serveur et un ou plusieurs utilisateurs.
 \item Permet de définir les droits d'accès aux dossiers du serveur.
 \item Propose une interface claire et intuitive.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
@@ -125,7 +129,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 
 \subsubsection{Côté client}
 \paragraph{Authentification}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}%[label = $\triangleright$]
 		\item Le programme devra permettra a un client de se connecter sur le client FTP.
 		\item Le nom d'utilisateur et le mot de passe seront définit par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
 		\item Le programme doit proposer un champ de texte éditable pour entrer un pseudo.
@@ -137,17 +141,17 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\subitem Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
 		\subitem Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
 		\item Le programme doit permettre l'auto-connexion au démarrage du programme\textcolor{green}{Où est-ce que l'utilisateur peut configurer l'auto-connexion?}.
-	\end{itemize}
+	
 	
 	\item \textcolor{green}{que se passe t-il si l'anthentification échoue?}
 	
 	\item \textcolor{green}{ si le login est erroné?}
 	
 	\item \textcolor{green}{ si le mot de passe est erroné ?}
-	
+	\end{enumerate}
 
 \paragraph{Gestionnaire de marque-pages}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}[label = $\triangleright$]
 		\item Le programme devrait proposer un gestionnaire de marque-pages de serveur.
 		\item Le programme devrait afficher un bouton "Bookmarks".\textcolor{green}{Où est positionné le bouton?}
 		\item Cliquer sur le bouton "Bookmarks" devrait afficher la liste des marques-pages de l'utilisateur.\textcolor{green}{Où la liste des marques-pages est affiché dans quoi ?}
@@ -157,10 +161,10 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Cliquer sur le bouton "Mettre un marque-page" devrait afficher un champ de saisie et une case à cocher.
 		\item Le champ de saisie devrait permettre à l'utilisateur d'enter le nom du marque-page.
 		\item La case à cocher devrait permettre à l'utilisateur de choisir si il veut enregistre son mot de passe ou non.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Limitations}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit permettre à l'utilisateur de limiter la vitesse de téléchargement des fichiers.
 		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléchargement".\textcolor{green}{Où est ce menu déroulant sur l'interface graphique?}
 		\item Le programme doit permettre à l'utilisateur de donner une valeur précise à la limite de téléchargement.
@@ -175,10 +179,10 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Le programme devrait permettre à l'utilisateur de verrouiller le téléversement de fichiers depuis sa machine pour certaines plages horaires.
 		\item Pour cela le menu déroulant "Configuration" devrait proposer un bouton "Plages horaires téléversement".
 		\item Cliquer sur le bouton "Plages horaires téléversement" doit faire apparaitre une liste d'horaires à cocher.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Utilisation des dossiers}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit afficher l'arborescence des dossiers auquel l'utilisateur a accès sur le serveur courant.\textcolor{green}{Où est-ce qu'il affiche cette arborescence ? dans une fenêtre à part ? sur la même fenêtre dans une partie à gauche ? dans ton *** ?}
 		\item Le programme doit permettre à l'utilisateur de parcourir tous les sous-dossiers du répertoire qui lui a été fournit.
 		\item Cliquer sur un dossier de l'arborescence doit afficher les sous-dossiers et fichiers de ce dossier.
@@ -198,13 +202,13 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
 		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Communication réseau}
 
 	\subparagraph{Procédure d'initialisation de la communication}
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 
 			\item Le client doit se connecter sur le \textbf{port 21} du serveur initialiser une procédure d'échange de fichiers.
 
@@ -215,14 +219,14 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 			\item Le client doit utiliser un port libre c'est-à-dire que son numéro de port doit être supérieur à 1024.
 
 			\item Un témoin graphique (de type diode) doit signaler la réussite de la connexion si la connexion est établie. 
-			\end{itemize}
+			\end{enumerate}
 
 	\subparagraph{Procédure en cas d'échec d'initiation de la communication }
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port 21} à l'aide d'une fenêtre de dialogue affichant les messages suivant : 
 
-			\begin{itemize}
+			\begin{enumerate}
 				\item \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
 -Vérifiez l'état de votre connexion Internet.\\
 -Vérifiez que le nom du serveur n'est pas erroné."\\}
@@ -234,7 +238,7 @@ Si le nombre de connexion autorisé par le serveur est atteint.
 				\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
 $\textless nom\_du\_serveur\textgreater$ vous a banni !"\\}
 Si le client a été auparavant banni par le serveur. 
-			\end{itemize}
+			\end{enumerate}
 
 			\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port d'échange} à l'aide d'une fenêtre de dialogue affichant le message suivant : \\
 \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$ sur le port $\textless numero\_du\_port\_echange\textgreater$ : Vérifiez vos règle de pare-feu."\\}
@@ -243,24 +247,24 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Les fenêtre de dialogue doivent avoir un bouton "Ré-essayer", positionné à leur angle inférieur droit à gauche du bouton fermer, pour que le client puisse retenter une connexion avec le serveur avec les mêmes paramètres de communications que la tentative précédente.
 
-		\end{itemize}
+		\end{enumerate}
 		
 	\subparagraph{Procédure en cas de coupure de la communication}
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le client doit prévenir l'utilisateur si la communication avec le serveur est interrompue à l'aide d'une fenêtre de dialogue affichant le message suivant:\\
 \textit{"Connexion interrompue avec le serveur $\textless nom\_du\_serveur\textgreater$."}
 
 			\item La fenêtre de dialogue doit avoir un bouton "Fermer".
 
 			\item Le client et le serveur doivent automatiquement fermer le port qui était dédié à la communication interrompue.
-		\end{itemize}
+		\end{enumerate}
 		
 	\subparagraph{Procédure de fermeture de la communication}
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le client doit \textbf{clôturer} la communication en cas d'\textbf{upload}. 
-		\end{itemize}
+		\end{enumerate}
 		
 \paragraph{Module de statistique}
 
@@ -269,23 +273,23 @@ Si le client a été auparavant banni par le serveur.
 	Ce module permettra à l'utilisateur de contrôler son activité sur le serveur FTP, et de contrôler les opérations faites sur ces fichiers par les autres utilisateurs.\\
 
 	Voici les exigences :
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 
 			\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chacun des fichiers de la propriété de l'utilisateur, par utilisateurs (ceux qui téléchargent les fichiers).
 
 			\item Le module de statistique doit afficher un rapport en temps réel contenant: 
 
-			\begin{itemize}
+			\begin{enumerate}
 				\item Le fichier le plus télécharger.
 
 				\item L'utilisateur qui "download" le plus ses fichiers.
 
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
-			\end{itemize} 
-		\end{itemize}
+			\end{enumerate} 
+		\end{enumerate}
 
 	\subparagraph{Interface graphique du client}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
 
@@ -316,71 +320,71 @@ Si le client a été auparavant banni par le serveur.
 			\item Les noms de fichier doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme.
 
 			\item l'histogramme doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
-		\end{itemize}
+		\end{enumerate}
 
 
 
 
 \subsubsection{Côté serveur}
 \paragraph{Authentification}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit être capable de recevoir et détecter l'arrivée d'un pseudo et d'un mot de passe.
 		\item Le programme doit vérifié les informations qu'il à reçu.
 		\item Le programme doit indiqué au client le succès ou l'échec d'authentification.
 		\item L'administrateur doit pouvoir se connecter au serveur à l'aide d'identifiants spécifiques.
 		\item Le programme détecter que l'utilisateur est un administrateur et lui donner tout les droits.	
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Partage de fichiers}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit partager les sous-dossier à partir de l'endroit où le programme à été lancé.
 		\item Le programme doit pouvoir partager un fichier avec plusieurs personnes.
 		\item \textcolor{red}{Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé. }
 		\item Les fichiers partagés seront stocké sur le serveur.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Gestionnaire de comptes utilisateurs}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit permettre a un administrateur de crée des comptes et de leurs attribuer des fichiers.
 		\item Le programme doit permettre de crée des utilisateurs temporaires.
 		\item Le programme doit se souvenir de tout les comptes crée.
 		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
 		\item Le programme doit permettre de bannir une personne
-	\end{itemize}
+	\end{enumerate}
 
 \paragraph{Bannissement d'un compte}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit permettre de retirer les droits à une personne.
 		\item Le programme doit stocker cette perte de droits.
 		\item Le programme devrait permettre de bannir temporairement une personne.
 		\item Le programme devrait pouvoir permettre de donner la raison du bannissement.
 		\item Le programme devrait permettre un bannissement partiel d'un compte
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Bannissement temporaire}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme devrait permettre de bannir un compte pour une durée déterminée.
 		\item Le programme devrait pouvoir donner le temps de bannissement restant.
 		\item Le programme devrait pouvoir associé une raison à se bannissement temporaire.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Bannissement partiel}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
 		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
 		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Stockage des comptes}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
 		\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
 		\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
 		\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
-	\end{itemize}
+	\end{enumerate}
 		
 	\subparagraph{Compte Administrateur}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le compte Administrateur doit être UNIQUE
 			\item Le compte administrateur sera stocké dans un fichier à part
 			\item Le fichiers qui stockera le compte administrateur n'aura pas d'extension
@@ -390,34 +394,34 @@ Si le client a été auparavant banni par le serveur.
 			\item L'administrateur aura priorité ABSOLUE sur tous les comptes.
 			\item L'accès au compte administrateur doit se faire en accès direct à la machine. 
 			\item AUCUN accès au compte administrateur pourra être fait a partir d'un client.
-		\end{itemize}
+		\end{enumerate}
 		
 	\subparagraph{Comptes normaux}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le programme stockera les pseudos et les mots de passe dans un fichier .acc
 			\item Le stockage sera sous la forme : pseudo@motDePasse:/fichier\#/autrefichier
-		\end{itemize}
+		\end{enumerate}
 	\subparagraph{Comptes temporaires}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item les comptes temporaires seront stockés dans un fichier .acctmp
 			\item Le programme doit stocker le temps restant au compte.
 			\item A la fin du temps le programme devra supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression le programme doit signaler a l'utilisateur que sont compte temporaire a été supprimé.
 			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
-		\end{itemize}
+		\end{enumerate}
 	\subparagraph{Comptes bannis}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le programme doit stocker les comptes bannis dans un fichier .accban
 			\item Le programme devrait indiqué la raison du bannissement au client lors des tentatives de connexion.
 			\item Le programme devrait pouvoir stocker le temps restant de bannissement.
 			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
 			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
-		\end{itemize}
+		\end{enumerate}
 		
 
 	
 \paragraph{Limitations}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit permettre à l'administrateur de limiter la vitesse de téléchargement des fichiers par les utilisateurs. 
 		\item Pour cela le menu déroulant "Configuration" doit proposer un bouton "Limiter vitesse de téléchargement". 
 		\item Le programme doit permettre à l'administrateur de donner une valeur précise à la limite de téléchargement. 
@@ -437,10 +441,10 @@ Si le client a été auparavant banni par le serveur.
 		\item Cliquer sur le bouton "Extensions interdites" doit afficher un champ de saisie.
 		\item Le champ de saisie doit être prérempli avec les extensions déjà interdites.
 		\item Un bouton "Valider" doit permettre de valider le contenu du champ de saisie.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Utilisation des dossiers}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme doit afficher l'arborescence des dossiers présents sur le serveur.
 		\item Le programme doit permettre à l'administrateur de parcourir tous les dossiers sur le serveur.
 		\item Cliquer sur un dossier de l'arborescence doit afficher les sous-dossiers et fichiers de ce dossier.
@@ -460,25 +464,25 @@ Si le client a été auparavant banni par le serveur.
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
 		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
-	\end{itemize}	
+	\end{enumerate}	
 \paragraph{Communication réseau}
 
 	\subparagraph{Procédure d'initialisation de la communication}
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item  Du démarrage jusqu'à sa fermeture, le serveur doit être à l'écoute sur le port \textbf{port 21}.
 
 			\item Le serveur doit allouer \textbf{un port d'échange supérieur à 1024} avec le client à chaque requête d'initialisation.
 
 			\item Le serveur doit communiquer au client le port d'échange qu'il a alloué (cf exigence précédente.
 
-		\end{itemize}
+		\end{enumerate}
 		
 \subparagraph{Procédure de fermeture de la communication Client-Serveur}
 
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le serveur doit \textbf{clôturer} la communication en cas de \textbf{download}. 
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Module de statistique \\ \\}
 
@@ -486,7 +490,7 @@ Si le client a été auparavant banni par le serveur.
 
 	\subparagraph{Fonctionnalités}
 
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item Le module de statistique doit mesurer la fréquence de connexion des utilisateurs clients.
 
 			\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chaque fichier stocké dans le serveur.
@@ -501,7 +505,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Le module de statistique doit pouvoir afficher en temps réel en plus d'éditer un rapport toute les 2 semaines contenant les statistiques suivante:
 
-			\begin{itemize}
+			\begin{enumerate}
 				\item le fichier le plus télécharger.
 
 				\item l'utilisateur qui "upload" le plus de fichiers.
@@ -513,16 +517,16 @@ Si le client a été auparavant banni par le serveur.
 				\item un histogramme H2 qui trace le nombre d'opération de "download" et de "upload" de chaque utilisateur.
 
 				\item un histogramme H3 qui trace la moyenne du nombre d'opération de "download" et de "upload" par tranche de 2 heures.
-			\end{itemize}
+			\end{enumerate}
 
 			\item Le rapport en temps réel doit d'être accessible via un bouton sur l'interface graphique du programme.
 
 			\item Le rapport édité par le module de statistique doit être un fichier de format html (le navigateur pourra interpréter le fichier et tracer les graphiques).
-		\end{itemize}
+		\end{enumerate}
 	
 	
 	\subparagraph{Interface graphique du serveur}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
 
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
@@ -579,14 +583,14 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
-		\end{itemize}
+		\end{enumerate}
 		
 \paragraph{Fichier d'historique des événements}
 
 Un fichier d'historique des événements, appelé aussi fichier "log", permettra au serveur d'enregistrer tous les interactions entre les clients et le serveur lui-même.
 
 	\subparagraph{Fonctionnalité}
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 		
 			\item Le serveur doit éditer un fichier d'historique des événements tant que le serveur est en activité.
 		
@@ -596,10 +600,10 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 			\item Les fichiers d'historique des événements doivent être consultable à partir de l'interface graphique du serveur, en cliquant sur un bouton "log" positionné dans la barre d'outil.
 			
-		\end{itemize}
+		\end{enumerate}
 		
 		\subparagraph{Interface graphique}
-			\begin{itemize}[label = $\triangleright$]
+			\begin{enumerate}
 		
 			\item Le bouton "log", suite à un événement "clic" doit ouvrir une fenêtre qui contient un champ de texte multi-ligne et non-éditable, affichant dans ce champ texte le contenu du fichier d'historique des événements de la journée courante.
 		
@@ -611,10 +615,10 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 			\item La fenêtre doit avoir un bouton "Fermer" positionné à son angle inférieur droit.
 			\item Le champ de texte devrait faire apparaître une barre de défilement verticale et une barre de défilement horizontale si le contenu du fichier d'historique des événements excède les dimensions en hauteur et/ou en largeur du champ de texte.
-		\end{itemize}
+		\end{enumerate}
 		
 		\subparagraph{Syntaxe du fichier d'historique des événements}
-			\begin{itemize}[label = $\triangleright$]
+			\begin{enumerate}
 				\item Le fichier d'historique des événements doit être fichier de texte.
 				
 				\item Le fichier d'historique des événements doit être nommer de la manière suivante : "log\_file\_DD\_MM\_AAAA". Où DD est le jour, MM le mois et AAAA l'année de l'édition du fichier.
@@ -628,11 +632,11 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		nom\_événement : le nom de l'événement (par exemple "Opération Upload", "Connexion").\\
 		précision\_événement : les objets en relation avec les événements (par exemple "Opération Upload \textbf{Document.pdf"}).\\
 		client\_ayant\_réalisé\_événement : le nom du client qui a déclenché l'événement.\\		
-	\end{itemize}
+	\end{enumerate}
 
 \subsubsection{Commun aux deux côtés}
 \paragraph{Cryptage}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le programme devrait proposer une fonction de cryptage de fichiers.
 		\item Le menu de gestion de fichier devrait proposer un bouton "Cryptage du fichier"
 		\item Le programme devrait enregistrer la clé de cryptage de chaque fichier crypté.
@@ -644,25 +648,25 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		\item Lors de l'envoie de la clé de cryptage, le programme devrait enregistrer celle-ci.
 		\item \textcolor{blue}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
 		\item Le programme doit crypter les mots de passe des utilisateurs
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Communication réseau}
 
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 		\item Le client et le serveur doivent utiliser le \textbf{protocole FTP} pour échanger les données.
-	\end{itemize}
+	\end{enumerate}
 	
 \paragraph{Module statistique }
 
 	\subparagraph{Interface graphique}
 	
-		\begin{itemize}[label = $\triangleright$]
+		\begin{enumerate}
 
 			\item Le module statistique doit être accessible à partir d'un bouton "Statistique" dans la barre d'outil de la fenêtre principale.
 
-			\item Le "clic" sur le bouton "Statistique" doit ouvrir une fenêtre (la fenêtre qui contiendra les informations du module statistique).
+			\item Cliquer sur le bouton "Statistique" doit ouvrir une fenêtre (la fenêtre qui contiendra les informations du module statistique).
 
-			\item Le "clic" sur le bouton "Statistique" doit initialiser les calculs statistiques (cf exigence module statistique" permettant d'avoir les informations statistiques au moment de l'événement "clic". Cela permet à l'utilisateur d'afficher les informations statistiques en temps réel.
+			\item Cliquer sur le bouton "Statistique" doit initialiser les calculs statistiques (cf exigence module statistique" permettant d'avoir les informations statistiques au moment de l'événement "clic". Cela permet à l'utilisateur d'afficher les informations statistiques en temps réel.
 
 			\item La fenêtre doit avoir un titre "Statistique".
 
@@ -670,22 +674,22 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	
 			\item La barre d'outil doit avoir un bouton "Exporter" positionner à son extrémité gauche.
 
-			\item Le "clic" sur le bouton "Exporter" doit permettre la génération d'un rapport de statistique contenant les informations qu'affiche la fenêtre, \textbf{en priorité les graphiques}, dans un format html.
+			\item Cliquer sur le bouton "Exporter" doit permettre la génération d'un rapport de statistique contenant les informations qu'affiche la fenêtre, \textbf{en priorité les graphiques}, dans un format html.
 
 			\item La fenêtre doit avoir un bouton "Fermer" dont l'emplacement sera l'angle inférieur droit de la fenêtre. 
 
-		\end{itemize}
+		\end{enumerate}
 	
 
 \subsection{Spécification des cas d’utilisation}
 
 
-\subsubsection{Utilisabilité}
-\begin{itemize}
-	\item Le programme doit avoir une prise en main facile pour que n'importe qui puisse immédiatement comprendre comment se servir des fonctionnalité principales.
-	\item L'utilisateur après une formation d'une demie heure, ne doit pas faire plus 10 erreur de manipulation sur une durée de 4h.
-	\item L'utilisateur ne doit faire plus d'une erreur de manipulation après 40 heures de pratiques sur une durée de 100h.
-\end{itemize}
+\subsubsection{Utilisabilité}[label = $\triangleright$]
+	\begin{enumerate}
+		\item Le programme doit avoir une prise en main facile pour que n'importe qui puisse immédiatement comprendre comment se servir des fonctionnalité principales.
+		\item L'utilisateur après une formation d'une demie heure, ne doit pas faire plus 10 erreurs de manipulation sur une durée de 4h.
+		\item L'utilisateur ne doit faire plus d'une erreur de manipulation après 40 heures de pratiques sur une durée de 100h.
+	\end{enumerate}
 \subsubsection{Fiabilité}
 %[Décrire les exigences qui affectent la fiabilité comme, par exemple:\\
 %•	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, %mode d’opération lors de dégradation, etc.\\
@@ -696,30 +700,30 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 %•	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie.]
 \paragraph{Fiabilité du fonctionnement général du logiciel}
 
-	\begin{itemize}[label = $\triangleright$]
-		\item Le client ne doit pas présenter de bugs pendant les 5 premier mois après le déploiement.
+	\begin{enumerate}
+		\item Le client ne doit pas présenter de bugs pendant les 5 premiers mois après le déploiement.
 	
 		\item Le serveur doit être capable de fonctionner sans défaillance (c'est-à-dire sans que des bug  surgissent) avec 100 clients connectés simultanément pendant une durée de 24h.
 		
 		\item Le serveur doit être capable de fonctionner plus d'une semaine en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...).	
 		
 		\item Le serveur doit être capable de fonctionner plus de 48h en condition critique (c'est-à-dire bande passante faible, plus 200 clients connectés simultanément, plus de 100 téléchargement simultané, etc ...).
-	\end{itemize}
+	\end{enumerate}
 	
 	
 \paragraph{Fiabilité des "Upload" et des "Download"}
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 	
 		\item Le logiciel ne doit pas échouer plus de 2 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
 		
 		\item Le logiciel ne doit pas échouer plus de 20 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal, pour 100 utilisateurs.
 		
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
-	\end{itemize}		 
+	\end{enumerate}		 
 
 \paragraph{Fiabilité des authentifications}
 
-	\begin{itemize}[label = $\triangleright$]
+	\begin{enumerate}
 	
 		\item Le logiciel ne doit pas échouer plus de 1 authentification sur 100 en condition normal.
 		
@@ -729,7 +733,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 		\item L'authentification de l'administrateur sur le serveur ne doit jamais échouer.
 		
-	\end{itemize}
+	\end{enumerate}
 
 \textcolor{red}{\subsubsection{Performance}
 [Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
@@ -756,11 +760,11 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 \section{Sécurité}
 Devront se faire de manière sécurisée:
-\begin{itemize}
+\begin{enumerate}
 \item L'enregistrement des mots de passe des utilisateurs dans la base de donnée.
 \item Les messages envoyés entre le serveur et chaque client.
 \item L'enregistrement des clés de cryptage.
-\end{itemize}
+\end{enumerate}
 
 
 \section{Exigences de documentation utilisateur et d’aide en ligne}
