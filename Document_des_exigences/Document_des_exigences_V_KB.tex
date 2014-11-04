@@ -130,12 +130,12 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 \subsubsection{Côté client}
 \paragraph{Authentification}
 
-	\subparagraph{Interface graphique}
+	\subparagraph{Interface graphique}\label{ClientIGA} 
 	\begin{enumerate}
-		\item Le formulaire de connexion doit etre de type Pop-up.
-		\item Le formulaire se situera au milieu de la fenetre.
+		\item Le formulaire de connexion doit être de type Pop-up.
+		\item Le formulaire se situera au milieu de la fenêtre.
 		\item Le Pop-Up de connexion apparaitra des l'ouverture du logiciel.
-		\item Quand le Formulaire sera présent le bouton déconnexion sera desactivé / grisé
+		\item Quand le Formulaire sera présent le bouton déconnexion sera désactive / grisé
 		\item Le titre de ce Pop-up sera "Authentification"
 		\item Le titre devra être centré
 		\item Le titre sera suivi d'une barre ligne horizontale de couleur grise prenant au minimum 80\% du pop-up
@@ -230,13 +230,9 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\begin{enumerate}
 
 			\item Le client doit se connecter sur le \textbf{port 21} du serveur initialiser une procédure d'échange de fichiers.
-
 			\item Le client doit se connecter au port d'échange alloué par le serveur (que le serveur aura précédemment communiqué : cf exigence précédente) pour échanger des données.
-
 			\item Le client doit résilier la connexion au \textbf{port 21} une fois qu'il a réussi à ce connecter au port d'échange.
-
 			\item Le client doit utiliser un port libre c'est-à-dire que son numéro de port doit être supérieur à 1024.
-
 			\item Un témoin graphique (de type diode) doit signaler la réussite de la connexion si la connexion est établie. 
 			\end{enumerate}
 
@@ -346,6 +342,12 @@ Si le client a été auparavant banni par le serveur.
 
 \subsubsection{Côté serveur}
 \paragraph{Authentification}
+	
+	\subparagraph{Interface graphique}
+		L'interface graphique de la connexion, du coté du serveur sera la même que celle coté client.\\
+		A la différence près que le champs serveur et sont input associé ne sera pas présent.\\
+		C.f Page \pageref{ClientIGA} : \ref{ClientIGA}
+	\subparagraph{Fonctionnalité}
 	\begin{enumerate}
 		\item Le programme doit être capable de recevoir et détecter l'arrivée d'un pseudo et d'un mot de passe.
 		\item Le programme doit vérifié les informations qu'il à reçu.
