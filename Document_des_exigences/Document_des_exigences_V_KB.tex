@@ -5,7 +5,6 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
@@ -110,6 +109,8 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 
 Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.
 
+\subsection{Perspectives du produit}
+
 \subsection{Fonctions du produit}
 \begin{enumerate}
 \item Permet de partager des dossiers entre un serveur et un ou plusieurs utilisateurs.
@@ -120,7 +121,10 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
 
-\newpage
+\subsection{Contraintes}
+
+\subsection{Exigences reportées}
+
 \section{Exigences spécifiques}
 
 \subsection{Fonctionnalités}
@@ -214,24 +218,15 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Ce champ de saisie doit permettre à l'utilisateur d'entrer le nom du sous-dossier.
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel sous-dossier du répertoire qui lui a été fourni.
 		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
-		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de confirmation de la suppression.
-		\begin{enumerate}[label=\arabic*.]
-			\item La boite de confirmation de la suppression de dossier doit proposer deux boutons, "Valider" et "Annuler".
-			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
-			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
-		\end{enumerate}
-		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni.\textcolor{green}{ si le répertoire fourni n'existe pas ?} \textcolor{red}{bah à ce moment là il n'a juste pas accès au serveur :3}
+		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de confirmation de la suppression.\textcolor{green}{description de la boite ? bouton oui/non ?}
+		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni.\textcolor{green}{ si le répertoire fourni n'existe pas ?}
 		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
 		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'utilisateur a fait un clic droit.
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel fichier dans les sous-dossiers du répertoire qui lui a été fourni.
 		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier.
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
-		\begin{enumerate}[label=\arabic*.]
-			\item La boite de confirmation de la suppression de fichier doit proposer deux boutons, "Valider" et "Annuler".
-			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
-			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
-		\end{enumerate}
+		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
 	\end{enumerate}
 	
 \paragraph{Communication réseau}
@@ -241,7 +236,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\begin{enumerate}
 
 			\item Le client doit se connecter sur le \textbf{port 21} du serveur initialiser une procédure d'échange de fichiers.
-			\item Le client doit se connecter au port d'échange alloué par le serveur (que le serveur aura précédemment communiqué : cf exigence précédente) pour échanger des données.
+			\item Le client doit se connecter au port d'échange alloué par le serveur (que le serveur aura précédemment communiqué : \textcolor{blue}{cf exigence 3.1.1.5.1}) pour échanger des données.
 			\item Le client doit résilier la connexion au \textbf{port 21} une fois qu'il a réussi à ce connecter au port d'échange.
 			\item Le client doit utiliser un port libre c'est-à-dire que son numéro de port doit être supérieur à 1024.
 			\item Un témoin graphique (de type diode) doit signaler la réussite de la connexion si la connexion est établie. 
@@ -313,18 +308,18 @@ Si le client a été auparavant banni par le serveur.
 	Voici les exigences :
 		\begin{enumerate}
 
-			\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chacun des fichiers de la propriété de l'utilisateur, par utilisateurs (ceux qui téléchargent les fichiers).
+			\item Le module de statistique doit comptabiliser le nombre de downloads de chacun des fichiers de la propriété de l'utilisateur, par utilisateurs (ceux qui téléchargent les fichiers).
 
 			\item Le module de statistique doit afficher un rapport en temps réel contenant: 
 
-			\begin{enumerate}[label=\arabic*.]
+			\begin{enumerate}
 				\item Le fichier le plus télécharger.
-				\item L'utilisateur qui "download" le plus ses fichiers.
+				\item L'utilisateur qui download le plus ses fichiers.
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
 			\end{enumerate} 
 		\end{enumerate}
 
-	\subparagraph{Interface graphique du client \textcolor{red}{en meme temps t'es dans la partie client}}
+	\subparagraph{Interface graphique du client}
 		\begin{enumerate}
 
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
@@ -335,9 +330,9 @@ Si le client a été auparavant banni par le serveur.
 
 			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant le fichier de la propriété de l'utilisateur qui a été le plus télécharger.
 
-			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "download" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant downloader des fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
 
-			\item La partie graphique doit contenir l'histogramme qui trace le nombre téléchargement de chaque fichier (cf exigence module de statistique du client).
+			\item La partie graphique doit contenir l'histogramme qui trace le nombre téléchargement de chaque fichier (\textcolor{blue}{cf exigences 3.1.1.7}).
 
 			\item L'histogramme doit tracer des barres verticales.
 
@@ -347,7 +342,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Chaque barre doit être de couleur différente.
 
-			\item Chaque barre doit être de hauteur proportionnel au nombre de téléchargement (cf exigence module de statistique).
+			\item Chaque barre doit être de hauteur proportionnel au nombre de téléchargement (\textcolor{blue}{cf exigences 3.1.1.7}).
 
 			\item Chaque barre doit être de largeur inversement proportionnel au nombre de fichiers (de la propriété de l'utilisateur) : plus l'utilisateur partage de fichiers plus les barres seront fine.
 
@@ -420,7 +415,6 @@ Si le client a été auparavant banni par le serveur.
 		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \hyperref[chg]{\ref{chg}} Page : \pageref{chg}
 	\end{enumerate}
 	
-	
 \paragraph{Bannissement d'un compte}
 	\begin{enumerate}
 		\item Le programme doit permettre de retirer les droits à une personne.
@@ -471,11 +465,29 @@ Si le client a été auparavant banni par le serveur.
 	
 \paragraph{Interface graphique ajout de compte}\label{add} 
 		\begin{enumerate}
-			\item Le pop-up doit contenir 
+			\item Le pop-up doit contenir quatre champs :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un champs de type texte associé au texte : "Nom d'utilisateur"
+				\item Un champs de type texte associé au texte : "Mot de passe"
+				\item Un champs de type sélecteur de fichier. Celui ci permettant d'indiquer, en les sélectionnant, les fichiers accessible par l'utilisateur.
+				\item Un champs de type case à coché associé au texte : "Utilisateur temporaire".
+			\end{enumerate}
+			\item Si la case "Utilisateur temporaire" est cochée, un champs de type date s'ajoutera.
+			\item En bas a droite de ce pop-up un bouton annulé.
+			\item En bas a gauche de ce pop-up un bouton validé qui aura pour but d'ajouter l'utilisateur.
 		\end{enumerate}
+		
 \paragraph{Interface graphique changement droits}\label{chg} 
 		\begin{enumerate}
-			\item a
+			\item Dans la partie gauche du programme ce trouvera par défaut la liste de tout les fichiers accessible sur le serveur.
+			\item En cliquant sur un utilisateur seul a liste des fichiers accessible par l'utilisateur sera présente.
+			\item En bas de cette fenêtre seront présent 2 champs
+				\begin{enumerate}[label=\arabic*.]
+					\item En bas à droite un "+" de couleur verte.
+					\item A droite du bouton "+" un bouton "-" de couleur rouge.
+				\end{enumerate}
+			\item Il suffira alors de cliquer sur un fichier puis sur moins pour retirer les droits a l'utilisateur sélectionne sur le fichier sélectionne.
+			\item En cliquant sur le "+" un pop-up apparaitra permettant de sélectionne les fichiers sur lesquels l'utilisateur gagnera les droits.
 		\end{enumerate}
 	
 	\subparagraph{Stockage des comptes}
@@ -511,14 +523,15 @@ Si le client a été auparavant banni par le serveur.
 			\item A la fin du temps, le programme doit supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression, le programme doit signaler à l'utilisateur que son compte temporaire a été supprimé.
 			\item Le stockage sera sous la forme : "DateFinEnSeconde$ \vert $pseudo@motDePasse:/fichier\#/autrefichier".
+
 		\end{enumerate}
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
 			\item Le programme doit stocker les comptes bannis dans un fichier ".accban".
 			\item Le programme devrait indiquer la raison du bannissement au client lors des tentatives de connexion.
 			\item Le programme devrait pouvoir stocker le temps restant de bannissement.
-			\item Le stockage doit être sous la forme : "TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier".
-			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
+			\item Le stockage sera sous la forme : "TimestampDeFin$ \vert $pseudo@motDePasse:/fichier\#/autrefichier".
+			\item A la fin du Timestamp compte devrait être réactivé.
 		\end{enumerate}
 		
 \paragraph{Limitations}
@@ -558,11 +571,6 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur.
 		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
 		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de dialogue demandant la confirmation de la suppression.
-		\begin{enumerate}[label=\arabic*.]
-			\item La boite de confirmation de la suppression de dossier doit proposer deux boutons, "Valider" et "Annuler".
-			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
-			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
-		\end{enumerate}
 		\item Le programme doit permettre à l'administrateur de créer des fichiers dans n'importe quel dossier sur le serveur.
 		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
 		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'administrateur a fait un clic droit.
@@ -570,11 +578,7 @@ Si le client a été auparavant banni par le serveur.
 		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
-		\begin{enumerate}[label=\arabic*.]
-			\item La boite de confirmation de la suppression de fichier doit proposer deux boutons, "Valider" et "Annuler".
-			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
-			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
-		\end{enumerate}
+		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
 	\end{enumerate}	
 	
 \paragraph{Communication réseau}
@@ -586,7 +590,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Le serveur doit allouer \textbf{un port d'échange supérieur à 1024} avec le client à chaque requête d'initialisation.
 
-			\item Le serveur doit communiquer au client le port d'échange qu'il a alloué (cf exigence précédente.
+			\item Le serveur doit communiquer au client le port d'échange qu'il a alloué (\textcolor{blue}{cf exigences 3.1.2.10.2}).
 
 		\end{enumerate}
 		
@@ -615,11 +619,11 @@ Si le client a été auparavant banni par le serveur.
 		\begin{enumerate}
 			\item Le module de statistique doit mesurer la fréquence de connexion des utilisateurs clients.
 
-			\item Le module de statistique doit comptabiliser le nombre d'opération de "download" de chaque fichier stocké dans le serveur.
+			\item Le module de statistique doit comptabiliser le nombre de downloads de chaque fichier stocké dans le serveur.
 
-			\item Le module de statistique doit comptabiliser le nombre d'opération de "download" par utilisateur.
+			\item Le module de statistique doit comptabiliser le nombre de downloads par utilisateur.
 
-			\item Le module de statistique doit comptabiliser le nombre d'opération de "upload" par utilisateur.
+			\item Le module de statistique doit comptabiliser le nombre de uploads par utilisateur.
 
 			\item Le module de statistique doit comptabiliser le nombre de téléchargement par tranche horaire (2 heures).
 
@@ -627,18 +631,18 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Le module de statistique doit pouvoir afficher en temps réel en plus d'éditer un rapport toute les 2 semaines contenant les statistiques suivante:
 
-			\begin{enumerate}[label=\arabic*.]
+			\begin{enumerate}
 				\item le fichier le plus télécharger.
 
-				\item l'utilisateur qui "upload" le plus de fichiers.
+				\item l'utilisateur qui upload le plus de fichiers.
 
-				\item l'utilisateur qui "download" le plus de fichiers.
+				\item l'utilisateur qui download le plus de fichiers.
 
 				\item un histogramme H1 qui trace le nombre de téléchargement de chaque fichier stocké dans le serveur.
 
-				\item un histogramme H2 qui trace le nombre d'opération de "download" et de "upload" de chaque utilisateur.
+				\item un histogramme H2 qui trace le nombre de downloads et de uploads de chaque utilisateur.
 
-				\item un histogramme H3 qui trace la moyenne du nombre d'opération de "download" et de "upload" par tranche de 2 heures.
+				\item un histogramme H3 qui trace la moyenne du nombre de downloads et de uploads par tranche de 2 heures.
 			\end{enumerate}
 
 			\item Le rapport en temps réel doit d'être accessible via un bouton sur l'interface graphique du programme.
@@ -653,9 +657,9 @@ Si le client a été auparavant banni par le serveur.
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
 			\item La partie graphique doit être la partie inférieur de la fenêtre.
 			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant le fichier de la propriété de l'utilisateur qui a été le plus télécharger.
-			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "download" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
-			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "upload" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
-			\item La partie graphique doit être diviser en trois sous-parties, une partie pour chaque histogramme (cf exigence module de statistique).
+			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus de downloads sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus de upload sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
+			\item La partie graphique doit être diviser en trois sous-parties, une partie pour chaque histogramme (\textcolor{blue}{cf exigences 3.1.2.12}).
 			\item L'histogramme H1 doit être positionné dans la partie inférieur de la partie graphique.
 			\item L'histogramme H2 doit être positionné dans la partie supérieur gauche de la partie graphique.
 			\item L'histogramme H3 doit être positionné dans la partie supérieur droit de la partie graphique.
@@ -670,10 +674,9 @@ Si le client a été auparavant banni par le serveur.
 			\item Les noms de fichier doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H1.
 
 			\item L'histogramme H1 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
-			\item L'histogramme H2 doit avoir autant de couples de barres que d'utilisateurs ayant effectuer une opération de "download" et "upload" (de la propriété de l'utilisateur).
-			\item L'histogramme H2 doit tracer des couples de barres de couleurs différentes. La couleur représente l'information "upload" et "download".
-			\item Le nombre d'opération de "upload" et de "download" doit apparaître dans la même ordonnée de l'histogramme H2.
-
+			\item L'histogramme H2 doit avoir autant de couples de barres que d'utilisateurs ayant effectuer un download et upload (de la propriété de l'utilisateur).
+			\item L'histogramme H2 doit tracer des couples de barres de couleurs différentes. La couleur représente l'information upload et download.
+			\item Le nombre de upload et de download doit apparaître dans la même ordonnée de l'histogramme H2.
 			\item Les noms de chaque utilisateur (ayant effectué une opération de "upload" et "download") doit correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H2.
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
@@ -744,7 +747,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		\item Avant de télécharger un fichier crypté dont la clé de cryptage n'est pas enregistrée, le programme devrait afficher un champ de saisie.
 		\item Ce champ de saisie devrait permettre à l'utilisateur d'entrer la clé de cryptage.
 		\item Lors de l'envoie de la clé de cryptage, le programme devrait enregistrer celle-ci.
-		\item \textcolor{red}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
+		\item \textcolor{blue}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
 		\item Le programme doit crypter les mots de passe des utilisateurs
 	\end{enumerate}
 	
@@ -764,7 +767,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 			\item Cliquer sur le bouton "Statistique" doit ouvrir une fenêtre (la fenêtre qui contiendra les informations du module statistique).
 
-			\item Cliquer sur le bouton "Statistique" doit initialiser les calculs statistiques (cf exigence module statistique" permettant d'avoir les informations statistiques au moment de l'événement "clic". Cela permet à l'utilisateur d'afficher les informations statistiques en temps réel.
+			\item Cliquer sur le bouton "Statistique" doit initialiser les calculs statistiques (\textcolor{blue}{cf exigences 3.1.1.7}) permettant d'avoir les informations statistiques au moment de l'événement "clic". Cela permet à l'utilisateur d'afficher les informations statistiques en temps réel.
 
 			\item La fenêtre doit avoir un titre "Statistique".
 
@@ -804,11 +807,10 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	
 \paragraph{Fiabilité des Uploads et des Downloads}
 	\begin{enumerate}
-	
 		\item Le logiciel ne doit pas échouer plus de 2 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
 		
 		\item Le logiciel ne doit pas échouer plus de 20 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale, pour 100 utilisateurs.
-	
+		
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
 	\end{enumerate}		 
 
@@ -887,12 +889,6 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
 	\hline
-	Création de compte & Essentielle\\
-	\hline
-	Authentification & Essentielle\\
-	\hline
-	Partage de fichier & Essentielle \\
-	\hline
 	Utilisation des dossiers & Essentielle\\
 	\hline
 	Download et Upload & Essentielle \\
@@ -905,19 +901,9 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	Limitations & Souhaitable\\
 	\hline
-	Suppression de compte & Souhaitable \\
-	\hline
-	Bannissement de compte & Souhaitable \\
-	\hline
 	Gestionnaire de marque-pages & Souhaitable\\
 	\hline
 	Cryptage & Optionnelle\\
-	\hline
-	Compte temporaire & Optionnelle \\
-	\hline
-	Bannissement temporaires & Optionnelle \\
-	\hline
-	Bannissement partiel & Optionnelle \\
 	\hline
 \end{tabular}
 \egroup
