@@ -283,6 +283,16 @@ Si le client a été auparavant banni par le serveur.
 			\item Le client doit \textbf{clôturer} la communication en cas d'\textbf{upload}. 
 		\end{enumerate}
 		
+\paragraph{Download et Upload}
+
+	\subparagraph{Download}
+	
+		\begin{enumerate}
+			\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+			\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+			\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\end{enumerate}
+		
 \paragraph{Module de statistique}
 
 	\subparagraph{Fonctionnalités}
@@ -489,6 +499,7 @@ Si le client a été auparavant banni par le serveur.
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
 		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
 	\end{enumerate}	
+	
 \paragraph{Communication réseau}
 
 	\subparagraph{Procédure d'initialisation de la communication}
@@ -552,59 +563,36 @@ Si le client a été auparavant banni par le serveur.
 	\subparagraph{Interface graphique du serveur}
 		\begin{enumerate}
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
-
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
-
 			\item La partie graphique doit être la partie inférieur de la fenêtre.
-
 			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant le fichier de la propriété de l'utilisateur qui a été le plus télécharger.
-
 			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "download" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
-
 			\item La partie textuelle doit contenir un champ de texte non-éditable indiquant l'utilisateur ayant fait le plus d'opération de "upload" sur les fichiers de la propriété de l'utilisateur (celui qui consulte le module de statistique).
-
 			\item La partie graphique doit être diviser en trois sous-parties, une partie pour chaque histogramme (cf exigence module de statistique).
-
 			\item L'histogramme H1 doit être positionné dans la partie inférieur de la partie graphique.
-
 			\item L'histogramme H2 doit être positionné dans la partie supérieur gauche de la partie graphique.
-
 			\item L'histogramme H3 doit être positionné dans la partie supérieur droit de la partie graphique.
-
 			\item Les trois histogrammes doivent tracer des barres verticales.
-
 			\item Chaque barre des 3 histogrammes doivent être entièrement visible.
-
 			\item Chaque barre des 3 histogrammes doivent être de hauteur proportionnel à la valeur des ordonnées.
-
 			\item Chaque barre des 3 histogrammes doivent être de largeur inversement proportionnel au nombre de barres.
 
 			\item L'histogramme H1 doit avoir autant de barre que de fichiers (de la propriété de l'utilisateur).
-
 			\item Chaque barre de l'histogramme H1 doit être de couleur différente.
-
 			\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H1.
-
 			\item Les noms de fichier doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H1.
 
 			\item L'histogramme H1 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
-
 			\item L'histogramme H2 doit avoir autant de couples de barres que d'utilisateurs ayant effectuer une opération de "download" et "upload" (de la propriété de l'utilisateur).
-
 			\item L'histogramme H2 doit tracer des couples de barres de couleurs différentes. La couleur représente l'information "upload" et "download".
-
 			\item Le nombre d'opération de "upload" et de "download" doit apparaître dans la même ordonnée de l'histogramme H2.
 
 			\item Les noms de chaque utilisateur (ayant effectuer une opération de "upload" et "download") doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H2.
-
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
-
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
-
 			\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
 
 			\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H3.
-
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
 		\end{enumerate}
