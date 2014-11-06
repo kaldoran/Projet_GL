@@ -102,8 +102,6 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item Uploader : Nous utilisons ce terme par abus de langage, cela est équivalent à "téléverser".
 \end{description}
 
-\subsection{Références}
-
 
 \section{Description générale}
 
@@ -120,10 +118,6 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
-
-\subsection{Contraintes}
-
-\subsection{Exigences reportées}
 
 \section{Exigences spécifiques}
 
@@ -152,13 +146,13 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\subparagraph{Fonctionnalité}
 	\begin{enumerate}
 		\item Le programme doit permettre à un client de se connecter sur le client FTP.
-		\item Le nom d'utilisateur et le mot de passe doivent être définis par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
+		\item Le nom d'utilisateur et le mot de passe doivent être définis par l'administrateur du serveur.
 		\item Le programme doit proposer un champ de texte éditable pour entrer un pseudo.
 		\item Le programme doit proposer un champ de texte éditable pour entrer mot de passe.
-		\item Le programme doit permettre d'envoyer les données d'authentification via un protocole sécurisé. \textcolor{blue}{cf Bouton envoyer}
-		\item Le programme doit envoyer le mot de passe crypté au serveur. \textcolor{blue}{cf Protocoles}
+		\item Le programme doit permettre d'envoyer les données d'authentification via un protocole sécurisé.
+		\item Le programme doit envoyer le mot de passe crypté au serveur.
 		\item Le programme doit indiquer le succès de la connexion à l'aide la phrase "Bonjour [pseudo]" présente dans la barre des menus.
-		\item Le programme doit indiquer si une erreur est survenue et son type. \textcolor{green}{Où l'utilisateur voit cette indication ?}
+		\item Le programme doit indiquer si une erreur est survenue et son type.
 		\item En cas d'erreur le programme doit indiquer l'erreur et redemander le mot de passe et/ou le login (en fonction de l'erreur survenue)
 		\item En cas d'erreur sur l'adresse du serveur le programme doit indiquer l'erreur et redemander l'adresse du serveur.
 		\item Le programme doit vérifier que l'adresse du serveur est une adresse IP V4.
@@ -170,7 +164,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 			\item Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
 			\item Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
 		\end{enumerate}
-		\item Le programme doit permettre l'auto-connexion au démarrage du programme, pour ce faire l'utilisateur pourra cocher une case. \textcolor{red}{où est cette case, diviser cet item en 2}
+		\item Le programme doit permettre l'auto-connexion au démarrage du programme, pour ce faire l'utilisateur pourra cocher une case.
 	\end{enumerate}
 
 \paragraph{Gestionnaire de marque-pages}
@@ -218,15 +212,24 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Ce champ de saisie doit permettre à l'utilisateur d'entrer le nom du sous-dossier.
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel sous-dossier du répertoire qui lui a été fourni.
 		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
-		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de confirmation de la suppression.\textcolor{green}{description de la boite ? bouton oui/non ?}
-		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni.\textcolor{green}{ si le répertoire fourni n'existe pas ?}
+		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de confirmation de la suppression.
+		\begin{enumerate}[label=\arabic*.]
+			\item La boite de confirmation de la suppression de dossier doit proposer deux boutons, "Valider" et "Annuler".
+			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
+			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
+		\end{enumerate}
+		\item Le programme doit permettre à l'utilisateur de créer des fichiers dans n'importe quel sous-dossier du répertoire qui lui a été fourni.
 		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
 		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'utilisateur a fait un clic droit.
 		\item Le programme doit permettre à l'utilisateur de supprimer n'importe quel fichier dans les sous-dossiers du répertoire qui lui a été fourni.
 		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier.
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
-		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
+		\begin{enumerate}[label=\arabic*.]
+			\item La boite de confirmation de la suppression de fichier doit proposer deux boutons, "Valider" et "Annuler".
+			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
+			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
+		\end{enumerate}
 	\end{enumerate}
 	
 \paragraph{Communication réseau}
@@ -376,7 +379,7 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le programme doit partager les sous-dossiers à partir de l'endroit où le programme a été lancé.
 		\item Le programme doit pouvoir partager un fichier avec plusieurs personnes.
-		\item \textcolor{red}{Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé. }
+		\item Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé.
 		\item Les fichiers partagés doivent être stockés sur le serveur.
 	\end{enumerate}
 	
@@ -492,10 +495,10 @@ Si le client a été auparavant banni par le serveur.
 	
 	\subparagraph{Stockage des comptes}
 		\begin{enumerate}
-			\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
-			\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
-			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
-			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+			\item Le programme doit contenir dans un fichier les mots de passe sous une forme cryptée.
+			\item Le programme doit stocker les droits associés à un compte dans ce même fichier.
+			\item Le programme doit stocker les comptes temporaires, les comptes normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+			\item Toute personne qui n'est pas présente dans un des quatre fichiers est considérée comme inconnue.
 		\end{enumerate}
 
 		
@@ -504,7 +507,7 @@ Si le client a été auparavant banni par le serveur.
 			\item Le compte Administrateur doit être UNIQUE.
 			\item Le compte administrateur doit être stocké dans un fichier à part.
 			\item Le fichiers qui stockera le compte administrateur ne doit pas avoir pas d'extension.
-			\item Le nom du fichier qui stockera le compte administrateur doit avoir pour nom ".shadow". \textcolor{blue}{cf linux}
+			\item Le nom du fichier qui stockera le compte administrateur doit avoir pour nom ".shadow".
 			\item Le compte administrateur doit être stocké sous la forme : "pseudo@motDePasse:/CheminDeReference".
 			\item L'administrateur ne doit pouvoir distribuer les droits que à partir du chemin de référence.
 			\item L'administrateur doit avoir priorité ABSOLUE sur tous les comptes.
@@ -572,6 +575,11 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme doit permettre à l'administrateur de supprimer n'importe quel dossier sur le serveur.
 		\item Le menu de gestion de dossier doit proposer un bouton "Supprimer le dossier".
 		\item Cliquer sur le bouton "Supprimer le dossier" doit afficher une boite de dialogue demandant la confirmation de la suppression.
+		\begin{enumerate}[label=\arabic*.]
+			\item La boite de confirmation de la suppression de dossier doit proposer deux boutons, "Valider" et "Annuler".
+			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
+			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
+		\end{enumerate}
 		\item Le programme doit permettre à l'administrateur de créer des fichiers dans n'importe quel dossier sur le serveur.
 		\item Le menu de gestion de dossier doit proposer un bouton "Nouveau fichier vide".
 		\item Cliquer sur le bouton "Nouveau fichier vide" doit créer un fichier sans extension dans le dossier sur lequel l'administrateur a fait un clic droit.
@@ -579,7 +587,11 @@ Si le client a été auparavant banni par le serveur.
 		\item Faire un clic droit sur un fichier doit afficher un menu de gestion de fichier
 		\item Le menu de gestion de fichier doit proposer un bouton "Supprimer le fichier".
 		\item Cliquer sur le bouton "Supprimer le fichier" doit afficher une boite de dialogue.
-		\item Le programme doit supprimer le fichier si l'administrateur confirme la boite de dialogue.
+		\begin{enumerate}[label=\arabic*.]
+			\item La boite de confirmation de la suppression de fichier doit proposer deux boutons, "Valider" et "Annuler".
+			\item Cliquer sur "Valider" doit supprimer le dossier puis fermer la boite de dialogue.
+			\item Cliquer sur "Annuler" doit fermer la boite de dialogue.
+		\end{enumerate}
 	\end{enumerate}	
 	
 \paragraph{Communication réseau}
@@ -748,7 +760,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		\item Avant de télécharger un fichier crypté dont la clé de cryptage n'est pas enregistrée, le programme devrait afficher un champ de saisie.
 		\item Ce champ de saisie devrait permettre à l'utilisateur d'entrer la clé de cryptage.
 		\item Lors de l'envoie de la clé de cryptage, le programme devrait enregistrer celle-ci.
-		\item \textcolor{blue}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
+		\item Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.
 		\item Le programme doit crypter les mots de passe des utilisateurs
 	\end{enumerate}
 	
@@ -784,6 +796,13 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	
 
 \subsection{Spécification des cas d’utilisation}
+
+\subsubsection{Diagramme de cas d'utilisation}
+
+\begin{center}
+	\includegraphics[scale=0.5]{Ressources/Client.png}\\
+	\includegraphics[scale=0.5]{Ressources/Serveur.png}
+\end{center}
 
 
 \subsubsection{Utilisabilité}
@@ -852,10 +871,6 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
  	\begin{enumerate}
  		\item Le serveur devrait pouvoir gérer au moins 200 comptes utilisateurs.
  	\end{enumerate}
-\textcolor{red}{\subsubsection{Maintenabilité}
-[Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
-\paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
-[Description de l’exigence]}
 
 
 \section{Contraintes de conception}
@@ -885,6 +900,12 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
 	\hline
+	Création de compte & Essentielle\\
+	\hline
+	Authentification & Essentielle\\
+	\hline
+	Partage de fichier & Essentielle \\
+	\hline
 	Utilisation des dossiers & Essentielle\\
 	\hline
 	Download et Upload & Essentielle \\
@@ -897,17 +918,27 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	Limitations & Souhaitable\\
 	\hline
+	Suppression de compte & Souhaitable \\
+	\hline
+	Bannissement de compte & Souhaitable \\
+	\hline
 	Gestionnaire de marque-pages & Souhaitable\\
 	\hline
 	Cryptage & Optionnelle\\
 	\hline
+	Compte temporaire & Optionnelle \\
+	\hline
+	Bannissement temporaires & Optionnelle \\
+	\hline
+	Bannissement partiel & Optionnelle \\
+	\hline
 \end{tabular}
 \egroup
 
-
-\section{Annexes}
+\section{Annexe}
 \subsection{Architecture du système KouldNotShare}
 \begin{center}
 \includegraphics[scale=0.8]{../Logo/doc_exigence.png}
 \end{center}
+
 \end{document}
