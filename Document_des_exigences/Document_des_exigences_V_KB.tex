@@ -495,10 +495,10 @@ Si le client a été auparavant banni par le serveur.
 	
 	\subparagraph{Stockage des comptes}
 		\begin{enumerate}
-			\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
-			\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
-			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
-			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+			\item Le programme doit contenir dans un fichier les mots de passe sous une forme cryptée.
+			\item Le programme doit stocker les droits associés à un compte dans ce même fichier.
+			\item Le programme doit stocker les comptes temporaires, les comptes normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+			\item Toute personne qui n'est pas présente dans un des quatre fichiers est considérée comme inconnue.
 		\end{enumerate}
 
 		
@@ -507,7 +507,7 @@ Si le client a été auparavant banni par le serveur.
 			\item Le compte Administrateur doit être UNIQUE.
 			\item Le compte administrateur doit être stocké dans un fichier à part.
 			\item Le fichiers qui stockera le compte administrateur ne doit pas avoir pas d'extension.
-			\item Le nom du fichier qui stockera le compte administrateur doit avoir pour nom ".shadow". \textcolor{blue}{cf linux}
+			\item Le nom du fichier qui stockera le compte administrateur doit avoir pour nom ".shadow".
 			\item Le compte administrateur doit être stocké sous la forme : "pseudo@motDePasse:/CheminDeReference".
 			\item L'administrateur ne doit pouvoir distribuer les droits que à partir du chemin de référence.
 			\item L'administrateur doit avoir priorité ABSOLUE sur tous les comptes.
@@ -760,7 +760,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		\item Avant de télécharger un fichier crypté dont la clé de cryptage n'est pas enregistrée, le programme devrait afficher un champ de saisie.
 		\item Ce champ de saisie devrait permettre à l'utilisateur d'entrer la clé de cryptage.
 		\item Lors de l'envoie de la clé de cryptage, le programme devrait enregistrer celle-ci.
-		\item \textcolor{blue}{Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.}
+		\item Le programme devrait permettre de communiquer les clés de cryptage entre utilisateurs et administrateur.
 		\item Le programme doit crypter les mots de passe des utilisateurs
 	\end{enumerate}
 	
@@ -928,7 +928,5 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 \end{tabular}
 \egroup
 
-
-\section{Annexes}
 
 \end{document}
