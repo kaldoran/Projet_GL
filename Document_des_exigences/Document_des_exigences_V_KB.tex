@@ -71,7 +71,7 @@
 		\@author\\
 		\end{titlepage}
 \makeatother
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{4}
 \renewcommand{\contentsname}{Sommaire}
 \tableofcontents
@@ -386,7 +386,37 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
 		\item Le programme doit permettre de bannir une personne
 	\end{enumerate}
+<<<<<<< HEAD
 
+=======
+	
+\subparagraph{Interface graphique}
+	\begin{enumerate}
+		\item La gestion de compte se fera a l'aide de cliques dans la zone gauche du programme.\label{cpt} 
+		\item Dans cette zone gauche se trouverons la liste des personnes ayant un accès au FTP.
+		\item Un indicateur de type voyant, se trouvera a droite de chaque nom de compte, indiquant la présence ou non d'une personne en ligne.
+			\begin{enumerate}[label=\arabic*.]
+				\item Si la personne n'est pas connectée, le voyant sera rouge.
+				\item Si la personne est connectée, le voyant sera vert.
+			\end{enumerate} 
+		\item Deux boutons seront présent en bas de cette zone.
+			\begin{enumerate}[label=\arabic*.]
+				\item Un bouton en bas a droite avec un "-" rouge dedans.\label{bgr} 
+				\item Au clic sur le bouton "-" un pop-up s'ouvrira. Voir \hyperref[del]{\ref{del}} Page : \pageref{del}
+				\item Un bouton en bas a gauche avec un "+" vert dedans.\label{bdv}
+				\item Au clic sur le bouton "+" un pop-up s'ouvrira. Voir \hyperref[add]{\ref{add}} Page : \pageref{add}
+			\end{enumerate} 
+		\item Les comptes temporaires seront souligné dans la zone gauche.
+		\item Le compte Administrateur ne sera pas présent dans cette liste.
+		\item Les utilisateurs bannis seront en rouge.
+		\item Les comptes bannis temporairement seront en gris clair.
+		\item Les comptes bannis partiellement seront en orange.
+		\item Les comptes normaux seront en noir.
+		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \hyperref[chg]{\ref{chg}} Page : \pageref{chg}
+	\end{enumerate}
+	
+	
+>>>>>>> 65765c2d5c9912ee8c0a002fca5fe44471e20b66
 \paragraph{Bannissement d'un compte}
 	\begin{enumerate}
 		\item Le programme doit permettre de retirer les droits à une personne.
@@ -412,11 +442,52 @@ Si le client a été auparavant banni par le serveur.
 	
 \paragraph{Stockage des comptes}
 	\begin{enumerate}
+<<<<<<< HEAD
 		\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
 		\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
 		\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
 		\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
 	\end{enumerate}
+=======
+		\item Le pop-up doit contenir deux case à cocher :
+			\begin{enumerate}[label=\arabic*.]
+				\item Une case alignée avec le texte "Supprimer le compte"
+				\item Une case alignée avec le texte "Bannir le compte"
+			\end{enumerate} 
+		\item Seule une des deux cases peut être cochée.
+		\item En bas de ce pop-up se trouverons deux boutons :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un bouton annulé, qui annulera toute la procédure.
+				\item Un bouton validé qui validera la procédure.
+			\end{enumerate} 
+		\item Si la case suppression du compte est cochée aucun élément n'est ajouté.
+		\item Si la case "Bannir le compte" est cochée alors les champs suivants seront ajouté en dessous de la case :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un champs Motif sera ajouté associé au texte "Motif du bannissement"
+				\item Une case à cochée sera présente associée au texte "Bannissement temporaire"
+			\end{enumerate} 
+		\item Si la case bannissement temporaire est cochée, un champs de type date sera ajouté en dessous. 
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
+		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
+	\end{enumerate}
+	
+\paragraph{Interface graphique ajout de compte}\label{add} 
+		\begin{enumerate}
+			\item Le pop-up doit contenir 
+		\end{enumerate}
+\paragraph{Interface graphique changement droits}\label{chg} 
+		\begin{enumerate}
+			\item a
+		\end{enumerate}
+	
+	\subparagraph{Stockage des comptes}
+		\begin{enumerate}
+			\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
+			\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
+			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+		\end{enumerate}
+>>>>>>> 65765c2d5c9912ee8c0a002fca5fe44471e20b66
 		
 	\subparagraph{Compte Administrateur}
 		\begin{enumerate}
@@ -442,7 +513,7 @@ Si le client a été auparavant banni par le serveur.
 			\item Le programme doit stocker le temps restant au compte.
 			\item A la fin du temps le programme devra supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression le programme doit signaler a l'utilisateur que sont compte temporaire a été supprimé.
-			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
+			\item Le stockage sera sous la forme : DateFinEnSeconde$ \vert $pseudo@motDePasse:/fichier\#/autrefichier
 		\end{enumerate}
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
@@ -453,8 +524,6 @@ Si le client a été auparavant banni par le serveur.
 			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
 		\end{enumerate}
 		
-
-	
 \paragraph{Limitations}
 	\begin{enumerate}
 		\item Le programme doit proposer un menu déroulant "Configuration" dans la barre des menus.
