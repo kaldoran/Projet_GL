@@ -102,8 +102,6 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item Uploader : Nous utilisons ce terme par abus de langage, cela est équivalent à "téléverser".
 \end{description}
 
-\subsection{Références}
-
 
 \section{Description générale}
 
@@ -120,10 +118,6 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
-
-\subsection{Contraintes}
-
-\subsection{Exigences reportées}
 
 \section{Exigences spécifiques}
 
@@ -632,7 +626,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\item Le module de statistique doit pouvoir afficher en temps réel en plus d'éditer un rapport toute les 2 semaines contenant les statistiques suivante:
 
-			\begin{enumerate}[label=\arabic*.]
+			\begin{enumerate}
 				\item le fichier le plus télécharger.
 
 				\item l'utilisateur qui upload le plus de fichiers.
@@ -852,10 +846,6 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
  	\begin{enumerate}
  		\item Le serveur devrait pouvoir gérer au moins 200 comptes utilisateurs.
  	\end{enumerate}
-\textcolor{red}{\subsubsection{Maintenabilité}
-[Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
-\paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
-[Description de l’exigence]}
 
 
 \section{Contraintes de conception}
@@ -885,6 +875,12 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
 	\hline
+	Création de compte & Essentielle\\
+	\hline
+	Authentification & Essentielle\\
+	\hline
+	Partage de fichier & Essentielle \\
+	\hline
 	Utilisation des dossiers & Essentielle\\
 	\hline
 	Download et Upload & Essentielle \\
@@ -897,9 +893,19 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	Limitations & Souhaitable\\
 	\hline
+	Suppression de compte & Souhaitable \\
+	\hline
+	Bannissement de compte & Souhaitable \\
+	\hline
 	Gestionnaire de marque-pages & Souhaitable\\
 	\hline
 	Cryptage & Optionnelle\\
+	\hline
+	Compte temporaire & Optionnelle \\
+	\hline
+	Bannissement temporaires & Optionnelle \\
+	\hline
+	Bannissement partiel & Optionnelle \\
 	\hline
 \end{tabular}
 \egroup
