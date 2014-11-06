@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
@@ -98,6 +99,8 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
 \item[Client] Logiciel qui envoie des demandes à un serveur.
 \item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
+\item Downloader : Nous utilisons ce terme par abus de langage, cela est équivalent à "télécharger".
+\item Uploader : Nous utilisons ce terme par abus de langage, cela est équivalent à "téléverser".
 \end{description}
 
 \subsection{Références}
@@ -117,7 +120,7 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
 
-
+\newpage
 \section{Exigences spécifiques}
 
 \subsection{Fonctionnalités}
@@ -291,14 +294,16 @@ Si le client a été auparavant banni par le serveur.
 		
 \paragraph{Download et Upload}
 
-	\subparagraph{Download}
-	
-		\begin{enumerate}
-			\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
-		\end{enumerate}
-		
+	\begin{enumerate}
+		\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir uploader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit prévenir l'utilisateur si le transfert de fichier n'est pas autorisé : une fenêtre devrait s'afficher avec le message suivant :\\
+		 "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater ".
+		\item Le client doit afficher une barre de progression (sur laquelle figure le pourcentage de progression) lorsqu'il transfert un fichier.
+		\item Le client doit pouvoir crypter transfert de fichier. 
+	\end{enumerate}
 \paragraph{Module de statistique}
 
 	\subparagraph{Fonctionnalités}
@@ -314,9 +319,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\begin{enumerate}[label=\arabic*.]
 				\item Le fichier le plus télécharger.
-
 				\item L'utilisateur qui "download" le plus ses fichiers.
-
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
 			\end{enumerate} 
 		\end{enumerate}
@@ -386,11 +389,38 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le programme doit permettre à un administrateur de créer des comptes et de leurs attribuer des fichiers.
 		\item Le programme doit permettre de créer des utilisateurs temporaires.
-		\item Le programme doit se souvenir de tous les comptes crées.
-		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
-		\item Le programme doit permettre de bannir une personne.
+		\item Le programme doit se souvenir de tous les comptes crées.\textcolor{blue}{ c.f \ref{cpt} }
+		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.\textcolor{blue}{ c.f \ref{bdv}}	
+		\item Le programme doit permettre de bannir une personne.\textcolor{blue}{ c.f \ref{bgr}}
+		\item Le programme doit permettre de supprimer un compte.\textcolor{blue}{ c.f \ref{bgr}}
 	\end{enumerate}
-
+	
+\subparagraph{Interface graphique}
+	\begin{enumerate}
+		\item La gestion de compte se fera a l'aide de cliques dans la zone gauche du programme.\label{cpt} 
+		\item Dans cette zone gauche se trouverons la liste des personnes ayant un accès au FTP.
+		\item Un indicateur de type voyant, se trouvera a droite de chaque nom de compte, indiquant la présence ou non d'une personne en ligne.
+			\begin{enumerate}[label=\arabic*.]
+				\item Si la personne n'est pas connectée, le voyant sera rouge.
+				\item Si la personne est connectée, le voyant sera vert.
+			\end{enumerate} 
+		\item Deux boutons seront présent en bas de cette zone.
+			\begin{enumerate}[label=\arabic*.]
+				\item Un bouton en bas a droite avec un "-" rouge dedans.\label{bgr} 
+				\item Au clic sur le bouton "-" un pop-up s'ouvrira. Voir \hyperref[del]{\ref{del}} Page : \pageref{del}
+				\item Un bouton en bas a gauche avec un "+" vert dedans.\label{bdv}
+				\item Au clic sur le bouton "+" un pop-up s'ouvrira. Voir \hyperref[add]{\ref{add}} Page : \pageref{add}
+			\end{enumerate} 
+		\item Les comptes temporaires seront souligné dans la zone gauche.
+		\item Le compte Administrateur ne sera pas présent dans cette liste.
+		\item Les utilisateurs bannis seront en rouge.
+		\item Les comptes bannis temporairement seront en gris clair.
+		\item Les comptes bannis partiellement seront en orange.
+		\item Les comptes normaux seront en noir.
+		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \hyperref[chg]{\ref{chg}} Page : \pageref{chg}
+	\end{enumerate}
+	
+	
 \paragraph{Bannissement d'un compte}
 	\begin{enumerate}
 		\item Le programme doit permettre de retirer les droits à une personne.
@@ -414,13 +444,47 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme devrait pouvoir associer une durée à ce bannissement partiel.
 	\end{enumerate}
 	
-\paragraph{Stockage des comptes}
+\subparagraph{Interface graphique bannissement \& suppression}\label{del} 
 	\begin{enumerate}
-		\item Le programme doit contenir dans un fichier les mots de passe sous une forme cryptée. \textcolor{blue}{cf Cryptage}
-		\item Le programme doit stocker les droits associés à un compte dans ce même fichier.
-		\item Le programme doit stocker les comptes temporaires, les comptes normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
-		\item Toute personne qui n'est pas présente dans un des quatre fichiers est considérée comme inconnue.
+
+		\item Le pop-up doit contenir deux cases à cocher :
+			\begin{enumerate}[label=\arabic*.]
+				\item Une case alignée avec le texte "Supprimer le compte"
+				\item Une case alignée avec le texte "Bannir le compte"
+			\end{enumerate} 
+		\item Seule une des deux cases doit pouvoir être cochée.
+		\item En bas de ce pop-up doit se trouver deux boutons :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un bouton "annuler", qui annulera toute la procédure.
+				\item Un bouton "valider", qui validera la procédure.
+			\end{enumerate} 
+		\item Si la case suppression du compte est cochée aucun élément n'est ajouté.
+		\item Si la case "Bannir le compte" est cochée alors les champs suivants seront ajouté en dessous de la case :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un champs Motif sera ajouté associé au texte "Motif du bannissement"
+				\item Une case à cochée sera présente associée au texte "Bannissement temporaire"
+			\end{enumerate} 
+		\item Si la case bannissement temporaire est cochée, un champs de type date sera ajouté en dessous. 
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
+		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
 	\end{enumerate}
+	
+\paragraph{Interface graphique ajout de compte}\label{add} 
+		\begin{enumerate}
+			\item Le pop-up doit contenir 
+		\end{enumerate}
+\paragraph{Interface graphique changement droits}\label{chg} 
+		\begin{enumerate}
+			\item a
+		\end{enumerate}
+	
+	\subparagraph{Stockage des comptes}
+		\begin{enumerate}
+			\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
+			\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
+			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+		\end{enumerate}
 		
 	\subparagraph{Compte Administrateur}
 		\begin{enumerate}
@@ -446,7 +510,7 @@ Si le client a été auparavant banni par le serveur.
 			\item Le programme doit stocker le temps restant au compte.
 			\item A la fin du temps, le programme doit supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression, le programme doit signaler à l'utilisateur que son compte temporaire a été supprimé.
-			\item Le stockage doit être sous la forme : "TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier".
+			\item Le stockage sera sous la forme : "DateFinEnSeconde$ \vert $pseudo@motDePasse:/fichier\#/autrefichier".
 		\end{enumerate}
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
@@ -457,8 +521,6 @@ Si le client a été auparavant banni par le serveur.
 			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
 		\end{enumerate}
 		
-
-	
 \paragraph{Limitations}
 	\begin{enumerate}
 		\item Le programme doit proposer un menu déroulant "Configuration" dans la barre des menus.
@@ -533,6 +595,16 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le serveur doit \textbf{clôturer} la communication en cas de \textbf{download}. 
 	\end{enumerate}
+
+\paragraph{Download et Upload}
+	
+	\begin{enumerate}
+		\item Le serveur doit vérifier la légitimité de toutes les requêtes de types download et upload :
+		\begin{enumerate}
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est autorisé par son propriétaire.
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est publique (n'importe qu'elle client est autorisé à le télécharger).
+		\end{enumerate}
+	\end{enumerate}
 	
 \paragraph{Module de statistique \\ \\}
 
@@ -575,7 +647,7 @@ Si le client a été auparavant banni par le serveur.
 		\end{enumerate}
 	
 	
-	\subparagraph{Interface graphique du serveur}
+	\subparagraph{Interface graphique}
 		\begin{enumerate}
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
@@ -606,7 +678,6 @@ Si le client a été auparavant banni par le serveur.
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
 			\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
-
 			\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H3.
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
@@ -731,13 +802,13 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	\end{enumerate}
 	
 	
-\paragraph{Fiabilité des "Upload" et des "Download"}
+\paragraph{Fiabilité des Uploads et des Downloads}
 	\begin{enumerate}
 	
 		\item Le logiciel ne doit pas échouer plus de 2 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
 		
 		\item Le logiciel ne doit pas échouer plus de 20 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale, pour 100 utilisateurs.
-		
+	
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
 	\end{enumerate}		 
 
@@ -755,16 +826,34 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 	\end{enumerate}
 
-\textcolor{red}{\subsubsection{Performance}
-[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
-•	Temps de réponse par transaction (moyen, maximum)\\
-•	Débit (transactions par seconde)\\
-•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
-•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
-•	Utilisation de ressources (mémoire, disque, communications, etc.]
-\paragraph{\textless Nom de l’exigence de performance 1 \textgreater}
-[Description de l’exigence]}
+\subsubsection{Performance}
 
+%[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
+%•	Temps de réponse par transaction (moyen, maximum)\\
+%•	Débit (transactions par seconde)\\
+%•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
+%•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
+%•	Utilisation de ressources (mémoire, disque, communications, etc.]
+\paragraph{Simultanéité}
+
+	\begin{enumerate}
+		\item Le serveur doit supporter au moins 200 connexions simultanées.
+		\item Le serveur doit supporter au moins 20 downloads simultanés et 20 uploads simultanés.
+		\item Le client doit supporter au moins 5 downloads simultanés et 5 uploads simultanés.
+	\end{enumerate}
+	
+\paragraph{Temps de réponse}
+	
+	\begin{enumerate}
+		\item Le serveur devrait répondre instantanément à tout type de requêtes avec plus de 100 connexions simultanées.
+		\item Le serveur et le client doit réagir instantanément au commande de l'utilisateur. 
+	\end{enumerate}
+
+\paragraph{Capacité}
+
+ 	\begin{enumerate}
+ 		\item Le serveur devrait pouvoir gérer au moins 200 comptes utilisateurs.
+ 	\end{enumerate}
 \textcolor{red}{\subsubsection{Maintenabilité}
 [Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
 \paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
@@ -798,13 +887,37 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
 	\hline
+	Création de compte & Essentielle\\
+	\hline
+	Authentification & Essentielle\\
+	\hline
+	Partage de fichier & Essentielle \\
+	\hline
 	Utilisation des dossiers & Essentielle\\
 	\hline
+	Download et Upload & Essentielle \\
+	\hline
+	Communication en réseau & Essentielle \\
+	\hline
+	Module de statistique & Souhaitable \\
+	\hline
+	Fichier d'historique des événements & Souhaitable \\
+	\hline
 	Limitations & Souhaitable\\
+	\hline
+	Suppression de compte & Souhaitable \\
+	\hline
+	Bannissement de compte & Souhaitable \\
 	\hline
 	Gestionnaire de marque-pages & Souhaitable\\
 	\hline
 	Cryptage & Optionnelle\\
+	\hline
+	Compte temporaire & Optionnelle \\
+	\hline
+	Bannissement temporaires & Optionnelle \\
+	\hline
+	Bannissement partiel & Optionnelle \\
 	\hline
 \end{tabular}
 \egroup
