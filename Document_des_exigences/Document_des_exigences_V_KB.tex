@@ -71,8 +71,8 @@
 		\@author\\
 		\end{titlepage}
 \makeatother
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 \renewcommand{\contentsname}{Sommaire}
 \tableofcontents
 \thispagestyle{empty}
@@ -128,42 +128,42 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 	\subparagraph{Interface graphique}\label{ClientIGA} 
 	\begin{enumerate}
 		\item Le formulaire de connexion doit être de type Pop-up.
-		\item Le formulaire se situera au milieu de la fenêtre.
-		\item Le Pop-Up de connexion apparaitra des l'ouverture du logiciel.
-		\item Quand le Formulaire sera présent le bouton déconnexion sera désactive / grisé
-		\item Le titre de ce Pop-up sera "Authentification"
-		\item Le titre devra être centré
-		\item Le titre sera suivi d'une barre ligne horizontale de couleur grise prenant au minimum 80\% du pop-up
-		\item Le formulaire doit avoir, a la suite de la barre horizontale trois champs permettant à l'utilisateur d'écrire
-		\item Les trois champs seront aligné avec les mots suivant : "Serveur", "Nom d'utilisateur" et "mot de passe" dans cette ordre 
-		\item Un bouton centré de type cliquable, nommé "Se connecter" sera présent en bas du pop-up.
-		\item En cas d'erreur un cadre aux bordures rouge apparaitra au dessus du champs concerné.
-		\item Le reste de l'application (barre d'action non incluse) sera grisé ( voile gris au dessus ) quand le pop-up est ouvert.
+		\item Le formulaire doit se situer au milieu de la fenêtre.
+		\item Le Pop-Up de connexion doit apparaitre dès l'ouverture du logiciel.
+		\item Quand le Formulaire sera présent le bouton déconnexion doit être désactive.
+		\item Lorsqu'il est désactivé, le bouton déconnexion doit être grisé.
+		\item Le titre de ce Pop-up doit être "Authentification".
+		\item Le titre doit être centré.
+		\item Le titre doit être suivi d'une barre ligne horizontale de couleur grise prenant au minimum 80\% du pop-up.
+		\item Le formulaire doit avoir, à la suite de la barre horizontale trois champs permettant à l'utilisateur d'écrire.
+		\item Les trois champs doivent être alignés avec les mots suivants : "Serveur", "Nom d'utilisateur" et "mot de passe" dans cette ordre.
+		\item Un bouton centré, nommé "Se connecter" doit être présent en bas du pop-up.
+		\item En cas d'erreur, un cadre aux bordures rouges doit apparaitre au dessus du champ concerné.
+		\item Le reste de l'application (barre d'action non incluse) doit être grisé (voile gris au dessus) quand le pop-up est ouvert.
 	\end{enumerate}
 	
 	\subparagraph{Fonctionnalité}
 	\begin{enumerate}
-		\item Le programme devra permettra a un client de se connecter sur le client FTP.
-		\item Le nom d'utilisateur et le mot de passe seront définit par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
+		\item Le programme doit permettre à un client de se connecter sur le client FTP.
+		\item Le nom d'utilisateur et le mot de passe doivent être définis par l'administrateur du serveur. \textcolor{blue}{cf Authentification côté serveur}
 		\item Le programme doit proposer un champ de texte éditable pour entrer un pseudo.
 		\item Le programme doit proposer un champ de texte éditable pour entrer mot de passe.
 		\item Le programme doit permettre d'envoyer les données d'authentification via un protocole sécurisé. \textcolor{blue}{cf Bouton envoyer}
-		\item Le programme doit envoyé le mot de passe crypté au serveur. \textcolor{blue}{cf Protocoles}
-		\item Le programme doit indiqué le succès a l'aide la phrase "Bonjour [pseudo]" présent dans la barre des menus.
-		\item Le programme doit indiqué si une erreur est survenu et le type d'erreur\textcolor{green}{Où l'utilisateur voit cette indication ?}.
-		\item En cas d'erreur le programme devra indiquer l'erreur et redemander le mot de passe et/ou le login ( en fonction de l'erreur survenue )
+		\item Le programme doit envoyer le mot de passe crypté au serveur. \textcolor{blue}{cf Protocoles}
+		\item Le programme doit indiquer le succès de la connexion à l'aide la phrase "Bonjour [pseudo]" présente dans la barre des menus.
+		\item Le programme doit indiquer si une erreur est survenue et son type. \textcolor{green}{Où l'utilisateur voit cette indication ?}
+		\item En cas d'erreur le programme doit indiquer l'erreur et redemander le mot de passe et/ou le login (en fonction de l'erreur survenue)
 		\item En cas d'erreur sur l'adresse du serveur le programme doit indiquer l'erreur et redemander l'adresse du serveur.
 		\item Le programme doit vérifier que l'adresse du serveur est une adresse IP V4.
 		\item Le programme doit vérifier que le nom d'utilisateur ne dépasse pas 30 caractères.
 		\item Le programme doit vérifier que le nom d'utilisateur n'a pas moins de 3 caractères.
-		\item Le programme doit vérifier que le mot de passe comporte plus de 3 caractères.
+		\item Le programme doit vérifier que le mot de passe comporte plus de 6 caractères.
 		\item Le programme doit vérifier que le mot de passe comporte moins de 50 caractères.
 		\begin{enumerate}
 			\item Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
 			\item Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
 		\end{enumerate}
-		\item Le programme doit permettre l'auto-connexion au démarrage du programme pour ce faire l'utilisateur pourra cocher une case.
-	
+		\item Le programme doit permettre l'auto-connexion au démarrage du programme, pour ce faire l'utilisateur pourra cocher une case. \textcolor{red}{où est cette case, diviser cet item en 2}
 	\end{enumerate}
 
 \paragraph{Gestionnaire de marque-pages}
@@ -172,7 +172,7 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 		\item Le programme devrait afficher un menu déroulant "Bookmarks" dans la barre des menus.
 		\item Le menu déroulant "Bookmarks" devrait proposer un bouton "Afficher les marques-pages".
 		\item Cliquer sur le bouton "Afficher les marques-pages" devrait afficher la liste des marques-pages de l'utilisateur dans une nouvelle page.
-		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur.\textcolor{green}{exemple de syntaxe ?} \textcolor{red}{J'AI PAS ENVIE}
+		\item Un marque-page doit se composer obligatoirement d'un nom, de l'adresse du serveur, de l'identifiant de l'utilisateur.
 		\item Un marque-page doit avoir la possibilité d'enregistrer aussi le mot de passe de l'utilisateur si ce dernier le veut.
 		\item Le menu déroulant "Bookmarks" devrait proposer un bouton "Mettre un marque-page".
 		\item Cliquer sur le bouton "Mettre un marque-page" devrait afficher un champ de saisie et une case à cocher.
@@ -250,21 +250,21 @@ Les utilisateurs de notre programme peuvent être des professionnels aguerris co
 			\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port 21} à l'aide d'une fenêtre de dialogue affichant les messages suivant : 
 
 			\begin{enumerate}[label=\arabic*.]
-				\item \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
+				\item \textit{"Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$:\\
 -Vérifiez l'état de votre connexion Internet.\\
 -Vérifiez que le nom du serveur n'est pas erroné."\\}
 Si la source du problème provient du réseau (problème de routage, connexion coupée) ou si le serveur est inexistant.
 
-				\item \textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$: le serveur est surchargé."\\}
+				\item \textit{"Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$: le serveur est surchargé."\\}
 Si le nombre de connexion autorisé par le serveur est atteint.
 
-				\item \textit{"Impossible d'établir une communication avec le serveur $\textless nom\_du\_serveur\textgreater$:\\
-$\textless nom\_du\_serveur\textgreater$ vous a banni !"\\}
+				\item \textit{"Impossible d'établir une communication avec le serveur $< nom\_du\_serveur>$:\\
+$< nom\_du\_serveur>$ vous a banni !"\\}
 Si le client a été auparavant banni par le serveur. 
 			\end{enumerate}
 
 			\item Le client doit prévenir l'utilisateur s'il ne parvient pas à établir une connexion avec le serveur sur le \textbf{port d'échange} à l'aide d'une fenêtre de dialogue affichant le message suivant : \\
-\textit{"Impossible d'établir une connexion avec le serveur $\textless nom\_du\_serveur\textgreater$ sur le port $\textless numero\_du\_port\_echange\textgreater$ : Vérifiez vos règle de pare-feu."\\}
+\textit{"Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$ sur le port $< numero\_du\_port\_echange>$ : Vérifiez vos règle de pare-feu."\\}
 
 			\item Les fenêtre de dialogue doivent avoir un bouton "Fermer", positionné à leur angle inférieur droit, pour fermer celles-ci.
 
@@ -276,7 +276,7 @@ Si le client a été auparavant banni par le serveur.
 
 		\begin{enumerate}
 			\item Le client doit prévenir l'utilisateur si la communication avec le serveur est interrompue à l'aide d'une fenêtre de dialogue affichant le message suivant:\\
-\textit{"Connexion interrompue avec le serveur $\textless nom\_du\_serveur\textgreater$."}
+\textit{"Connexion interrompue avec le serveur $< nom\_du\_serveur>$."}
 
 			\item La fenêtre de dialogue doit avoir un bouton "Fermer".
 
@@ -368,27 +368,27 @@ Si le client a été auparavant banni par le serveur.
 	\subparagraph{Fonctionnalité}
 	\begin{enumerate}
 		\item Le programme doit être capable de recevoir et détecter l'arrivée d'un pseudo et d'un mot de passe.
-		\item Le programme doit vérifié les informations qu'il à reçu.
-		\item Le programme doit indiqué au client le succès ou l'échec d'authentification.
+		\item Le programme doit vérifier les informations qu'il à reçu.
+		\item Le programme doit indiquer au client le succès ou l'échec d'authentification.
 		\item L'administrateur doit pouvoir se connecter au serveur à l'aide d'identifiants spécifiques.
-		\item Le programme détecter que l'utilisateur est un administrateur et lui donner tout les droits.	
+		\item Le programme doit détecter que l'utilisateur est un administrateur et lui donner tous les droits.	
 	\end{enumerate}
 	
 \paragraph{Partage de fichiers}
 	\begin{enumerate}
-		\item Le programme doit partager les sous-dossier à partir de l'endroit où le programme à été lancé.
+		\item Le programme doit partager les sous-dossiers à partir de l'endroit où le programme a été lancé.
 		\item Le programme doit pouvoir partager un fichier avec plusieurs personnes.
 		\item \textcolor{red}{Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé. }
-		\item Les fichiers partagés seront stocké sur le serveur.
+		\item Les fichiers partagés doivent être stockés sur le serveur.
 	\end{enumerate}
 	
 \paragraph{Gestionnaire de comptes utilisateurs}
 	\begin{enumerate}
-		\item Le programme doit permettre a un administrateur de crée des comptes et de leurs attribuer des fichiers.
-		\item Le programme doit permettre de crée des utilisateurs temporaires.
-		\item Le programme doit se souvenir de tout les comptes crée.
+		\item Le programme doit permettre à un administrateur de créer des comptes et de leurs attribuer des fichiers.
+		\item Le programme doit permettre de créer des utilisateurs temporaires.
+		\item Le programme doit se souvenir de tous les comptes crées.
 		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
-		\item Le programme doit permettre de bannir une personne
+		\item Le programme doit permettre de bannir une personne.
 	\end{enumerate}
 
 \paragraph{Bannissement d'un compte}
@@ -397,63 +397,63 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme doit stocker cette perte de droits.
 		\item Le programme devrait permettre de bannir temporairement une personne.
 		\item Le programme devrait pouvoir permettre de donner la raison du bannissement.
-		\item Le programme devrait permettre un bannissement partiel d'un compte
+		\item Le programme devrait permettre un bannissement partiel d'un compte.
 	\end{enumerate}
 	
 \paragraph{Bannissement temporaire}
 	\begin{enumerate}
 		\item Le programme devrait permettre de bannir un compte pour une durée déterminée.
 		\item Le programme devrait pouvoir donner le temps de bannissement restant.
-		\item Le programme devrait pouvoir associé une raison à se bannissement temporaire.
+		\item Le programme devrait pouvoir associer une raison à ce bannissement temporaire.
 	\end{enumerate}
 	
 \paragraph{Bannissement partiel}
 	\begin{enumerate}
 		\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
-		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
-		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de ce bannissement partiel.
+		\item Le programme devrait pouvoir associer une durée à ce bannissement partiel.
 	\end{enumerate}
 	
 \paragraph{Stockage des comptes}
 	\begin{enumerate}
-		\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
-		\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
-		\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
-		\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+		\item Le programme doit contenir dans un fichier les mots de passe sous une forme cryptée. \textcolor{blue}{cf Cryptage}
+		\item Le programme doit stocker les droits associés à un compte dans ce même fichier.
+		\item Le programme doit stocker les comptes temporaires, les comptes normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+		\item Toute personne qui n'est pas présente dans un des quatre fichiers est considérée comme inconnue.
 	\end{enumerate}
 		
 	\subparagraph{Compte Administrateur}
 		\begin{enumerate}
-			\item Le compte Administrateur doit être UNIQUE
-			\item Le compte administrateur sera stocké dans un fichier à part
-			\item Le fichiers qui stockera le compte administrateur n'aura pas d'extension
-			\item Le nom du fichier qui stockera le compte administrateur aura pour nom .shadow \textcolor{blue}{cf linux}
-			\item Le compte administrateur sera stocké sous la forme : pseudo@motDePasse:/CheminDeReference
-			\item L'administrateur ne pourra distribuer les droits que à partir du Chemin de référence.
-			\item L'administrateur aura priorité ABSOLUE sur tous les comptes.
+			\item Le compte Administrateur doit être UNIQUE.
+			\item Le compte administrateur doit être stocké dans un fichier à part.
+			\item Le fichiers qui stockera le compte administrateur ne doit pas avoir pas d'extension.
+			\item Le nom du fichier qui stockera le compte administrateur doit avoir pour nom ".shadow". \textcolor{blue}{cf linux}
+			\item Le compte administrateur doit être stocké sous la forme : "pseudo@motDePasse:/CheminDeReference".
+			\item L'administrateur ne doit pouvoir distribuer les droits que à partir du chemin de référence.
+			\item L'administrateur doit avoir priorité ABSOLUE sur tous les comptes.
 			\item L'accès au compte administrateur doit se faire en accès direct à la machine. 
-			\item AUCUN accès au compte administrateur pourra être fait a partir d'un client.
+			\item AUCUN accès au compte administrateur doit pouvoir être fait à partir d'un client.
 		\end{enumerate}
 		
 	\subparagraph{Comptes normaux}
 		\begin{enumerate}
-			\item Le programme stockera les pseudos et les mots de passe dans un fichier .acc
-			\item Le stockage sera sous la forme : pseudo@motDePasse:/fichier\#/autrefichier
+			\item Le programme doit stocker les pseudos et les mots de passe dans un fichier ".acc".
+			\item Le stockage doit être sous la forme : "pseudo@motDePasse:/fichier\#/autrefichier".
 		\end{enumerate}
 	\subparagraph{Comptes temporaires}
 		\begin{enumerate}
-			\item les comptes temporaires seront stockés dans un fichier .acctmp
+			\item les comptes temporaires doivent être stockés dans un fichier ".acctmp".
 			\item Le programme doit stocker le temps restant au compte.
-			\item A la fin du temps le programme devra supprimer le compte lors de la prochaine tentative de connexion.
-			\item Lors de la suppression le programme doit signaler a l'utilisateur que sont compte temporaire a été supprimé.
-			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
+			\item A la fin du temps, le programme doit supprimer le compte lors de la prochaine tentative de connexion.
+			\item Lors de la suppression, le programme doit signaler à l'utilisateur que son compte temporaire a été supprimé.
+			\item Le stockage doit être sous la forme : "TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier".
 		\end{enumerate}
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
-			\item Le programme doit stocker les comptes bannis dans un fichier .accban
-			\item Le programme devrait indiqué la raison du bannissement au client lors des tentatives de connexion.
+			\item Le programme doit stocker les comptes bannis dans un fichier ".accban".
+			\item Le programme devrait indiquer la raison du bannissement au client lors des tentatives de connexion.
 			\item Le programme devrait pouvoir stocker le temps restant de bannissement.
-			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
+			\item Le stockage doit être sous la forme : "TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier".
 			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
 		\end{enumerate}
 		
@@ -588,9 +588,9 @@ Si le client a été auparavant banni par le serveur.
 			\item L'histogramme H2 doit être positionné dans la partie supérieur gauche de la partie graphique.
 			\item L'histogramme H3 doit être positionné dans la partie supérieur droit de la partie graphique.
 			\item Les trois histogrammes doivent tracer des barres verticales.
-			\item Chaque barre des 3 histogrammes doivent être entièrement visible.
-			\item Chaque barre des 3 histogrammes doivent être de hauteur proportionnel à la valeur des ordonnées.
-			\item Chaque barre des 3 histogrammes doivent être de largeur inversement proportionnel au nombre de barres.
+			\item Chaque barre des 3 histogrammes doit être entièrement visible.
+			\item Chaque barre des 3 histogrammes doit être de hauteur proportionnel à la valeur des ordonnées.
+			\item Chaque barre des 3 histogrammes doit être de largeur inversement proportionnel au nombre de barres.
 
 			\item L'histogramme H1 doit avoir autant de barre que de fichiers (de la propriété de l'utilisateur).
 			\item Chaque barre de l'histogramme H1 doit être de couleur différente.
@@ -602,7 +602,7 @@ Si le client a été auparavant banni par le serveur.
 			\item L'histogramme H2 doit tracer des couples de barres de couleurs différentes. La couleur représente l'information "upload" et "download".
 			\item Le nombre d'opération de "upload" et de "download" doit apparaître dans la même ordonnée de l'histogramme H2.
 
-			\item Les noms de chaque utilisateur (ayant effectuer une opération de "upload" et "download") doit être correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H2.
+			\item Les noms de chaque utilisateur (ayant effectué une opération de "upload" et "download") doit correspondre à un numéro unique, ce numéro unique doit apparaître en abscisse de l'histogramme H2.
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
 			\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
@@ -623,9 +623,9 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 			\item Le serveur doit éditer un nouveau fichier d'historique des événements chaque jour, qui trace les événements passés de 00h00 à 23h59 et 59s.
 		
-			\item Les fichiers d'historique des événements doivent être des stockés dans un répertoire appelé "log", dans le répertoire du logiciel.
+			\item Les fichiers d'historique des événements doivent être stockés dans un répertoire appelé "log", dans le répertoire du logiciel.
 		
-			\item Les fichiers d'historique des événements doivent être consultable à partir de l'interface graphique du serveur, en cliquant sur un bouton "log" positionné dans la barre d'outil.
+			\item Les fichiers d'historique des événements doivent être consultables à partir de l'interface graphique du serveur, en cliquant sur un bouton "log" positionné dans la barre d'outil.
 			
 		\end{enumerate}
 		
@@ -646,9 +646,9 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 		\subparagraph{Syntaxe du fichier d'historique des événements}
 			\begin{enumerate}
-				\item Le fichier d'historique des événements doit être fichier de texte.
+				\item Le fichier d'historique des événements doit être un fichier de texte.
 				
-				\item Le fichier d'historique des événements doit être nommer de la manière suivante : "log\_file\_DD\_MM\_AAAA". Où DD est le jour, MM le mois et AAAA l'année de l'édition du fichier.
+				\item Le fichier d'historique des événements doit être nommé de la manière suivante : "log\_file\_DD\_MM\_AAAA". Où DD est le jour, MM le mois et AAAA l'année de l'édition du fichier.
 				
 				\item Le fichier d'historique des événements doit avoir une extension ".log".
 				\item Une ligne du fichier d'historique des événements doit correspondre à un seul événement.
@@ -699,7 +699,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 			\item La fenêtre doit avoir une barre d'outil.
 	
-			\item La barre d'outil doit avoir un bouton "Exporter" positionner à son extrémité gauche.
+			\item La barre d'outil doit avoir un bouton "Exporter" positionné à son extrémité gauche.
 
 			\item Cliquer sur le bouton "Exporter" doit permettre la génération d'un rapport de statistique contenant les informations qu'affiche la fenêtre, \textbf{en priorité les graphiques}, dans un format html.
 
@@ -713,37 +713,30 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 \subsubsection{Utilisabilité}
 	\begin{enumerate}
-		\item Le programme doit avoir une prise en main facile pour que n'importe qui puisse immédiatement comprendre comment se servir des fonctionnalité principales.
-		\item L'utilisateur après une formation d'une demie heure, ne doit pas faire plus 10 erreurs de manipulation sur une durée de 4h.
-		\item L'utilisateur ne doit faire plus d'une erreur de manipulation après 40 heures de pratiques sur une durée de 100h.
+		\item Après une formation d'une demi-heure, L'utilisateur ne doit pas faire plus de 10 erreurs de manipulation sur une durée de 4h.
+		\item Après 40 heures de pratique, l'utilisateur ne doit pas faire plus d'une erreur de manipulation sur une durée de 100h.
 	\end{enumerate}
+
 \subsubsection{Fiabilité}
-%[Décrire les exigences qui affectent la fiabilité comme, par exemple:\\
-%•	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, %mode d’opération lors de dégradation, etc.\\
-%•	Durée moyenne de fonctionnement avant défaillance, exprimée en heures, en jours, en %mois ou en années.\\
-%•	Durée moyenne de rétablissement, qui est le délai moyen de réparation d'une unité fonctionnelle après une défaillance.\\
-%•	Exactitude. précision, souvent définie par de normes, requise pour les extrants.\\
-%•	Nombre maximum d’anomalies exprimé habituellement en KLOC, en défaut par millier de ligne de code ou par points de fonction.\\
-%•	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie.]
 \paragraph{Fiabilité du fonctionnement général du logiciel}
 
 	\begin{enumerate}
-		\item Le client ne doit pas présenter de bugs pendant les 5 premiers mois après le déploiement.
+		\item Le client ne doit pas présenter de bug pendant les 5 premiers mois après le déploiement.
 	
-		\item Le serveur doit être capable de fonctionner sans défaillance (c'est-à-dire sans que des bug  surgissent) avec 100 clients connectés simultanément pendant une durée de 24h.
+		\item Le serveur doit être capable de fonctionner sans défaillance (c'est-à-dire sans que des bugs surgissent) avec 100 clients connectés simultanément pendant une durée de 24h.
 		
-		\item Le serveur doit être capable de fonctionner plus d'une semaine en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...).	
+		\item Le serveur doit être capable de fonctionner plus d'une semaine en condition normale (c'est à dire sans problème de réseau, de surcharge de serveur etc...).	
 		
-		\item Le serveur doit être capable de fonctionner plus de 48h en condition critique (c'est-à-dire bande passante faible, plus 200 clients connectés simultanément, plus de 100 téléchargement simultané, etc ...).
+		\item Le serveur doit être capable de fonctionner plus de 48h en condition critique (c'est-à-dire bande passante faible, plus de 200 clients connectés simultanément, plus de 100 téléchargements simultanés, etc ...).
 	\end{enumerate}
 	
 	
 \paragraph{Fiabilité des "Upload" et des "Download"}
 	\begin{enumerate}
 	
-		\item Le logiciel ne doit pas échouer plus de 2 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
+		\item Le logiciel ne doit pas échouer plus de 2 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
 		
-		\item Le logiciel ne doit pas échouer plus de 20 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal, pour 100 utilisateurs.
+		\item Le logiciel ne doit pas échouer plus de 20 transferts de fichiers (opération de "upload" et "download") sur 100, en condition normale, pour 100 utilisateurs.
 		
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
 	\end{enumerate}		 
@@ -752,9 +745,9 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 	\begin{enumerate}
 	
-		\item Le logiciel ne doit pas échouer plus de 1 authentification sur 100 en condition normal.
+		\item Le logiciel ne doit pas échouer plus de 1 authentification sur 100 en condition normale.
 		
-		\item \textbf{Le logiciel ne doit jamais autorisé l'accès des services du serveur d'un client dont le pseudo et/ou mot de passe sont erroné.}
+		\item \textbf{Le logiciel ne doit jamais autoriser l'accès des services du serveur d'un client dont le pseudo et/ou mot de passe sont erronés.}
 		
 		\item Le logiciel ne doit jamais confondre les comptes utilisateurs lors d'une authentification.
 		
