@@ -402,9 +402,9 @@ Si le client a été auparavant banni par le serveur.
 		\item Deux boutons seront présent en bas de cette zone.
 			\begin{enumerate}[label=\arabic*.]
 				\item Un bouton en bas a droite avec un "-" rouge dedans.\label{bgr} 
-				\item Au clic sur le bouton "-" un pop-up s'ouvrira. Voir \hyperref[del]{\ref{del}} Page : \pageref{del}
+				\item Au clic sur le bouton "-" un pop-up s'ouvrira. Voir \ref{del} Page : \pageref{del}
 				\item Un bouton en bas a gauche avec un "+" vert dedans.\label{bdv}
-				\item Au clic sur le bouton "+" un pop-up s'ouvrira. Voir \hyperref[add]{\ref{add}} Page : \pageref{add}
+				\item Au clic sur le bouton "+" un pop-up s'ouvrira. Voir \ref{add} Page : \pageref{add}
 			\end{enumerate} 
 		\item Les comptes temporaires seront souligné dans la zone gauche.
 		\item Le compte Administrateur ne sera pas présent dans cette liste.
@@ -412,7 +412,7 @@ Si le client a été auparavant banni par le serveur.
 		\item Les comptes bannis temporairement seront en gris clair.
 		\item Les comptes bannis partiellement seront en orange.
 		\item Les comptes normaux seront en noir.
-		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \hyperref[chg]{\ref{chg}} Page : \pageref{chg}
+		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \ref{chg} Page : \pageref{chg}
 	\end{enumerate}
 	
 \paragraph{Bannissement d'un compte}
@@ -463,7 +463,7 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
 	\end{enumerate}
 	
-\paragraph{Interface graphique ajout de compte}\label{add} 
+	\subparagraph{Interface graphique ajout de compte}\label{add} 
 		\begin{enumerate}
 			\item Le pop-up doit contenir quatre champs :
 			\begin{enumerate}[label=\arabic*.]
@@ -477,7 +477,7 @@ Si le client a été auparavant banni par le serveur.
 			\item En bas a gauche de ce pop-up un bouton validé qui aura pour but d'ajouter l'utilisateur.
 		\end{enumerate}
 		
-\paragraph{Interface graphique changement droits}\label{chg} 
+	\subparagraph{Interface graphique changement droits}\label{chg} 
 		\begin{enumerate}
 			\item Dans la partie gauche du programme ce trouvera par défaut la liste de tout les fichiers accessible sur le serveur.
 			\item En cliquant sur un utilisateur seul a liste des fichiers accessible par l'utilisateur sera présente.
@@ -497,6 +497,7 @@ Si le client a été auparavant banni par le serveur.
 			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
 			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
 		\end{enumerate}
+
 		
 	\subparagraph{Compte Administrateur}
 		\begin{enumerate}
@@ -792,6 +793,7 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	\end{enumerate}
 
 \subsubsection{Fiabilité}
+
 \paragraph{Fiabilité du fonctionnement général du logiciel}
 
 	\begin{enumerate}
@@ -830,12 +832,6 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 
 \subsubsection{Performance}
 
-%[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
-%•	Temps de réponse par transaction (moyen, maximum)\\
-%•	Débit (transactions par seconde)\\
-%•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
-%•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
-%•	Utilisation de ressources (mémoire, disque, communications, etc.]
 \paragraph{Simultanéité}
 
 	\begin{enumerate}
