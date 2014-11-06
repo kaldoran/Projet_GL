@@ -98,6 +98,8 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
 \item[Client] Logiciel qui envoie des demandes à un serveur.
 \item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
+\item Downloader : Nous utilisons ce terme par abus de langage, cela est équivalent à "télécharger".
+\item Uploader : Nous utilisons ce terme par abus de langage, cela est équivalent à "téléverser".
 \end{description}
 
 \subsection{Références}
@@ -732,13 +734,10 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	\end{enumerate}
 	
 	
-\paragraph{Fiabilité des "Upload" et des "Download"}
+\paragraph{Fiabilité des Uploads et des Downloads}
 	\begin{enumerate}
-	
 		\item Le logiciel ne doit pas échouer plus de 2 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
-		
 		\item Le logiciel ne doit pas échouer plus de 20 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal, pour 100 utilisateurs.
-		
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
 	\end{enumerate}		 
 
@@ -756,16 +755,34 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 	\end{enumerate}
 
-\textcolor{red}{\subsubsection{Performance}
-[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
-•	Temps de réponse par transaction (moyen, maximum)\\
-•	Débit (transactions par seconde)\\
-•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
-•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
-•	Utilisation de ressources (mémoire, disque, communications, etc.]
-\paragraph{\textless Nom de l’exigence de performance 1 \textgreater}
-[Description de l’exigence]}
+\subsubsection{Performance}
 
+%[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
+%•	Temps de réponse par transaction (moyen, maximum)\\
+%•	Débit (transactions par seconde)\\
+%•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
+%•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
+%•	Utilisation de ressources (mémoire, disque, communications, etc.]
+\paragraph{Simultanéité}
+
+	\begin{enumerate}
+		\item Le serveur doit supporter au moins 200 connexions simultanées.
+		\item Le serveur doit supporter au moins 20 downloads simultanés et 20 uploads simultanés.
+		\item Le client doit supporter au moins 5 downloads simultanés et 5 uploads simultanés.
+	\end{enumerate}
+	
+\paragraph{Temps de réponse}
+	
+	\begin{enumerate}
+		\item Le serveur devrait répondre instantanément à tout type de requêtes avec plus de 100 connexions simultanées.
+		\item Le serveur et le client doit réagir instantanément au commande de l'utilisateur. 
+	\end{enumerate}
+
+\paragraph{Capacité}
+
+ 	\begin{enumerate}
+ 		\item Le serveur devrait pouvoir gérer au moins 200 comptes utilisateurs.
+ 	\end{enumerate}
 \textcolor{red}{\subsubsection{Maintenabilité}
 [Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
 \paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
@@ -800,6 +817,14 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	{\large \textbf{Fonctionnalité}} & {\large \textbf{Type}}\\
 	\hline
 	Utilisation des dossiers & Essentielle\\
+	\hline
+	Download et Upload & Essentielle \\
+	\hline
+	Communication en réseau & Essentielle \\
+	\hline
+	Module de statistique & Souhaitable \\
+	\hline
+	Fichier d'historique des événements & Souhaitable \\
 	\hline
 	Limitations & Souhaitable\\
 	\hline
