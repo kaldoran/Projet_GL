@@ -22,8 +22,8 @@ Le mercredi 1er octobre 2014 à 23h59 au plus tard, le responsable communication
 
 **ATTENTION :** Chaque semaine (au jour choisi par chaque groupe, et toujours à ce jour là, mais pas durant la séance de TP dédiée aux projets), les groupes doivent organiser une (parfois brève, parfois longue) réunion d'avancement permettant de faire le point sur le travail de chacun, les difficultés, les problèmes à résoudre (techniques, humains, etc), l'état d'avancement global du projet, la nouvelle planification à envisager, etc...
 Le responsable communication de chaque groupe doit me faire parvenir, par mail, chaque semaine, au jour défini initialement, selon un format déterminé au début du projet, le compte rendu détaillé de cette réunion en mettant tous les membres du projet en copie(en utilisant uniquement les adresses universitaire). Ici aussi il est important de se documenter par soi même pour avoir une certaine connaissance de la façon habituelle de mener une réunion, d'en faire un compte rendu efficace, sous une forme utile. A noter que ce compte rendu doit être rédigé par un membre différent chaque semaine. Outre votre contenu propre à chaque réunion, le compte rendu devra obligatoirement indiquer le nom du rédacteur du document ainsi que les membres présents à la réunion, les membres excusés et les membres absents. Si, lors d'une réunion, le planning du projet est modifié, le nouveau planning doit m'être envoyé par mail en même temps que le compte rendu.
--La notation du projet tiendra compte de :
 
+-La notation du projet tiendra compte de :
     - votre comportement durant les séances de génie logiciel (respect, assiduité, écoute, etc)
     - la qualité des documents produits durant le projet
     - votre capacité à prendre des initiatives
