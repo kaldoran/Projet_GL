@@ -470,11 +470,29 @@ Si le client a été auparavant banni par le serveur.
 	
 \paragraph{Interface graphique ajout de compte}\label{add} 
 		\begin{enumerate}
-			\item Le pop-up doit contenir 
+			\item Le pop-up doit contenir quatre champs :
+			\begin{enumerate}[label=\arabic*.]
+				\item Un champs de type texte associé au texte : "Nom d'utilisateur"
+				\item Un champs de type texte associé au texte : "Mot de passe"
+				\item Un champs de type sélecteur de fichier. Celui ci permettant d'indiquer, en les sélectionnant, les fichiers accessible par l'utilisateur.
+				\item Un champs de type case à coché associé au texte : "Utilisateur temporaire".
+			\end{enumerate}
+			\item Si la case "Utilisateur temporaire" est cochée, un champs de type date s'ajoutera.
+			\item En bas a droite de ce pop-up un bouton annulé.
+			\item En bas a gauche de ce pop-up un bouton validé qui aura pour but d'ajouter l'utilisateur.
 		\end{enumerate}
+		
 \paragraph{Interface graphique changement droits}\label{chg} 
 		\begin{enumerate}
-			\item a
+			\item Dans la partie gauche du programme ce trouvera par défaut la liste de tout les fichiers accessible sur le serveur.
+			\item En cliquant sur un utilisateur seul a liste des fichiers accessible par l'utilisateur sera présente.
+			\item En bas de cette fenêtre seront présent 2 champs
+				\begin{enumerate}[label=\arabic*.]
+					\item En bas à droite un "+" de couleur verte.
+					\item A droite du bouton "+" un bouton "-" de couleur rouge.
+				\end{enumerate}
+			\item Il suffira alors de cliquer sur un fichier puis sur moins pour retirer les droits a l'utilisateur sélectionne sur le fichier sélectionne.
+			\item En cliquant sur le "+" un pop-up apparaitra permettant de sélectionne les fichiers sur lesquels l'utilisateur gagnera les droits.
 		\end{enumerate}
 	
 	\subparagraph{Stockage des comptes}
@@ -509,15 +527,16 @@ Si le client a été auparavant banni par le serveur.
 			\item Le programme doit stocker le temps restant au compte.
 			\item A la fin du temps le programme devra supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression le programme doit signaler a l'utilisateur que sont compte temporaire a été supprimé.
-			\item Le stockage sera sous la forme : DateFinEnSeconde$ \vert $pseudo@motDePasse:/fichier\#/autrefichier
+			\item Le stockage sera sous la forme : TimestampDeFin$ \vert $pseudo@motDePasse:/fichier\#/autrefichier
+			\item A la fin du Timestamp le compte ne sera plus accessible.
 		\end{enumerate}
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
 			\item Le programme doit stocker les comptes bannis dans un fichier .accban
 			\item Le programme devrait indiqué la raison du bannissement au client lors des tentatives de connexion.
 			\item Le programme devrait pouvoir stocker le temps restant de bannissement.
-			\item Le stockage sera sous la forme : TempsEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier
-			\item A la fin du TempsEnSeconde le compte devrait être réactivé.
+			\item Le stockage sera sous la forme : TimestampDeFin$ \vert $pseudo@motDePasse:/fichier\#/autrefichier
+			\item A la fin du Timestamp compte devrait être réactivé.
 		\end{enumerate}
 		
 \paragraph{Limitations}
