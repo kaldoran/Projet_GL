@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
@@ -117,7 +118,7 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 \subsection{Caractéristiques des utilisateurs}
 Les utilisateurs de notre programme peuvent être des professionnels aguerris comme des utilisateurs néophytes. Il nous faudra donc proposer un programme sûr pour les entreprises mais aussi simple d'utilisation pour le particuliers.
 
-
+\newpage
 \section{Exigences spécifiques}
 
 \subsection{Fonctionnalités}
@@ -378,7 +379,7 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le programme doit partager les sous-dossier à partir de l'endroit où le programme à été lancé.
 		\item Le programme doit pouvoir partager un fichier avec plusieurs personnes.
-		\item \textcolor{red}{Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé. }
+		\item \textcolor{red}{Le programme doit pouvoir bloquer l'accès à un sous-dossier d'un dossier partagé.}
 		\item Les fichiers partagés seront stocké sur le serveur.
 	\end{enumerate}
 	
@@ -386,11 +387,36 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le programme doit permettre a un administrateur de crée des comptes et de leurs attribuer des fichiers.
 		\item Le programme doit permettre de crée des utilisateurs temporaires.
-		\item Le programme doit se souvenir de tout les comptes crée.
-		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.
-		\item Le programme doit permettre de bannir une personne
+		\item Le programme doit se souvenir de tout les comptes crée.\textcolor{blue}{ c.f \ref{cpt} }
+		\item Le programme doit permettre d'attribuer des droits sur un fichier pour un compte donné.\textcolor{blue}{ c.f \ref{bdv}}
+		\item Le programme doit permettre de bannir une personne.\textcolor{blue}{ c.f \ref{bgr}}
+		\item Le programme doit permettre de supprimer un compte.\textcolor{blue}{ c.f \ref{bgr}}
 	\end{enumerate}
-
+	
+\subparagraph{Interface graphique}
+	\begin{enumerate}
+		\item La gestion de compte se fera a l'aide de cliques dans la zone gauche du programme.\label{cpt} 
+		\item Dans cette zone gauche se trouverons la liste des personnes ayant un accès au FTP.
+		\item Un indicateur de type voyant, se trouvera a droite de chaque nom de compte, indiquant la présence ou non d'une personne en ligne.
+			\begin{enumerate}[label=\arabic*.]
+				\item Si la personne n'est pas connectée, le voyant sera rouge.
+				\item Si la personne est connectée, le voyant sera vert.
+			\end{enumerate} 
+		\item Deux boutons seront présent en bas de cette zone.
+			\begin{enumerate}[label=\arabic*.]
+				\item Un bouton en bas a droite avec un "-" rouge dedans.\label{bgr} 
+				\item Au clique sur le bouton "-" un pop-up s'ouvrira. Voir \hyperref[del]{\ref{del}} Page : \pageref{del}
+				\item Un bouton en bas a gauche avec un "+" vert dedans.\label{bdv}
+			\end{enumerate} 
+		\item Les comptes temporaires seront souligné dans la zone gauche.
+		\item Le compte Administrateur ne sera pas présent dans cette liste.
+		\item Les utilisateurs bannis seront en rouge.
+		\item Les comptes bannis temporairement seront en gris clair.
+		\item Les comptes bannis partiellement seront en orange.
+		\item Les comptes normaux seront en noir.
+	\end{enumerate}
+	
+	
 \paragraph{Bannissement d'un compte}
 	\begin{enumerate}
 		\item Le programme doit permettre de retirer les droits à une personne.
@@ -414,13 +440,21 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
 	\end{enumerate}
 	
-\paragraph{Stockage des comptes}
+\subparagraph{Interface graphique bannissement \& suppression}\label{del} 
 	\begin{enumerate}
-		\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
-		\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
-		\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
-		\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+		\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
+		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
 	\end{enumerate}
+	
+	
+	\subparagraph{Stockage des comptes}
+		\begin{enumerate}
+			\item Le programme doit contenir dans un fichier les mots de passes sous une forme cryptée \textcolor{blue}{cf Cryptage}
+			\item Le programme doit stocker les droits associé à un compte dans ce même fichier.
+			\item Le programme doit stocker les comptes temporaires, les compte normaux, le compte administrateur et les comptes bannis dans 3 fichiers différents
+			\item Toutes personnes qui n'est pas présent dans un des quatre fichiers est considérée comme inconnue.
+		\end{enumerate}
 		
 	\subparagraph{Compte Administrateur}
 		\begin{enumerate}
@@ -815,6 +849,8 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	\hline
 	Limitations & Souhaitable\\
 	\hline
+	Suppression de compte & Souhaitable \\
+	\hline
 	Bannissement de compte & Souhaitable \\
 	\hline
 	Gestionnaire de marque-pages & Souhaitable\\
@@ -822,6 +858,10 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	Cryptage & Optionnelle\\
 	\hline
 	Compte temporaire & Optionnelle \\
+	\hline
+	Bannissement temporaires & Optionnelle \\
+	\hline
+	Bannissement partiel & Optionnelle \\
 	\hline
 \end{tabular}
 \egroup
