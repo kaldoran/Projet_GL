@@ -99,6 +99,8 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
 \item[Client] Logiciel qui envoie des demandes à un serveur.
 \item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
+\item Downloader : Nous utilisons ce terme par abus de langage, cela est équivalent à "télécharger".
+\item Uploader : Nous utilisons ce terme par abus de langage, cela est équivalent à "téléverser".
 \end{description}
 
 \subsection{Références}
@@ -292,14 +294,16 @@ Si le client a été auparavant banni par le serveur.
 		
 \paragraph{Download et Upload}
 
-	\subparagraph{Download}
-	
-		\begin{enumerate}
-			\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
-		\end{enumerate}
-		
+	\begin{enumerate}
+		\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir uploader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit prévenir l'utilisateur si le transfert de fichier n'est pas autorisé : une fenêtre devrait s'afficher avec le message suivant :\\
+		 "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater ".
+		\item Le client doit afficher une barre de progression (sur laquelle figure le pourcentage de progression) lorsqu'il transfert un fichier.
+		\item Le client doit pouvoir crypter transfert de fichier. 
+	\end{enumerate}
 \paragraph{Module de statistique}
 
 	\subparagraph{Fonctionnalités}
@@ -315,9 +319,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\begin{enumerate}[label=\arabic*.]
 				\item Le fichier le plus télécharger.
-
 				\item L'utilisateur qui "download" le plus ses fichiers.
-
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
 			\end{enumerate} 
 		\end{enumerate}
@@ -567,6 +569,16 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le serveur doit \textbf{clôturer} la communication en cas de \textbf{download}. 
 	\end{enumerate}
+
+\paragraph{Download et Upload}
+	
+	\begin{enumerate}
+		\item Le serveur doit vérifier la légitimité de toutes les requêtes de types download et upload :
+		\begin{enumerate}
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est autorisé par son propriétaire.
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est publique (n'importe qu'elle client est autorisé à le télécharger).
+		\end{enumerate}
+	\end{enumerate}
 	
 \paragraph{Module de statistique \\ \\}
 
@@ -609,7 +621,7 @@ Si le client a été auparavant banni par le serveur.
 		\end{enumerate}
 	
 	
-	\subparagraph{Interface graphique du serveur}
+	\subparagraph{Interface graphique}
 		\begin{enumerate}
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
@@ -640,7 +652,6 @@ Si le client a été auparavant banni par le serveur.
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
 			\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
-
 			\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H3.
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
@@ -772,13 +783,10 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 	\end{enumerate}
 	
 	
-\paragraph{Fiabilité des "Upload" et des "Download"}
+\paragraph{Fiabilité des Uploads et des Downloads}
 	\begin{enumerate}
-	
 		\item Le logiciel ne doit pas échouer plus de 2 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal (c'est à dire sans problème de réseau, de surcharge de serveur etc...) pour 1 utilisateur.
-		
 		\item Le logiciel ne doit pas échouer plus de 20 transfert de fichiers (opération de "upload" et "download" sur 100 en condition normal, pour 100 utilisateurs.
-		
 		\item Le logiciel ne doit jamais se tromper de destination lors d'un transfert de donnée.
 	\end{enumerate}		 
 
@@ -796,16 +804,34 @@ Un fichier d'historique des événements, appelé aussi fichier "log", permettra
 		
 	\end{enumerate}
 
-\textcolor{red}{\subsubsection{Performance}
-[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
-•	Temps de réponse par transaction (moyen, maximum)\\
-•	Débit (transactions par seconde)\\
-•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
-•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
-•	Utilisation de ressources (mémoire, disque, communications, etc.]
-\paragraph{\textless Nom de l’exigence de performance 1 \textgreater}
-[Description de l’exigence]}
+\subsubsection{Performance}
 
+%[Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.\\
+%•	Temps de réponse par transaction (moyen, maximum)\\
+%•	Débit (transactions par seconde)\\
+%•	Capacité (nombre de client ou de transaction que le système doit supporter)\\
+%•	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)\\
+%•	Utilisation de ressources (mémoire, disque, communications, etc.]
+\paragraph{Simultanéité}
+
+	\begin{enumerate}
+		\item Le serveur doit supporter au moins 200 connexions simultanées.
+		\item Le serveur doit supporter au moins 20 downloads simultanés et 20 uploads simultanés.
+		\item Le client doit supporter au moins 5 downloads simultanés et 5 uploads simultanés.
+	\end{enumerate}
+	
+\paragraph{Temps de réponse}
+	
+	\begin{enumerate}
+		\item Le serveur devrait répondre instantanément à tout type de requêtes avec plus de 100 connexions simultanées.
+		\item Le serveur et le client doit réagir instantanément au commande de l'utilisateur. 
+	\end{enumerate}
+
+\paragraph{Capacité}
+
+ 	\begin{enumerate}
+ 		\item Le serveur devrait pouvoir gérer au moins 200 comptes utilisateurs.
+ 	\end{enumerate}
 \textcolor{red}{\subsubsection{Maintenabilité}
 [Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, le sbibliothèque3s de classe, l’accès à la maintenance, les services de maintenances, etc. 
 \paragraph{\textless Nom de l’exigence de maintenance 1 \textgreater}
@@ -846,6 +872,14 @@ Une documentation utilisateur complète doit être fournie avec le programme.
 	Partage de fichier & Essentielle \\
 	\hline
 	Utilisation des dossiers & Essentielle\\
+	\hline
+	Download et Upload & Essentielle \\
+	\hline
+	Communication en réseau & Essentielle \\
+	\hline
+	Module de statistique & Souhaitable \\
+	\hline
+	Fichier d'historique des événements & Souhaitable \\
 	\hline
 	Limitations & Souhaitable\\
 	\hline
