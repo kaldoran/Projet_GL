@@ -285,14 +285,16 @@ Si le client a été auparavant banni par le serveur.
 		
 \paragraph{Download et Upload}
 
-	\subparagraph{Download}
-	
-		\begin{enumerate}
-			\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
-			\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
-		\end{enumerate}
-		
+	\begin{enumerate}
+		\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir uploader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
+		\item Le client doit prévenir l'utilisateur si le transfert de fichier n'est pas autorisé : une fenêtre devrait s'afficher avec le message suivant :\\
+		 "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater ".
+		\item Le client doit afficher une barre de progression (sur laquelle figure le pourcentage de progression) lorsqu'il transfert un fichier.
+		\item Le client doit pouvoir crypter transfert de fichier. 
+	\end{enumerate}
 \paragraph{Module de statistique}
 
 	\subparagraph{Fonctionnalités}
@@ -308,9 +310,7 @@ Si le client a été auparavant banni par le serveur.
 
 			\begin{enumerate}
 				\item Le fichier le plus télécharger.
-
 				\item L'utilisateur qui "download" le plus ses fichiers.
-
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.
 			\end{enumerate} 
 		\end{enumerate}
@@ -518,6 +518,16 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le serveur doit \textbf{clôturer} la communication en cas de \textbf{download}. 
 	\end{enumerate}
+
+\paragraph{Download et Upload}
+	
+	\begin{enumerate}
+		\item Le serveur doit vérifier la légitimité de toutes les requêtes de types download et upload :
+		\begin{enumerate}
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est autorisé par son propriétaire.
+			\item Si le client est authentifié et le fichier qu'il souhaite downloader est publique (n'importe qu'elle client est autorisé à le télécharger).
+		\end{enumerate}
+	\end{enumerate}
 	
 \paragraph{Module de statistique \\ \\}
 
@@ -560,7 +570,7 @@ Si le client a été auparavant banni par le serveur.
 		\end{enumerate}
 	
 	
-	\subparagraph{Interface graphique du serveur}
+	\subparagraph{Interface graphique}
 		\begin{enumerate}
 			\item La fenêtre doit contenir deux parties : une partie contenant les informations textuelles, et une partie graphique contenant l'histogramme.
 			\item La partie textuelle doit être la partie supérieur de la fenêtre.
@@ -591,7 +601,6 @@ Si le client a été auparavant banni par le serveur.
 			\item L'histogramme H2 doit avoir une légende qui informe la correspondance des noms de fichier avec leur numéro.
 			\item L'histogramme H3 doit avoir autant de barre que de tranches horaires (24 divisé par la durée de la tranche horaire).
 			\item Les barres de l'histogramme H3 doit être colorier avec une alternance de deux couleurs.
-
 			\item Le nombre de fichier doit apparaître en ordonnée de l'histogramme H3.
 			\item Les tranches horaires doivent apparaître en abscisse de l'histogramme H3.
 
