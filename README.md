@@ -2,6 +2,7 @@ Projet Génie Logiciel :
 ======================
 
 - Début officiel des projets : mercredi 1er octobre 2014
+
 Le mercredi 1er octobre 2014 à 23h59 au plus tard, le responsable communication de chaque groupe doit me faire parvenir, par mail, la liste des noms des membres du groupe.
 
 - Remise de la première planification des projets : au plus tard le vendredi 17 octobre 2014, 12h. Il s'agit ici de rédiger un document décrivant les différentes tâches à réaliser durant le projet, l'affectation de chaque membre à chacune des tâches, l'estimation en temps de chacune des tâches, leur répartition pendant la durée du projet et les jalons du projet. Il est important de se documenter par soi même pour avoir une certaine connaissance de la façon habituelle de procéder pour réaliser une planification et de quel outil il peut être utile de se doter.
