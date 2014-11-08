@@ -10,53 +10,47 @@ Idee retenue :
 - Gestionnaire FTP a avec Client - Serveur
 
 Langage : 
-Java - Mysql
+Java et Mysql
 
-Nom logiciel : Kould
-                Not
-                 Konnect
+Nom logiciel : Kould Not Share
 
 Cible : Tout public 
 
 Serveur :
+	-Partie Doit :
+		- Doit pouvoir partager des fichier par le protocol ftp ( port 21 - 22 )
+		- Doit avoir une interface graphique
+		- Doit avoir un fichier public qui contient des informations
 
-    Partie Doit :
-	- Doit pouvoir partager des fichier par le protocol ftp ( port 21 - 22 )
-	    Serveur FTP
-	- Doit avoir une interface graphique
-	- Doit avoir un fichier public qui contient des informations
-
-	Les comptes :
-	- l'administrateur peut crée des comptes utilisateurs
-	- chaque compte donne acces à certain fichier
-	- l'administrateur doit pouvoir parametrer les acces aux fichiers pour chaque compte
+	-Les comptes :
+		- l'administrateur peut crée des comptes utilisateurs
+		- chaque compte donne acces à certain fichier
+		- l'administrateur doit pouvoir parametrer les acces aux fichiers pour chaque compte
 
 	
-	Partie Devrait :
-	- Devrait pouvoir changer le port
-	- Devrait pouvoir fixer la taille maximum des fichier qui peuvent etre envoyé
-	- Devrait pouvoir fixer le nombre maximum de téléchargement d'un fichier
-	- Devrait pouvoir fixer les heures de téléchargement
-	- Devrait faire des stats
-	- Devrait pouvoir filter les fichiers ( extension ) 
-	- Devrait pouvoir etre accessible en ligne de commande ( sans interface graphique )
-	- Devrait pouvoir bannir une personne / ip / compte
-	- Brider le taux de transfere par utilisateur 
-	- Crypter un envoi de fichier
-	- Devrait pouvoir, voir en temps réel qui est connecté ( ce qu'il télécharge ) , heure de début, heure de fin
-	- Crée des utilisateurs temporaire
+	-Partie Devrait :
+		- Devrait pouvoir changer le port
+		- Devrait pouvoir fixer la taille maximum des fichier qui peuvent etre envoyé
+		- Devrait pouvoir fixer le nombre maximum de téléchargement d'un fichier
+		- Devrait pouvoir fixer les heures de téléchargement
+		- Devrait faire des stats
+		- Devrait pouvoir filter les fichiers ( extension ) 
+		- Devrait pouvoir etre accessible en ligne de commande ( sans interface graphique )
+		- Devrait pouvoir bannir une personne / ip / compte
+		- Brider le taux de transfere par utilisateur 
+		- Crypter un envoi de fichier
+		- Devrait pouvoir, voir en temps réel qui est connecté ( ce qu'il télécharge ) , heure de début, heure de fin
+		- Crée des utilisateurs temporaire
 	
 
 Client :
     - Devrait pouvoir limiter le taux de transfere
     - Doit pouvoir changer sont mot de passe
     - Devrait gérer les bookmarks
-   
-Git - Tuto rapide
 	
 
 
-=================================================================================================================================
+======================================================================================================================
 
 Partie du DSE
 
