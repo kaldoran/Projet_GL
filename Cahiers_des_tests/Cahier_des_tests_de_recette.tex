@@ -1,0 +1,83 @@
+\documentclass[10pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{} 
+\lhead{\includegraphics{../Logo/logoKNKMini.jpg} \hspace{0.1cm} Kould Not Konect  \hspace{0.4cm} \vline}
+\chead{Cahier des tests de recette}
+\rhead{Kould Not Share}
+\rfoot{\thepage}
+
+\author{Nicolas REYNAUD, Kevin BASCOL}
+\title{Cahier des tests de recette}
+\date{5 Novembre 2014}
+
+\makeatletter
+\renewcommand{\thesection}{\@arabic\c@section}
+\makeatother
+
+\begin{document}
+
+\makeatletter
+	\begin{titlepage}
+	
+	\begin{figure}
+		\begin{minipage}[c]{.46\linewidth}
+		\end{minipage} \hfill
+		\begin{minipage}[c]{.20\linewidth}
+			\begin{center}
+				\includegraphics{../Logo/logoKNK.jpg}\\
+				{\large Kould Not Konect}
+			\end{center}
+		\end{minipage}
+	\vspace{1cm}
+	\end{figure}
+	
+	\centering
+		{
+		\hrule height 2pt
+		\vspace{0.7cm}
+		\Huge \textbf{\@title}}\\
+		\vspace{0.7cm}
+		\hrule height 2pt
+		\vspace{1.5cm}
+		{\LARGE  Projet \textbf{Kould Not Share} v1.0}
+		
+		\vfill
+		
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Version & Date & Description\\
+			\hline
+			v.1 & 05/11/14 & Tests de la première version des exigences\\
+			\hline
+			 & & \\
+			\hline
+			 & & \\
+			\hline
+		\end{tabular}\\
+		\vspace{1cm}
+		\@author\\
+		\end{titlepage}
+\makeatother
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+\newpage
+
+
+\end{document}
