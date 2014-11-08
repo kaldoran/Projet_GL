@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt,a4paper,landscape]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{enumitem}
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -28,7 +28,6 @@
 \makeatother
 
 \begin{document}
-
 \makeatletter
 	\begin{titlepage}
 	
@@ -74,10 +73,46 @@
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 \renewcommand{\contentsname}{Sommaire}
+\begingroup\makeatletter
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20pt% <---- à réduire pour avoir plus de place
+  }}\makeatother
 \tableofcontents
+\endgroup
 \thispagestyle{empty}
 \setcounter{page}{0}
 \newpage
 
+\newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+
+\section{Authentification}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Reference & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		 & & & \\
+		\hline
+		 & & & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Gestionnaire de marques-page}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Reference & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		 & & & \\
+		\hline
+		 & & & \\
+		\hline
+	\end{tabular}
+\end{center}
 
 \end{document}

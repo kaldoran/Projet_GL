@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{enumitem}
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -74,11 +74,21 @@
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 \renewcommand{\contentsname}{Sommaire}
+\begingroup\makeatletter
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20pt% <---- à réduire pour avoir plus de place
+  }}\makeatother
 \tableofcontents
+\endgroup
 \thispagestyle{empty}
 \setcounter{page}{0}
 \newpage
 
+\newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
 
 \section{Introduction}
 
@@ -624,6 +634,7 @@ Si le client a été auparavant banni par le serveur.
 	\end{enumerate}
 	
 \paragraph{Module de statistique}
+	\subparagraph*{ }
 	Ce module permettra à l'administrateur de contrôler les activités sur son serveur, et 	de pouvoir par la suite de modifier la configuration de son serveur pour mieux adapter celui-ci au besoin des utilisateur.
 
 	\subparagraph{Fonctionnalités}
