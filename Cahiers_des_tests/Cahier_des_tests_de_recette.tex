@@ -6,7 +6,11 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{color}
+\definecolor{gris}{rgb}{0.75,0.75,0.75}
+\usepackage{colortbl}
 \usepackage{enumitem}
+\usepackage{version}
+\usepackage{multirow}
 \usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \usepackage{fancyhdr}
@@ -87,27 +91,64 @@
 \setcounter{page}{0}
 \newpage
 
-\newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\newgeometry{top=2cm, bottom=2cm, left=0.5cm, right=0.5cm}
 
 \section{Tests Client}
 \subsection{Authentification}
 \begin{center}
-	\begin{tabular}{|c|c|c|c|}
+\bgroup
+\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
 		\hline
-		Reference & Test & Résultat attendu & Résultat/Commentaires\\
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		 & & & \\
+		AuthC.1 & 3.1.1.1.1.1 3.1.1.1.1.2 3.1.1.1.1.3 3.1.1.1.1.13 & Ouvrir le logiciel. & Le formulaire de connexion apparait en pop-up au centre de la fenêtre, le reste de l'application est grisé (hormis la barre d'action). & \\
 		\hline
-		 & & & \\
+		AuthC.2 & 3.1.1.1.1.4 3.1.1.1.1.5 & Cliquer sur le bouton de déconnexion alors que le formulaire de connexion est ouvert.& Le bouton doit être grisé et ne doit rien déclencher. & \\
+		\hline
+		AuthC.3 & 3.1.1.1.1.6 3.1.1.1.1.7 3.1.1.1.1.8 & Ouvrir le pop-up de connexion. & Le titre "Authentification" apparait centré et est au dessus d'une barre horizontale. & \\
+		\cline{1-2}\cline{4-5}
+		AuthC.4 & 3.1.1.1.1.9 3.1.1.1.1.10 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \\
+		\cline{1-2}\cline{4-5}
+		AuthC.5 & 3.1.1.1.1.11 & & Un bouton "Se connecter" est affiché centré en bas du pop-up & \\
+		\hline
+		AuthC.6 & 3.1.1.1.1.11 & Dans le pop-up de connexion, remplir incorrectement un ou plusieurs champs de saisie puis cliquer sur le bouton "Se connecter" (à effectuer avec plusieurs combinaison de champs incorrects). & Le(s) champ(s) incorrect(s) possède(nt) une bordure rouge. & \\
+		\hline
+		AthC.7 & 3.1.1.1.2.1 & Dans le pop-up de connexion, remplir correctement les champs, puis cliquer sur "Se connecter". & Le programme se connecte au serveur avec l'identifiant donné. & \\
 		\hline
 	\end{tabular}
+\egroup
 \end{center}
+
+\begin{comment}
+		\item Le programme doit permettre à un client de se connecter sur le client FTP.
+		\item Le nom d'utilisateur et le mot de passe doivent être définis par l'administrateur du serveur.
+		\item Le programme doit proposer un champ de texte éditable pour entrer un pseudo.
+		\item Le programme doit proposer un champ de texte éditable pour entrer mot de passe.
+		\item Le programme doit permettre d'envoyer les données d'authentification via un protocole sécurisé.
+		\item Le programme doit envoyer le mot de passe crypté au serveur.
+		\item Le programme doit indiquer le succès de la connexion à l'aide la phrase "Bonjour [pseudo]" présente dans la barre des menus.
+		\item Le programme doit indiquer si une erreur est survenue et son type.
+		\item En cas d'erreur le programme doit indiquer l'erreur et redemander le mot de passe et/ou le login (en fonction de l'erreur survenue)
+		\item En cas d'erreur sur l'adresse du serveur le programme doit indiquer l'erreur et redemander l'adresse du serveur.
+		\item Le programme doit vérifier que l'adresse du serveur est une adresse IP V4.
+		\item Le programme doit vérifier que le nom d'utilisateur ne dépasse pas 30 caractères.
+		\item Le programme doit vérifier que le nom d'utilisateur n'a pas moins de 3 caractères.
+		\item Le programme doit vérifier que le mot de passe comporte plus de 6 caractères.
+		\item Le programme doit vérifier que le mot de passe comporte moins de 50 caractères.
+		\begin{enumerate}
+			\item Exemple avec la phrase suivante en cas de mauvais mot de passe "Erreur de mot de passe".
+			\item Exemple en cas de pseudo non reconnu "L'utilisateur entré est invalide".
+		\end{enumerate}
+		\item Le programme doit permettre l'auto-connexion au démarrage du programme, pour ce faire l'utilisateur pourra cocher une case.
+	\end{enumerate}	
+\end{comment}
 
 \subsection{Gestionnaire de marques-page}
 \begin{center}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		Reference & Test & Résultat attendu & Résultat/Commentaires\\
+		\rowcolor{gris}Référence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
 		 & & & \\
 		\hline
