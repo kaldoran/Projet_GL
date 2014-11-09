@@ -95,6 +95,10 @@ Tout public
 
 ##DSE, exigences à modifier:
 
+####Procédure d'initialisation de la communication ( 3.1.1.5.1.3 & 3.1.1.5.1.4)
+- On ne doit pas clore la communication sur le port 21 elle servira a fournir les dossiers qui existent.
+- Pourquoi un port perso ? il y a le 21 et 20 a utiliser c'est tout me semble
+
 ####Marque-pages 
 - Modifier liste de nom vers liste de bouton de connexion.
 - Ajouter methode enregistrement.
