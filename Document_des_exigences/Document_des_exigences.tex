@@ -403,78 +403,78 @@ Si le client a été auparavant banni par le serveur.
 		\item Le programme doit permettre de supprimer un compte.\textcolor{blue}{ c.f \ref{bgr}}
 	\end{enumerate}
 	
-	\subparagraph{Interface graphique}
-		\begin{enumerate}
-			\item La gestion de compte se fera a l'aide de cliques dans la zone gauche du programme.\label{cpt} 
-			\item Dans cette zone gauche se trouverons la liste des personnes ayant un accès au FTP.
-			\item Un indicateur de type voyant, se trouvera a droite de chaque nom de compte, indiquant la présence ou non d'une personne en ligne.
+\subparagraph{Interface graphique}
+	\begin{enumerate}
+		\item La gestion de compte se fera a l'aide de cliques dans la zone gauche du programme.\label{cpt} 
+		\item Dans cette zone gauche se trouverons la liste des personnes ayant un accès au FTP.
+		\item Un indicateur de type voyant, se trouvera a droite de chaque nom de compte, indiquant la présence ou non d'une personne en ligne.
 			\begin{enumerate}[label=\arabic*.]
 				\item Si la personne n'est pas connectée, le voyant sera rouge.
 				\item Si la personne est connectée, le voyant sera vert.
 			\end{enumerate} 
-			\item Deux boutons seront présent en bas de cette zone.
+		\item Deux boutons seront présent en bas de cette zone.
 			\begin{enumerate}[label=\arabic*.]
 				\item Un bouton en bas a droite avec un "-" rouge dedans.\label{bgr} 
 				\item Au clic sur le bouton "-" un pop-up s'ouvrira. Voir \ref{del} Page : \pageref{del}
 				\item Un bouton en bas a gauche avec un "+" vert dedans.\label{bdv}
 				\item Au clic sur le bouton "+" un pop-up s'ouvrira. Voir \ref{add} Page : \pageref{add}
 			\end{enumerate} 
-			\item Les comptes temporaires seront souligné dans la zone gauche.
-			\item Le compte Administrateur ne sera pas présent dans cette liste.
-			\item Les utilisateurs bannis seront en rouge.
-			\item Les comptes bannis temporairement seront en gris clair.
-			\item Les comptes bannis partiellement seront en orange.
-			\item Les comptes normaux seront en noir.
-			\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \ref{chg} Page : \pageref{chg}
-		\end{enumerate}
+		\item Les comptes temporaires seront souligné dans la zone gauche.
+		\item Le compte Administrateur ne sera pas présent dans cette liste.
+		\item Les utilisateurs bannis seront en rouge.
+		\item Les comptes bannis temporairement seront en gris clair.
+		\item Les comptes bannis partiellement seront en orange.
+		\item Les comptes normaux seront en noir.
+		\item Lors du clic sur un compte, la fenêtre de droite changera, elle contiendra alors les répertoire auquel l'utilisateur sélectionné à accès. Voir \ref{chg} Page : \pageref{chg}
+	\end{enumerate}
 	
-	\subparagraph{Bannissement d'un compte}
-		\begin{enumerate}
-			\item Le programme doit permettre de retirer les droits à une personne.
-			\item Le programme doit stocker cette perte de droits.
-			\item Le programme devrait permettre de bannir temporairement une personne.
-			\item Le programme devrait pouvoir permettre de donner la raison du bannissement.
-			\item Le programme devrait permettre un bannissement partiel d'un compte.
-		\end{enumerate}
+\paragraph{Bannissement d'un compte}
+	\begin{enumerate}
+		\item Le programme doit permettre de retirer les droits à une personne.
+		\item Le programme doit stocker cette perte de droits.
+		\item Le programme devrait permettre de bannir temporairement une personne.
+		\item Le programme devrait pouvoir permettre de donner la raison du bannissement.
+		\item Le programme devrait permettre un bannissement partiel d'un compte.
+	\end{enumerate}
 	
-	\subparagraph{Bannissement temporaire}
-		\begin{enumerate}
-			\item Le programme devrait permettre de bannir un compte pour une durée déterminée.
-			\item Le programme devrait pouvoir donner le temps de bannissement restant.
-			\item Le programme devrait pouvoir associer une raison à ce bannissement temporaire.
-		\end{enumerate}
-		
-	\subparagraph{Bannissement partiel}
-		\begin{enumerate}
-			\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
-			\item Le programme devrait pouvoir stocker la ou les raison(s) de ce bannissement partiel.
-			\item Le programme devrait pouvoir associer une durée à ce bannissement partiel.
-		\end{enumerate}
+\paragraph{Bannissement temporaire}
+	\begin{enumerate}
+		\item Le programme devrait permettre de bannir un compte pour une durée déterminée.
+		\item Le programme devrait pouvoir donner le temps de bannissement restant.
+		\item Le programme devrait pouvoir associer une raison à ce bannissement temporaire.
+	\end{enumerate}
 	
-	\subparagraph{Interface graphique bannissement \& suppression}\label{del} 
-		\begin{enumerate}
+\paragraph{Bannissement partiel}
+	\begin{enumerate}
+		\item Le programme devrait permettre de retirer les droits d'une personne uniquement sur une partie du serveur.
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de ce bannissement partiel.
+		\item Le programme devrait pouvoir associer une durée à ce bannissement partiel.
+	\end{enumerate}
+	
+\subparagraph{Interface graphique bannissement \& suppression}\label{del} 
+	\begin{enumerate}
 
-			\item Le pop-up doit contenir deux cases à cocher :
+		\item Le pop-up doit contenir deux cases à cocher :
 			\begin{enumerate}[label=\arabic*.]
 				\item Une case alignée avec le texte "Supprimer le compte"
 				\item Une case alignée avec le texte "Bannir le compte"
 			\end{enumerate} 
-			\item Seule une des deux cases doit pouvoir être cochée.
-			\item En bas de ce pop-up doit se trouver deux boutons :
+		\item Seule une des deux cases doit pouvoir être cochée.
+		\item En bas de ce pop-up doit se trouver deux boutons :
 			\begin{enumerate}[label=\arabic*.]
 				\item Un bouton "annuler", qui annulera toute la procédure.
 				\item Un bouton "valider", qui validera la procédure.
 			\end{enumerate} 
-			\item Si la case suppression du compte est cochée aucun élément n'est ajouté.
-			\item Si la case "Bannir le compte" est cochée alors les champs suivants seront ajouté en dessous de la case :
+		\item Si la case suppression du compte est cochée aucun élément n'est ajouté.
+		\item Si la case "Bannir le compte" est cochée alors les champs suivants seront ajouté en dessous de la case :
 			\begin{enumerate}[label=\arabic*.]
 				\item Un champs Motif sera ajouté associé au texte "Motif du bannissement"
 				\item Une case à cochée sera présente associée au texte "Bannissement temporaire"
 			\end{enumerate} 
-			\item Si la case bannissement temporaire est cochée, un champs de type date sera ajouté en dessous. 
-			\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
-			\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
-		\end{enumerate}
+		\item Si la case bannissement temporaire est cochée, un champs de type date sera ajouté en dessous. 
+		\item Le programme devrait pouvoir stocker la ou les raison(s) de se bannissement partiel.
+		\item Le programme devrait pouvoir associé une durée à se bannissement partiel.
+	\end{enumerate}
 	
 	\subparagraph{Interface graphique ajout de compte}\label{add} 
 		\begin{enumerate}
@@ -537,8 +537,8 @@ Si le client a été auparavant banni par le serveur.
 			\item A la fin du temps, le programme doit supprimer le compte lors de la prochaine tentative de connexion.
 			\item Lors de la suppression, le programme doit signaler à l'utilisateur que son compte temporaire a été supprimé.
 			\item Le stockage sera sous la forme : "DateFinEnSeconde$ \vert $pseudo@motDePasse:/fichier\#/autrefichier".
+
 		\end{enumerate}
-		
 	\subparagraph{Comptes bannis}
 		\begin{enumerate}
 			\item Le programme doit stocker les comptes bannis dans un fichier ".accban".
