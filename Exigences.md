@@ -93,6 +93,7 @@ Tout public
 
 ![Use case serveur](https://raw.githubusercontent.com/kaldoran/Projet_GL/dev/Document_des_exigences/Ressources/Serveur.png "Use case serveur")
 
+## DSE, Voir pour une V2.0
 ##DSE, exigences à modifier:
 
 ####Procédure d'initialisation de la communication ( 3.1.1.5.1.3 & 3.1.1.5.1.4)
@@ -105,6 +106,9 @@ Tout public
 
 ####Limitations
 - préciser methode plannification.
+
+####Bannissement 
+- Changer les numéro ( subparagraph de gestion de compte) 
 
 ####Utilisation des dossiers
 - rennomage des fichiers et dossiers.
