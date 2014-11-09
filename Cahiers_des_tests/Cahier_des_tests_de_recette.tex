@@ -369,15 +369,15 @@
 	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
-		\hline
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthS.1 & 3.1.2.1.2.1 & Envoyer une chaine de caractère contenant un pseudo suivit d'un mot de passe & Le programme détecte cette arrivé et l'indique dans une console de log & \\
-		\hline		
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}		
 		AuthS.2 & 3.1.2.1.2.2 & Après avoir récupéré les informations essayer de les faires correspondre a la liste des pseudo / Mot de passe. & Le programme indique dans une console de log le succès ou l'échec de l'opération & \\
-		\hline		
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}		
 		AuthS.3 & 3.1.2.1.2.3 & Envoyer une chaine contenant le mot "succès" ou "échec" (suivant la réponse au test AuthS.2) sur un client sommaire. & Chaine reçu en concordance avec le résultat du test AuthS.2 & \\
-		\hline		
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}		
 		AuthS.4 & 3.1.2.1.2.4 & & & \\
-		\hline
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthS.5 & 3.1.2.1.2.5 & Se connecter en temps qu'Administrateur. &  Avoir accès a la totalité des fichiers du serveur. & \\
 		\hline
 	\end{tabular}
@@ -392,7 +392,13 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		& & & & \\
+		PafiS.1 & 3.1.2.2.1 & Crée un compte et essayer de partager des fichiers présent a partir de la racine. & Les fichiers ne doivent pas être accessible. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		PafiS.2 & 3.1.2.2.2 & Crée 2 comptes et partager un même fichier a ses 2 comptes & Se connecter sur les 2 comptes et vérifier l'accès aux fichiers. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		PafiS.3 & 3.1.2.2.3 & Crée un compte lui partager un fichier et bloqué l'accès a un sous dossier & Se connecter sur le compte crée, le fichier ne doit pas être présent dans la liste des fichiers. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		PafiS.4 & 3.1.2.2.4 & Ouvrir un explorateur de fichier sur le serveur & Les fichiers sont visible avec l'explorateur de fichier & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -406,11 +412,80 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		& & & & \\
+		GecuS.1 & 3.1.2.3.1 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.2 & 3.1.2.3.2 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.3 & 3.1.2.3.3 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.4 & 3.1.2.3.4 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.5 & 3.1.2.3.5 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.6 & 3.1.2.3.6 &  & & \\
 		\hline
 	\end{tabular}
 	\egroup
 \end{center}
+
+\subsubsection{Bannissement d’un compte}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		BancS.1 & 3.1.2.4.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.2 & 3.1.2.4.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.3 & 3.1.2.4.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.4 & 3.1.2.4.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.5 & 3.1.2.4.5 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Bannissement temporaire}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		BantS.1 & 3.1.2.5.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BantS.2 & 3.1.2.5.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BantS.3 & 3.1.2.5.3 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Bannissement partiel}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		BanpS.1 & 3.1.2.6.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BanpS.2 & 3.1.2.6.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BanpS.3 & 3.1.2.6.3 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
 
 \subsection{Stockage des comptes}
 \begin{center}
@@ -420,12 +495,206 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		& & & & \\
+		StcS.1 & 3.1.2.6.4.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		StcS.2 & 3.1.2.6.4.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		StcS.3 & 3.1.2.6.4.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		StcS.4 & 3.1.2.6.4.4 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
 \end{center}
 
+\subsubsection{Compte Administrateur}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		CoaS.1 & 3.1.2.6.5.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.2 & 2.1.2.6.5.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.3 & 3.1.2.6.5.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.4 & 3.1.2.6.5.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.5 & 3.1.2.6.5.5 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.6 & 3.1.2.6.5.6 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.7 & 3.1.2.6.5.7 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.8 & 3.1.2.6.5.8 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.9 & 3.1.2.6.5.9 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
 
+\subsubsection{Comptes normaux}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		ConS.1 & 3.1.2.6.6.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		ConS.2 & 3.1.2.6.6.2 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Comptes temporaires}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		CotS.1 & 3.1.2.6.7.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CotS.2 & 3.1.2.6.7.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CotS.3 & 3.1.2.6.7.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CotS.4 & 3.1.2.6.7.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CotS.5 & 3.1.2.6.7.5 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Comptes bannis}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		CobS.1 & 3.1.2.6.8.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.2 & 3.1.2.6.8.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.3 & 3.1.2.6.8.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.4 & 3.1.2.6.8.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.5 & 3.1.2.6.8.5 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsection{Limitations}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		LimiS.1 & 3.1.2.7.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.2 & 3.1.2.7.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.3 & 3.1.2.7.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.4 & 3.1.2.7.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.5 & 3.1.2.7.5 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.6 & 3.1.2.7.6 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.7 & 3.1.2.7.7 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.8 & 3.1.2.7.8 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.9 & 3.1.2.7.9 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.10 & 3.1.2.7.10 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.11 & 3.1.2.7.11 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.12 & 3.1.2.7.12 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.13 & 3.1.2.7.13 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.14 & 3.1.2.7.14 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.15 & 3.1.2.7.15 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.16 & 3.1.2.7.16 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.17 & 3.1.2.7.17 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.18 & 3.1.2.7.18 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.19 & 3.1.2.7.19 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.20 & 3.1.2.7.20 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsection{Utilisation des dossiers}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		UtdoS.1 & 3.1.2.8.1 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.2 & 3.1.2.8.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.3 & 3.1.2.8.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.4 & 3.1.2.8.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.5 & 3.1.2.8.5 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.6 & 3.1.2.8.6 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.7 & 3.1.2.8.7 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.8 & 3.1.2.8.8 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.9 & 3.1.2.8.9 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.10 & 3.1.2.8.10 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.11 & 3.1.2.8.11 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.12 & 3.1.2.8.12 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.13 & 3.1.2.8.13 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.14 & 3.1.2.8.14 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.15 & 3.1.2.8.15 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.16 & 3.1.2.8.16 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.17 & 3.1.2.8.17 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		UtdoS.18 & 3.1.2.8.18 & & & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
 
 \end{document}
