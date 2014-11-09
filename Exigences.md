@@ -105,6 +105,9 @@ Tout public
 ####Utilisation des dossiers
 - rennomage des fichiers et dossiers.
 
+####Module stat
+- reformuler !
+
 ##Divers
 - exemple de fichier de gestion de droits: Nicolas:password@/home/Dossier_de_Nicolas/
 	

@@ -305,7 +305,7 @@ Si le client a été auparavant banni par le serveur.
 	\begin{enumerate}
 		\item Le client doit pouvoir downloader des fichiers à partir de n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
 		\item Le client doit pouvoir downloader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
-		\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre le celui-ci et le client.
+		\item Le client doit pouvoir uploader des fichiers sur n'importe quel serveur FTP, et à condition que la connexion soit établis entre celui-ci et le client.
 		\item Le client doit pouvoir uploader des fichiers sur le serveur FTP KouldNotShare uniquement s'il est y autorisé.
 		\item Le client doit prévenir l'utilisateur si le transfert de fichier n'est pas autorisé : une fenêtre devrait s'afficher avec le message suivant :\\
 		 "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater ".
@@ -315,17 +315,16 @@ Si le client a été auparavant banni par le serveur.
 \paragraph{Module de statistique}
 
 	\subparagraph{Fonctionnalités}
-
+	\subparagraph*{}
 	Ce module permettra à l'utilisateur de contrôler son activité sur le serveur FTP, et de contrôler les opérations faites sur ces fichiers par les autres utilisateurs.\\
 
-	Voici les exigences :
 		\begin{enumerate}
 
 			\item Le module de statistique doit comptabiliser le nombre de downloads de chacun des fichiers de la propriété de l'utilisateur, par utilisateurs (ceux qui téléchargent les fichiers).
 
 			\item Le module de statistique doit afficher un rapport en temps réel contenant: 
 
-			\begin{enumerate}
+			\begin{enumerate}[label=\arabic*.]
 				\item Le fichier le plus télécharger.
 				\item L'utilisateur qui download le plus ses fichiers.
 				\item Un histogramme qui trace le nombre de téléchargement de chaque fichier de la propriété de l'utilisateur.

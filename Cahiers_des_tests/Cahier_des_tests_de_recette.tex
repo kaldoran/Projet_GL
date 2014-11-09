@@ -236,6 +236,7 @@
 \end{center}
 
 \subsection{Communication réseau}
+
 \subsubsection{Procédure d'initialisation de la communication}
 
 \begin{center}
@@ -249,6 +250,116 @@
 	\end{tabular}
 	\egroup
 \end{center}
+
+\subsubsection{Procédure en cas d'échec d'initialisation de la communication}
+
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Procédure en cas de coupure de la communication}
+
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Procédure en cas de fermeture de la communication}
+
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsection{Download et Upload}
+
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		DwupC.1 & 3.1.1.6.1 & Connecter le client à un serveur FTP autre qu'un serveur KNS. & La connexion doit s'effectuer. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		DwupC.1.1 & 3.1.1.6.3 & Uploader un fichier. & Le fichier est disponible sur le serveur. & \\
+		\hline
+		DwupC.2 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte invalide & La connexion ne doit pas s'effectuer. & \\
+		\hline
+		DwupC.3 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte valide & La connexion doit s'effectuer. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		DwupC.3.1 & 3.1.1.6.4 3.1.1.6.6 & Uploader un fichier, dont l'extension n'est pas interdite. & Une barre de progression s'affiche, arrivée au bout le fichier est disponible sur le serveur. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		DwupC.3.2 & 3.1.1.6.5 & Uploader un fichier, dont l'extension est interdite. & Un boite de dialogue apparait avec le mention "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater". & \\
+		\hline
+		\rowcolor{red}DwupC.4 & 3.1.1.6.7 & & & \\		
+		\hline	
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsection{Module de statistique}
+
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		MdstC.1 & 3.1.1.7.2.1 3.1.1.7.2.2 3.1.1.7.2.3 & Ouvrir le module de statistique. & Une partie textuelle apparait dans la partie haute de la fenêtre et une partie graphique dans la partie basse. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.1 & 3.1.1.7.1.2.1 3.1.1.7.2.4 & & Le nom du fichier de l'utilisateur le plus téléchargé apparait dans la partie textuelle. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.2 & 3.1.1.7.1.2.2 3.1.1.7.2.5 & & L'identifiant de la personne qui a téléchargé le plus de fichier de l'utilisateur apparait dans la partie textuelle. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3 & 3.1.1.7.1.1 3.1.1.7.1.2.3 3.1.1.7.2.6 & & Un histogramme représentant le nombre de téléchargement de chaque fichier apparait dans la partie graphique. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.1 & 3.1.1.7.2.7 3.1.1.7.2.8 3.1.1.7.2.9 & & Une barre s'affiche dans l'histogramme pour chaque fichier de l'utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.2 & 3.1.1.7.2.10 & & Chaque barre possède une couleur différente. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.3 & 3.1.1.7.2.11 & & La hauteur des barres correspond au nombre de téléchargement de chaque fichier. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.4 & 3.1.1.7.2.12 & & La largeur des barres est adaptée pour que l'histogramme prenne entièrement la largeur de la page. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.5 & 3.1.1.7.2.13 & & En ordonnée le nombre de fichier est affiché. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.6 & 3.1.1.7.2.14 & & En abscisse un nombre est affiché sous chacune des barres. & \\
+		\cline{1-2}\cline{4-5}
+		MdstC.1.3.6.1 & 3.1.1.7.2.15 & & Une légende est affichée avec la correspondance numéro de barre/nom du fichier. & \\
+		\hline	
+	\end{tabular}
+	\egroup
+\end{center}
+
+
+
+
+
+
 
 \section{Tests Serveur}
 \subsection{Authentification}
