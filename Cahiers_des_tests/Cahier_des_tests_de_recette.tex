@@ -150,12 +150,53 @@
 		GdmpC.2 & 3.1.1.2.3 3.1.1.2.7& Dérouler le menu "Bookmarks". & Les boutons "Afficher les marque-pages" et "Mettre un marque-page" sont présents dans le menu. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		GdmpC.3 & 3.1.1.2.4 & Cliquer sur "Afficher les marque-pages". & un pop-up s'ouvre avec la liste des liens vers les serveurs affichés avec les noms des marque-pages & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GdmpC.4 & 3.1.1.2.8 & Cliquer sur "Mettre un marque-page". & Un champs de saisie "nom" et un case à cocher "enregistrer mot de passe" apparaissent dans une boite de dialogue. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GdmpC.5 & 3.1.1.2.9 & Entrer un nom. & Le marque page est ajouté à la liste. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GdmpC.4 & 3.1.1.2.10 & Entrer un nom et cocher la case. & Le marque-page est ajouté à la liste et permet une connexion directe. & \\
 		\hline
-		GdmpC.4 & 3.1.1.2.7 & Cliquer sur "Mettre un marque-page" & \\
-		\hline	
+		GdmpC.5 & 3.1.1.2.5 & Ouvrir le fichier des marque-pages. & Les marque-pages sont composés d'un nom, de l'adresse du serveur et de l'identifiant de l'utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		GdmpC.6 & 3.1.1.2.6 & & Les marque-pages où le mot de passe est enregistré sont composé aussi du mot de passe crypté. & \\
+		\hline
 	\end{tabular}
 	\egroup
 \end{center}
+
+\subsection{Limitations}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		LimiC.1 & 3.1.1.3.1 & Ouvrir le logiciel. & Le menu déroulant "Configuration est présent dans la barre d'action. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.2 & 3.1.1.3.3 3.1.1.3.7 3.1.1.3.11 3.1.1.3.14 & Cliquer sur le menu déroulant "Configuration". & Les boutons "Limiter vitesse téléchargement", "Limiter vitesse téléversement", "Plages horaires téléchargement" et "Plages horaires téléversement" sont présent dans le menu déroulant. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.3 & 3.1.1.3.4 3.1.1.3.5 & Cliquer sur "Limiter vitesse téléchargement". & Une boite de dialogue avec un curseur apparait. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.4 & 3.1.1.3.2 & Choisir une limite et valider la boite de dialogue. & La vitesse de téléchargement ne dépasse pas la limite fixée. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.5 & 3.1.1.3.8 3.1.1.3.9 & Cliquer sur "Limiter vitesse téléversement". & Une boite de dialogue avec un curseur apparait. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.6 & 3.1.1.3.6 & Choisir une limite et valider la boite de dialogue. & La vitesse de téléversement ne dépasse pas la limite fixée. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.7 & 3.1.1.3.12 & Cliquer sur "Plages horaires téléchargement". & Une boite de dialogue apparait avec la liste des heures du jours couplées à une case à cocher. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.8 & 3.1.1.3.10 & Sélectionner des horaires et valider la boite de dialogue. & Aux heures sélectionnées le programme ne télécharge pas. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.7 & 3.1.1.3.15 & Cliquer sur "Plages horaires téléversement". & Une boite de dialogue apparait avec la liste des heures du jours couplées à une case à cocher. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiC.8 & 3.1.1.3.13 & Sélectionner des horaires et valider la boite de dialogue. & Aux heures sélectionnées le programme ne téléverse pas. & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
 
 \section{Tests Serveur}
 \subsection{Authentification}

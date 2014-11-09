@@ -99,6 +99,9 @@ Tout public
 - Modifier liste de nom vers liste de bouton de connexion.
 - Ajouter methode enregistrement.
 
+####Limitations
+- préciser methode plannification.
+
 ##Divers
 - exemple de fichier de gestion de droits: Nicolas:password@/home/Dossier_de_Nicolas/
 	
