@@ -102,6 +102,9 @@ Tout public
 ####Limitations
 - préciser methode plannification.
 
+####Utilisation des dossiers
+- rennomage des fichiers et dossiers.
+
 ##Divers
 - exemple de fichier de gestion de droits: Nicolas:password@/home/Dossier_de_Nicolas/
 	
