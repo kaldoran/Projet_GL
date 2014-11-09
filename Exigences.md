@@ -66,7 +66,7 @@ Tout public
 - partage de fichier (l'administrateur choisit quel fichier/dossier il veut partager) == Nico
 - Gestion des utilisateurs == NIC0
 	- Creation de compte utilisateur
-	- Création des utilisateurs temporaire   
+	- Création des utilisateurs temporaire
 	- stockage login et password
 	- droit au téléchargement sur les fichiers
 	- Attribution d'un espace pour chaque utilisateur
@@ -97,6 +97,7 @@ Tout public
 
 ####Marque-pages 
 - Modifier liste de nom vers liste de bouton de connexion.
+- Ajouter methode enregistrement.
 
 ##Divers
 - exemple de fichier de gestion de droits: Nicolas:password@/home/Dossier_de_Nicolas/
