@@ -106,6 +106,7 @@ Tout public
 
 ####Limitations
 - préciser methode plannification.
+- Changer le curseur par une boite
 
 ####Bannissement 
 - Changer les numéro ( subparagraph de gestion de compte) 
