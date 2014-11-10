@@ -116,6 +116,9 @@ Tout public
 ####Module stat
 - reformuler !
 
+####Cryptage
+- exigence 3.1.3.1.11 n'est pas des deux cotés
+
 ##Divers
 - exemple de fichier de gestion de droits: Nicolas:password@/home/Dossier_de_Nicolas/
 	
