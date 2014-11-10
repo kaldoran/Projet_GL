@@ -395,11 +395,6 @@
 \end{center}
 
 
-
-
-
-
-
 \section{Tests Serveur}
 \subsection{Authentification}
 \begin{center}
@@ -451,17 +446,17 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GecuS.1 & 3.1.2.3.1 &  & & \\
+		GecuS.1 & 3.1.2.3.1 & Se connecter en tant qu'administrateur et essayer de crée un compte & LE compte peut etre crée et les droits donné. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.2 & 3.1.2.3.2 &  & & \\
+		GecuS.2 & 3.1.2.3.2 & Se connecter en tant qu'administrateur et crée un compte et cocher compte temporaire & Un compte temporaire est crée & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.3 & 3.1.2.3.3 &  & & \\
+		GecuS.3 & 3.1.2.3.3 & Regarder la liste des membres présente à droite & Elle contient la totalité des comptes crée & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.4 & 3.1.2.3.4 &  & & \\
+		GecuS.4 & 3.1.2.3.4 & Cliquer sur un compte & La liste des fichiers auquel il a accès se trouve a droite et un plus est présent en bas a droite. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.5 & 3.1.2.3.5 &  & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.6 & 3.1.2.3.6 &  & & \\
+		GecuS.5 & 3.1.2.3.5 & Cliquer sur un compte et cliquer sur le bouton "-" présent en bas a droite de la partie droite & Le compte est banni après confirmation. & \\
+		\cline{1-2}\cline{4-5}
+		GecuS.6 & 3.1.2.3.6 &  & Le compte est supprimé après confirmation. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -534,13 +529,13 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		StcS.1 & 3.1.2.6.4.1 & & & \\
+		StcS.1 & 3.1.2.6.4.1 & Ouvrir les fichiers contenant les comptes & Les mots de passe ne sont pas écrit en clair. & \\
+		\cline{1-2}\cline{4-5}
+		StcS.2 & 3.1.2.6.4.2 & & Sur chaque ligne est présent les droits associé à un compte. & \\
+		\cline{1-2}\cline{4-5}
+		StcS.3 & 3.1.2.6.4.3 & & Les comptes sont dans des fichiers séparés & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.2 & 3.1.2.6.4.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.3 & 3.1.2.6.4.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.4 & 3.1.2.6.4.4 & & & \\
+		StcS.4 & 3.1.2.6.4.4 & Se connecter sur un compte non présent dans l'un des 3 fichiers & Le programme nous indique que le mot de passe et / ou le nom de compte est erroné. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -554,23 +549,23 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CoaS.1 & 3.1.2.6.5.1 & & & \\
+		CoaS.1 & 3.1.2.6.5.1 & Ouvrir le fichier contenant les comptes administrateurs & Vérifier qu'il n'y a qu'une seule ligne dedans. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.2 & 2.1.2.6.5.2 & & Seul le compte administrateur est présent dans le fichier. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.2 & 2.1.2.6.5.2 & & & \\
+		CoaS.3 & 3.1.2.6.5.3 & Ouvrir le dossier contenant les comptes administrateur & Le fichier ne possède pas d'extension. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.4 & 3.1.2.6.5.4 & & Le fichier s'appel .shadow & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.3 & 3.1.2.6.5.3 & & & \\
+		CoaS.5 & 3.1.2.6.5.5 & Ouvrir le fichier contenant les comptes administrateurs & Le fichier contient une ligne unique de la forme : "pseudo@motDePasse:/CheminDeReference". & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.4 & 3.1.2.6.5.4 & & & \\
+		CoaS.6 & 3.1.2.6.5.6 & Essayer de donner des droits à partir de la racine. & Imposible d'accéder aux fichier présent avant la racine présente dans le fichier .shadow. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.5 & 3.1.2.6.5.5 & & & \\
+		CoaS.7 & 3.1.2.6.5.7 & Supprimer un fichier en même temps qu'un utilisateur le visite. & L'utilisateur n'a plus d'accès au fichier. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.6 & 3.1.2.6.5.6 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.7 & 3.1.2.6.5.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.8 & 3.1.2.6.5.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.9 & 3.1.2.6.5.9 & & & \\
+		CoaS.8 & 3.1.2.6.5.8 & Essayer d'accéder au compte administrateur à partir d'un client & Impossibilité de se connecter au compte. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.9 & 3.1.2.6.5.9 & & Impossibilité de se connecter au compte. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -584,9 +579,9 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ConS.1 & 3.1.2.6.6.1 & & & \\
+		ConS.1 & 3.1.2.6.6.1 & Ouvrir le dossier contenant les comptes normaux & Vérifier que le fichier à bien pour extension .acc & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		ConS.2 & 3.1.2.6.6.2 & & & \\
+		ConS.2 & 3.1.2.6.6.2 & Ouvrir le fichier .acc & Les lignes sont de la forme "pseudo@motDePasse:/fichier#/autrefichier" & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -600,15 +595,15 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CotS.1 & 3.1.2.6.7.1 & & & \\
+		CotS.1 & 3.1.2.6.7.1 & Ouvrir le dossier contenant les comptes temporaires. & L'extension du fichier est .acctmp & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.2 & 3.1.2.6.7.2 & & & \\
+		CotS.2 & 3.1.2.6.7.2 & Ouvrir le fichier .acctmp & Le fichier contient un timestamp. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.3 & 3.1.2.6.7.3 & & & \\
+		CotS.3 & 3.1.2.6.7.3 & Accéder a un compte dont le temps est écoulé & Le compte doit être supprimé du fichier .acctmp & \\
+		\cline{1-2}\cline{4-5}
+		CotS.3.1 & 3.1.2.6.7.4 & & Un message indique que le compte temporaire vient d'être supprimé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.4 & 3.1.2.6.7.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.5 & 3.1.2.6.7.5 & & & \\
+		CotS.4 & 3.1.2.6.7.5 & Ouvrir le fichier .acctmp & Les lignes sont de la forme "DateFinEnSeconde|pseudo@motDePasse:/fichier#/autrefichier" & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -622,15 +617,15 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CobS.1 & 3.1.2.6.8.1 & & & \\
+		CobS.1 & 3.1.2.6.8.1 & Ouvrir le dossier contenant les comptes bannis & Le fichier contenant les comptes bannis doit avoir pour extension .accban & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.2 & 3.1.2.6.8.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.3 & 3.1.2.6.8.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.4 & 3.1.2.6.8.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.5 & 3.1.2.6.8.5 & & & \\
+		CobS.2 & 3.1.2.6.8.2 & Ouvrir le fichier .accban & Chaque ligne contient le motif de bannissemnt. & \\
+		\cline{1-2}\cline{4-5}
+		CobS.3 & 3.1.2.6.8.3 & & Un timestamp est présent dans le fichier. & \\
+		\cline{1-2}\cline{4-5}
+		CobS.4 & 3.1.2.6.8.4 & & Chaque ligne est de la forme "TimestampDeFin|pseudo@motDePasse:/fichier#/autrefichier" & \\
+		\cline{1-2}\cline{4-5}
+		CobS.5 & 3.1.2.6.8.5 & & Quand le timestamp actuel est égale au timestamp présent dans le fichier, le compte repasse dans le fichier .acc & \\
 		\hline
 	\end{tabular}
 	\egroup
