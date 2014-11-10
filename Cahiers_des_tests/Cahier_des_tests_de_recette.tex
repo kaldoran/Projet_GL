@@ -874,13 +874,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		FhevS.1 & 3.1.2.12.1.1 & & & \\
+		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. & \\
+		\cline{1-2}\cline{4-5}
+		FhevS.2 & 3.1.2.12.1.2 & & Le fichier contient tout les événement passé entre 0h00 et 23h 59m 59s& \\
+		\cline{1-2}\cline{4-5}
+		FhevS.3 & 3.1.2.12.1.3 & & Le fichier se trouve dans un répertoire log présent dans le répertoire du logiciel. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.2 & 3.1.2.12.1.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.3 & 3.1.2.12.1.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.4 & 3.1.2.12.1.4 & & & \\
+		FhevS.4 & 3.1.2.12.1.4 & Ouvrir le logiciel & Un bouton log est présent dans la barre d'outil. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -896,27 +896,27 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CrypB.1 & 3.1.3.1.1 & & & \\
+		\rowcolor{red}CrypB.1 & 3.1.3.1.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.2 & 3.1.3.1.2 & & & \\
+		CrypB.2 & 3.1.3.1.2 & Ourir le menu de gestion des fichiers. & Un bouton "Cryptage du fichier" est présent. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.3 & 3.1.3.1.3 & & & \\
+		CrypB.3 & 3.1.3.1.3 & Définir une clé de cryptage pour un fichier. & Le programme indique dans une console de log que le clé de cryptage est sauvegardée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.4 & 3.1.3.1.4 & & & \\
+		CrypB.4 & 3.1.3.1.4 & Cliquer sur "Cryptage du fichier" et définir une clé & LE fichier est accessible uniquement avec la clé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.5 & 3.1.3.1.5 & & & \\
+		CrypB.5 & 3.1.3.1.5 & Cliquer sur un fichier Crypté et entré la clé. & Le fichier est lisible et décrypté. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.6 & 3.1.3.1.6 & & & \\
+		CrypB.6 & 3.1.3.1.6 & Cliquer sur "décrypté le fichier." & Le programme décrypte le fichier avec la clé donnée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.7 & 3.1.3.1.7 & & & \\
+		CrypB.7 & 3.1.3.1.7 & Téléchargé un fichier crypté. & Un champs de saisie apparait. & \\
+		\cline{1-2}\cline{4-5}
+		CrypB.8 & 3.1.3.1.8 & & Le champs peut être rempli à l'aide d'une clé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.8 & 3.1.3.1.8 & & & \\
+		CrypB.9 & 3.1.3.1.9 & Entrer la clé de cryptage et valider. & Le programme indique que la clé à été enregistré dans une console de log. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.9 & 3.1.3.1.9 & & & \\
+		CrypB.10 & 3.1.3.1.10 & Crypter un fichier sur le serveur et le télécharger sur un client. & Le client entre une clé, si celle ci est en accord avec celle sur le serveur, le fichier est décrypté. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.10 & 3.1.3.1.10 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.11 & 3.1.3.1.11 & & & \\
+		CrypB.11 & 3.1.3.1.11 & Ouvrir le fichier contenant les clés. & Les clés ne sont pas écrit en clair. & \\
 		\hline
 	\end{tabular}
 	\egroup
