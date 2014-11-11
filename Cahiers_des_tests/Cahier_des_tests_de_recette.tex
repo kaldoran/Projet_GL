@@ -125,7 +125,7 @@
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthC.1.2 & 3.1.1.1.1.6 3.1.1.1.1.7 3.1.1.1.1.8 &  & sur le pop-up, le titre "Authentification" apparait centré et est au dessus d'une barre horizontale. & \\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \\
+		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 3.1.1.1.2.3 3.1.1.1.2.4 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \\
 		\cline{1-2}\cline{4-5}
 		AuthC.1.4 & 3.1.1.1.1.11 & & Un bouton "Se connecter" est affiché centré en bas du pop-up & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -407,6 +407,18 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		MdstC.1.1.3.6 & 3.1.1.7.2.14 & & En abscisse un nombre est affiché sous chacune des barres. & \\
 		\cline{1-2}\cline{4-5}
 		MdstC.1.1.3.6.1 & 3.1.1.7.2.15 & & Une légende est affichée avec la correspondance numéro de barre/nom du fichier. & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+\newpage
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
 		\cline{1-2}\cline{4-5}
 		MdstC.1.2 & 3.1.3.3.1.4 & & Le titre "Statistiques" apparait en haut de la fenêtre. & \\
 		\cline{1-2}\cline{4-5}
@@ -506,17 +518,16 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GecuS.1 & 3.1.2.3.1 &  & & \\
+		GecuS.1 & 3.1.2.3.1 & Se connecter en tant qu'administrateur et essayer de crée un compte & LE compte peut etre crée et les droits donné. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.2 & 3.1.2.3.2 &  & & \\
+		GecuS.2 & 3.1.2.3.2 & Se connecter en tant qu'administrateur et crée un compte et cocher compte temporaire & Un compte temporaire est crée & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.3 & 3.1.2.3.3 &  & & \\
+		GecuS.3 & 3.1.2.3.3 & Regarder la liste des membres présente à droite & Elle contient la totalité des comptes crée & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.4 & 3.1.2.3.4 &  & & \\
+		GecuS.4 & 3.1.2.3.4 & Cliquer sur un compte & La liste des fichiers auquel il a accès se trouve a droite et un plus est présent en bas a droite. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.5 & 3.1.2.3.5 &  & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.6 & 3.1.2.3.6 &  & & \\
+		GecuS.5 & 3.1.2.3.5 & Cliquer sur un compte et cliquer sur le bouton "-" présent en 		\cline{1-2}\cline{4-5}
+		 GecuS.6 & 3.1.2.3.6 & & Le compte est supprimé après confirmation. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -589,13 +600,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		StcS.1 & 3.1.2.6.4.1 & & & \\
+		StcS.1 & 3.1.2.6.4.1 & Ouvrir les fichiers contenant les comptes & Les mots de passe ne sont pas écrit en clair. & \\
+		\cline{1-2}\cline{4-5}
+		StcS.2 & 3.1.2.6.4.2 & & Sur chaque ligne est présent les droits associé à un compte. & \\
+		\cline{1-2}\cline{4-5}
+		StcS.3 & 3.1.2.6.4.3 & & Les comptes sont dans des fichiers séparés & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.2 & 3.1.2.6.4.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.3 & 3.1.2.6.4.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.4 & 3.1.2.6.4.4 & & & \\
+		StcS.4 & 3.1.2.6.4.4 & Se connecter sur un compte non présent dans l'un des 3 fichiers & Le programme nous indique que le mot de passe et / ou le nom de compte est erroné. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -609,23 +620,23 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CoaS.1 & 3.1.2.6.5.1 & & & \\
+		CoaS.1 & 3.1.2.6.5.1 & Ouvrir le fichier contenant les comptes administrateurs & Vérifier qu'il n'y a qu'une seule ligne dedans. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.2 & 2.1.2.6.5.2 & & Seul le compte administrateur est présent dans le fichier. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.2 & 2.1.2.6.5.2 & & & \\
+		CoaS.3 & 3.1.2.6.5.3 & Ouvrir le dossier contenant les comptes administrateur & Le fichier ne possède pas d'extension. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.4 & 3.1.2.6.5.4 & & Le fichier s'appel .shadow & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.3 & 3.1.2.6.5.3 & & & \\
+		CoaS.5 & 3.1.2.6.5.5 & Ouvrir le fichier contenant les comptes administrateurs & Le fichier contient une ligne unique de la forme : "pseudo@motDePasse:/CheminDeReference". & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.4 & 3.1.2.6.5.4 & & & \\
+		CoaS.6 & 3.1.2.6.5.6 & Essayer de donner des droits à partir de la racine. & Imposible d'accéder aux fichier présent avant la racine présente dans le fichier .shadow. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.5 & 3.1.2.6.5.5 & & & \\
+		CoaS.7 & 3.1.2.6.5.7 & Supprimer un fichier en même temps qu'un utilisateur le visite. & L'utilisateur n'a plus d'accès au fichier. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.6 & 3.1.2.6.5.6 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.7 & 3.1.2.6.5.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.8 & 3.1.2.6.5.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.9 & 3.1.2.6.5.9 & & & \\
+		CoaS.8 & 3.1.2.6.5.8 & Essayer d'accéder au compte administrateur à partir d'un client & Impossibilité de se connecter au compte. & \\
+		\cline{1-2}\cline{4-5}
+		CoaS.9 & 3.1.2.6.5.9 & & Impossibilité de se connecter au compte. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -639,9 +650,9 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ConS.1 & 3.1.2.6.6.1 & & & \\
+		ConS.1 & 3.1.2.6.6.1 & Ouvrir le dossier contenant les comptes normaux & Vérifier que le fichier à bien pour extension .acc & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		ConS.2 & 3.1.2.6.6.2 & & & \\
+		ConS.2 & 3.1.2.6.6.2 & Ouvrir le fichier .acc & Les lignes sont de la forme "pseudo@motDePasse:/fichier\#/autrefichier" & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -655,15 +666,15 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CotS.1 & 3.1.2.6.7.1 & & & \\
+		CotS.1 & 3.1.2.6.7.1 & Ouvrir le dossier contenant les comptes temporaires. & L'extension du fichier est .acctmp & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.2 & 3.1.2.6.7.2 & & & \\
+		CotS.2 & 3.1.2.6.7.2 & Ouvrir le fichier .acctmp & Le fichier contient un timestamp. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.3 & 3.1.2.6.7.3 & & & \\
+		CotS.3 & 3.1.2.6.7.3 & Accéder a un compte dont le temps est écoulé & Le compte doit être supprimé du fichier .acctmp & \\
+		\cline{1-2}\cline{4-5}
+		CotS.3.1 & 3.1.2.6.7.4 & & Un message indique que le compte temporaire vient d'être supprimé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.4 & 3.1.2.6.7.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.5 & 3.1.2.6.7.5 & & & \\
+		CotS.4 & 3.1.2.6.7.5 & Ouvrir le fichier .acctmp & Les lignes sont de la forme "DateFinEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier" & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -677,15 +688,15 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CobS.1 & 3.1.2.6.8.1 & & & \\
+		CobS.1 & 3.1.2.6.8.1 & Ouvrir le dossier contenant les comptes bannis & Le fichier contenant les comptes bannis doit avoir pour extension .accban & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.2 & 3.1.2.6.8.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.3 & 3.1.2.6.8.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.4 & 3.1.2.6.8.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.5 & 3.1.2.6.8.5 & & & \\
+		CobS.2 & 3.1.2.6.8.2 & Ouvrir le fichier .accban & Chaque ligne contient le motif de bannissemnt. & \\
+		\cline{1-2}\cline{4-5}
+		CobS.3 & 3.1.2.6.8.3 & & Un timestamp est présent dans le fichier. & \\
+		\cline{1-2}\cline{4-5}
+		CobS.4 & 3.1.2.6.8.4 & & Chaque ligne est de la forme "TimestampDeFin|pseudo@motDePasse:/fichier\#/autrefichier" & \\
+		\cline{1-2}\cline{4-5}
+		CobS.5 & 3.1.2.6.8.5 & & Quand le timestamp actuel est égale au timestamp présent dans le fichier, le compte repasse dans le fichier .acc & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -699,23 +710,23 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		LimiS.1 & 3.1.2.7.1 & & & \\
+		LimiS.1 & 3.1.2.7.1 & Ouvrir le programme & Vérifier la présence du menu "Configuration" dans la barre des menus. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.2 & 3.1.2.7.2 & & & \\
+		LimiS.2 & 3.1.2.7.2 & Cliquer sur configuration, puis sur "limiter la vitesse" et mettre en place une limite & Le programme ne télécharge pas plus vite que la vitesse définie. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.3 & 3.1.2.7.3 & & & \\
+		LimiS.3 & 3.1.2.7.3 & Ouvrir le menu déroulant "Configuration" & La liste déroulante contient un bouton "Limiter vitesse de téléchargement" & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.4 & 3.1.2.7.4 & & & \\
+		LimiS.4 & 3.1.2.7.4 & Cliquer sur configuration, puis sur "limiter la vitesse" & Un curseur précis apparait pour régler la vitesse de téléchargement. & \\
+		\cline{1-2}\cline{4-5}
+		LimiS.5 & 3.1.2.7.5 & & Un curseur apparait pour régler la vitesse de téléchargement. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.5 & 3.1.2.7.5 & & & \\
+		LimiS.6 & 3.1.2.7.6 & & La vitesse de téléchargement de l'utilisateur est limitée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.6 & 3.1.2.7.6 & & & \\
+		LimiS.7 & 3.1.2.7.7 & Ouvrir le menu déroulant Configuration & Un bouton "Limiter vitesse de téléversement" est présent & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.7 & 3.1.2.7.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.8 & 3.1.2.7.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.9 & 3.1.2.7.9 & & & \\
+		LimiS.8 & 3.1.2.7.8 & Cliquer sur "Limiter vitesse de téléversement" & Un curseur apparait. & \\
+		\cline{1-2}\cline{4-5}
+		LimiS.9 & 3.1.2.7.9 & & Le curseur permet de donner une valeur limite. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiS.10 & 3.1.2.7.11 & Ouvrir le menu déroulant "Configuration" & Un bouton "Plages horaires téléchargement" est présent. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -729,25 +740,14 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiS.15 & 3.1.2.7.13 & Bloquer les téléchargement sur une plage horaire et tester de télécharger un fichier dans cette plage horaire & Les téléchargement sont bloqué sur la plage horaire définie. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.14 & 3.1.2.7.14 & & & \\
+		LimiS.16 & 3.1.2.7.16 & Essayer d'uploader un fichier dont l'extension est interdite ( exemple .exe) & Le programme doit refuser l'upload. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.15 & 3.1.2.7.15 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.16 & 3.1.2.7.16 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.17 & 3.1.2.7.17 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.18 & 3.1.2.7.18 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.19 & 3.1.2.7.19 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.20 & 3.1.2.7.20 & & & \\
+		LimiS.17 & 3.1.2.7.17 & Cliquer sur le menu "Configuration" & Un bouton "Extensions interdites" est présent dans la liste déroulante. & \\
 		\hline
 	\end{tabular}
 	\egroup
 \end{center}
-
-\subsection{Utilisation des dossiers}
+\newpage
 \begin{center}
 	\bgroup
 	\def\arraystretch{1.5}
@@ -755,41 +755,11 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		UtdoS.1 & 3.1.2.8.1 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.2 & 3.1.2.8.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.3 & 3.1.2.8.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.4 & 3.1.2.8.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.5 & 3.1.2.8.5 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.6 & 3.1.2.8.6 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.7 & 3.1.2.8.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.8 & 3.1.2.8.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.9 & 3.1.2.8.9 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.10 & 3.1.2.8.10 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.11 & 3.1.2.8.11 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.12 & 3.1.2.8.12 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.13 & 3.1.2.8.13 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.14 & 3.1.2.8.14 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.15 & 3.1.2.8.15 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.16 & 3.1.2.8.16 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.17 & 3.1.2.8.17 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoS.18 & 3.1.2.8.18 & & & \\
+		LimiS.18 & 3.1.2.7.18 & Cliquer sur le bouton "Extensions interdites" & Un champ de saisie apparait. & \\
+		\cline{1-2}\cline{4-5}
+		LimiS.19 & 3.1.2.7.19 & & Le champs est pré-rempli avec les extensions déjà interdite. & \\
+		\cline{1-2}\cline{4-5}
+		LimiS.20 & 3.1.2.7.20 & & Un bouton valide est présent en dessous du champs présent. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -861,7 +831,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		DoupS.1 & 3.1.2.10.1 & & & \\
+		DoupS.1 & 3.1.2.10.1 & Télécharger puis Téléverser un fichier en étant connecté & Le transférer se fait dans les 2 cas. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -875,23 +845,24 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		MostS.1 & 3.1.2.11.1.1 & & & \\
+		MostS.1 & 3.1.2.11.1.1 & Ouvrir le logiciel et cliquer sur le bouton statistique. & Le programme affiche la fréquence de connexion des utilisateurs. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.2 & 3.1.2.11.1.2 & & Le programme affiche le nombre de téléchargement de chaque fichier. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.3 & 3.1.2.11.1.3 & & Le programme affiche le nombre de téléchargement par utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.4 & 3.1.2.11.1.4 & & Le programme affiche le nombre de téléversement effectué par utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.5 & 3.1.2.11.1.5 & & Le programme affiche le nombre de téléchargement par tranche de 2 heures. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.6 & 3.1.2.11.1.6 & & Un bouton permet de paramétrer le nombre d'heure entre chaque tranches horaires. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.7 & 3.1.2.11.1.7 & & La programme affiche en temps réel les statistiques suivante : le fichier le plus téléchargé, l'utilisateur qui upload le plus de fichier, l'utilisateur qui télécharge le plus de fichier, un histogramme traçant le nombre de téléchargement de chaque fichier, un histogramme du nombre de fichier téléchargé et téléversé par utilisateur, un histogramme du nombre moyen de téléchargement et téléversement par tranche de 2 heures. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.7.1 & 3.1.2.11.1.7 & & Toutes les 2 semaines un rapport contient les informations listé ci-dessus. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.2 & 3.1.2.11.1.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.3 & 3.1.2.11.1.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.4 & 3.1.2.11.1.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.5 & 3.1.2.11.1.5 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.6 & 3.1.2.11.1.6 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.7 & 3.1.2.11.1.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.8 & 3.1.2.11.1.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.9 & 3.1.2.11.1.9 & & & \\
+		MostS.8 & 3.1.2.11.1.8 & Ouvrir le logiciel & Un bouton "Temps réel" est présent et génère un fichier. & \\
+		MostS.9 & 3.1.2.11.1.9 & & Le fichier généré aura comme format .html & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -905,13 +876,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		FhevS.1 & 3.1.2.12.1.1 & & & \\
+		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. & \\
+		\cline{1-2}\cline{4-5}
+		FhevS.2 & 3.1.2.12.1.2 & & Le fichier contient tout les événement passé entre 0h00 et 23h 59m 59s& \\
+		\cline{1-2}\cline{4-5}
+		FhevS.3 & 3.1.2.12.1.3 & & Le fichier se trouve dans un répertoire log présent dans le répertoire du logiciel. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.2 & 3.1.2.12.1.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.3 & 3.1.2.12.1.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.4 & 3.1.2.12.1.4 & & & \\
+		FhevS.4 & 3.1.2.12.1.4 & Ouvrir le logiciel & Un bouton log est présent dans la barre d'outil. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -951,8 +922,5 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 	\end{tabular}
 	\egroup
 \end{center}
-
-
-
 
 \end{document}
