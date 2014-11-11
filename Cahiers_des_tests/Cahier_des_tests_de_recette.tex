@@ -572,7 +572,35 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
 		BancS.1 & 3.1.2.4.1 & Cliquer sur un compte. & Un moins est présent dans la zone de droites. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.1 & 3.1.2.6.1.1 & Cliquer sur le moins & Un pop-up s'ouvre, celui ci contient 2 cases & \\
 		\cline{1-2}\cline{4-5}
+		BancS.1.1.1 & 3.1.2.6.1.1.1 & & Une case à coché alignée avec le texte "Supprimer le compte" & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.1.2 & 3.1.2.6.1.1.2 & & Une case à coché alignée avec le texte "Bannir le compte" & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.2 & 3.1.2.6.1.2 & Cocher une case puis l'autre & Une seul case doit être cochée & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.3 & 3.1.2.6.1.3 & & Le pop-up contient 2 boutons en bas & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.3.1 & 3.1.2.6.1.3.1 & & Un bouton "Valider" & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.3.2 & 3.1.2.6.1.3.2 & & Un bouton "Annuler" & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.4 & 3.1.2.6.1.4 & Cocher "Supprimer le compte" & Seul les 2 cases ( dont supprimer le compte" coché ) plus les 2 boutons sont présent. & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.5 & 3.1.2.6.1.5 & Cocher "Bannir le compte" & 2 Champs sont ajouté & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.5.1 & 3.1.2.6.1.5.1 & & Un champ Motif est ajouté aligné au texte "Motif de bannissement" & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.5.2 & 3.1.2.6.1.5.2 & & Un case à cocher est alignée avec le texte "Bannissement temporaire" & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.5.2.1 & 3.1.2.6.1.6 & Cocher la case "Bannissement temporaire" & Un champs de type date s'ajoute en dessous de la case. & \\ 
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		BancS.1.6 & 3.1.2.6.1.7 & Ouvrir le fichier .accban & Il contient le motif de bannissement & \\
+		\cline{1-2}\cline{4-5}
+		BancS.1.6.1 & 3.1.2.6.1.8 & & Il contient une durée en seconde & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		BancS.2 & 3.1.2.4.2 & Et retirer les droits sur un fichier. & Ouvrir le fichier .acc et vérifié que les droits sur le fichier ont été retiré. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		BancS.3 & 3.1.2.4.3 & Bannir temporairement une personne. & Verifier que le fichier .accban est mis a jours. & \\
