@@ -497,6 +497,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 	\egroup
 \end{center}
 
+
 \subsection{Gestionnaire de comptes utilisateurs}
 \begin{center}
 	\bgroup
@@ -811,11 +812,25 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		PicoS.1 & 3.1.2.9.1.1 & & & \\
+		PicoS.1 & 3.1.2.9.1.1 & Lancer le serveur et pingger le port 21 du serveur. & Le serveur répond. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		PicoS.2 & 3.1.2.9.1.2 & & & \\
+		PicoS.2 & 3.1.2.9.1.2 & Lancer le serveur. & Vérifier que le port utilisé est supérieur a 1024 pour chaque nouveau client. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		PicoS.3 & 3.1.2.9.1.3 & & & \\
+		PicoS.3 & 3.1.2.9.1.3 & Faire une demande au serveur à partir d'un client. & Le programme communique par le port définit. & \\
+		\hline
+	\end{tabular}
+	\egroup
+\end{center}
+
+\subsubsection{Procédure de fermeture de la communication Client-Serveur}
+\begin{center}
+	\bgroup
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
+		\hline
+		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
+		\hline
+		PfccS.1 & 3.1.2.9.2 & Lancer un téléchargement a partir du client et fermer le serveur. & Le téléchargement se coupe. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -829,7 +844,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		DoupS.1 & 3.1.2.10.1 & & & \\
+		DoupS.1 & 3.1.2.10.1 & Télécharger puis Téléverser un fichier en étant connecté & Le transférer se fait dans les 2 cas. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -843,23 +858,24 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		MostS.1 & 3.1.2.11.1.1 & & & \\
+		MostS.1 & 3.1.2.11.1.1 & Ouvrir le logiciel et cliquer sur le bouton statistique. & Le programme affiche la fréquence de connexion des utilisateurs. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.2 & 3.1.2.11.1.2 & & Le programme affiche le nombre de téléchargement de chaque fichier. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.3 & 3.1.2.11.1.3 & & Le programme affiche le nombre de téléchargement par utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.4 & 3.1.2.11.1.4 & & Le programme affiche le nombre de téléversement effectué par utilisateur. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.5 & 3.1.2.11.1.5 & & Le programme affiche le nombre de téléchargement par tranche de 2 heures. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.6 & 3.1.2.11.1.6 & & Un bouton permet de paramétrer le nombre d'heure entre chaque tranches horaires. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.7 & 3.1.2.11.1.7 & & La programme affiche en temps réel les statistiques suivante : le fichier le plus téléchargé, l'utilisateur qui upload le plus de fichier, l'utilisateur qui télécharge le plus de fichier, un histogramme traçant le nombre de téléchargement de chaque fichier, un histogramme du nombre de fichier téléchargé et téléversé par utilisateur, un histogramme du nombre moyen de téléchargement et téléversement par tranche de 2 heures. & \\
+		\cline{1-2}\cline{4-5}
+		MostS.7.1 & 3.1.2.11.1.7 & & Toutes les 2 semaines un rapport contient les informations listé ci-dessus. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.2 & 3.1.2.11.1.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.3 & 3.1.2.11.1.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.4 & 3.1.2.11.1.4 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.5 & 3.1.2.11.1.5 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.6 & 3.1.2.11.1.6 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.7 & 3.1.2.11.1.7 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.8 & 3.1.2.11.1.8 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.9 & 3.1.2.11.1.9 & & & \\
+		MostS.8 & 3.1.2.11.1.8 & Ouvrir le logiciel & Un bouton "Temps réel" est présent et génère un fichier. & \\
+		MostS.9 & 3.1.2.11.1.9 & & Le fichier généré aura comme format .html & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -873,13 +889,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		FhevS.1 & 3.1.2.12.1.1 & & & \\
+		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. & \\
+		\cline{1-2}\cline{4-5}
+		FhevS.2 & 3.1.2.12.1.2 & & Le fichier contient tout les événement passé entre 0h00 et 23h 59m 59s& \\
+		\cline{1-2}\cline{4-5}
+		FhevS.3 & 3.1.2.12.1.3 & & Le fichier se trouve dans un répertoire log présent dans le répertoire du logiciel. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.2 & 3.1.2.12.1.2 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.3 & 3.1.2.12.1.3 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.4 & 3.1.2.12.1.4 & & & \\
+		FhevS.4 & 3.1.2.12.1.4 & Ouvrir le logiciel & Un bouton log est présent dans la barre d'outil. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -895,27 +911,27 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CrypB.1 & 3.1.3.1.1 & & & \\
+		\rowcolor{red}CrypB.1 & 3.1.3.1.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.2 & 3.1.3.1.2 & & & \\
+		CrypB.2 & 3.1.3.1.2 & Ourir le menu de gestion des fichiers. & Un bouton "Cryptage du fichier" est présent. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.3 & 3.1.3.1.3 & & & \\
+		CrypB.3 & 3.1.3.1.3 & Définir une clé de cryptage pour un fichier. & Le programme indique dans une console de log que le clé de cryptage est sauvegardée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.4 & 3.1.3.1.4 & & & \\
+		CrypB.4 & 3.1.3.1.4 & Cliquer sur "Cryptage du fichier" et définir une clé & LE fichier est accessible uniquement avec la clé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.5 & 3.1.3.1.5 & & & \\
+		CrypB.5 & 3.1.3.1.5 & Cliquer sur un fichier Crypté et entré la clé. & Le fichier est lisible et décrypté. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.6 & 3.1.3.1.6 & & & \\
+		CrypB.6 & 3.1.3.1.6 & Cliquer sur "décrypté le fichier." & Le programme décrypte le fichier avec la clé donnée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.7 & 3.1.3.1.7 & & & \\
+		CrypB.7 & 3.1.3.1.7 & Téléchargé un fichier crypté. & Un champs de saisie apparait. & \\
+		\cline{1-2}\cline{4-5}
+		CrypB.8 & 3.1.3.1.8 & & Le champs peut être rempli à l'aide d'une clé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.8 & 3.1.3.1.8 & & & \\
+		CrypB.9 & 3.1.3.1.9 & Entrer la clé de cryptage et valider. & Le programme indique que la clé à été enregistré dans une console de log. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.9 & 3.1.3.1.9 & & & \\
+		CrypB.10 & 3.1.3.1.10 & Crypter un fichier sur le serveur et le télécharger sur un client. & Le client entre une clé, si celle ci est en accord avec celle sur le serveur, le fichier est décrypté. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.10 & 3.1.3.1.10 & & & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.11 & 3.1.3.1.11 & & & \\
+		CrypB.11 & 3.1.3.1.11 & Ouvrir le fichier contenant les clés. & Les clés ne sont pas écrit en clair. & \\
 		\hline
 	\end{tabular}
 	\egroup
