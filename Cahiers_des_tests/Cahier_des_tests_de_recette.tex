@@ -125,28 +125,13 @@
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthC.1.2 & 3.1.1.1.1.6 3.1.1.1.1.7 3.1.1.1.1.8 &  & sur le pop-up, le titre "Authentification" apparait centré et est au dessus d'une barre horizontale. & \\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 3.1.1.1.2.3 3.1.1.1.2.4 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \\
+		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \\
 		\cline{1-2}\cline{4-5}
 		AuthC.1.4 & 3.1.1.1.1.11 & & Un bouton "Se connecter" est affiché centré en bas du pop-up & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthC.1.4.1 & 3.1.1.1.1.11 & Remplir incorrectement un ou plusieurs champs de saisie puis cliquer sur le bouton "Se connecter" (à effectuer avec plusieurs combinaison de champs incorrects). & Le(s) champ(s) incorrect(s) possède(nt) une bordure rouge. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.2 & 3.1.1.1.2.1 3.1.1.1.2.5 3.1.1.1.2.6 & Remplir correctement les champs, puis cliquer sur "Se connecter". & Le programme se connecte au serveur avec l'identifiant donné. & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.2.1 & 3.1.1.1.2.7 & & Le message "Bonjour [pseudo]" apparait dans la barre de menu. & \\
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		\hline
-		\rowcolor{red} AuthC. & 3.1.1.1.2.2 & 
+		AuthC.1.4.2 & 3.1.1.1.2.1 & Remplir correctement les champs, puis cliquer sur "Se connecter". & Le programme se connecte au serveur avec l'identifiant donné. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -196,7 +181,7 @@
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiC.1.1.1.2 & 3.1.1.3.2 & Choisir une limite et valider la boite de dialogue. & La vitesse de téléchargement ne dépasse pas la limite fixée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiC.1.1.2 & 3.1.1.3.8 3.1.1.3.9 & Cliquer sur "Limiter vitesse de téléversement". & Une boite de dialogue avec un curseur apparait. & \\
+		LimiC.1.1.2 & 3.1.1.3.8 3.1.1.3.9 & Cliquer sur "Limiter vitesse téléversement". & Une boite de dialogue avec un curseur apparait. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiC.1.1.2.1 & 3.1.1.3.6 & Choisir une limite et valider la boite de dialogue. & La vitesse de téléversement ne dépasse pas la limite fixée. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -261,11 +246,11 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ComReC & 3.1.1.5.1.1 & Après la connexion du client vers le serveur, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être 21, l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel.& \\
+		PicoC.1.1 & 3.1.1.5.1.1 & Après la connexion du client vers le serveur, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être 21, l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel.& \\
 		\hline
-		ComReC & 3.1.1.5.1.2 3.1.1.5.1.4 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être différent de 21 (soit supérieur à 1024, soit égale à 20), l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel. & \\
+		PicoC.1.2 & 3.1.1.5.1.2 3.1.1.5.1.4 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être différent de 21 (soit supérieur à 1024, soit égale à 20), l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel. & \\
 		\hline
-		ComReC & 3.1.1.5.1.3 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a" sur le terminal du client & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur \textbf{et} dont le port de connexion est 21. &\\
+		PicoC.1.3 & 3.1.1.5.1.3 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a" sur le terminal du client & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur \textbf{et} dont le port de connexion est 21. &\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -280,24 +265,22 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ComReC & 3.1.1.5.2.1.1.a & Débrancher la machine contenant le logiciel client du réseau, et faire une demande de connexion avec un nom de serveur FTP valide.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$:\linebreak
+		PecoC.1.1.a & 3.1.1.5.2.1.1.a & Débrancher la machine contenant le logiciel client du réseau, et faire une demande de connexion avec un nom de serveur FTP valide.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$:\linebreak
 -Vérifiez l'état de votre connexion Internet.\linebreak
 -Vérifiez que le nom du serveur n'est pas erroné.".&\\
+		\cline{1-3}\cline{5-5}
+		PecoC.1.1.b & 3.1.1.5.2.1.1.b & Faire une demande de connexion avec un nom de serveur FTP non-valide.& .&\\
 		\hline
-		ComReC & 3.1.1.5.2.1.1.b & Faire une demande de connexion avec un nom de serveur FTP non-valide.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$:\linebreak
--Vérifiez l'état de votre connexion Internet.\linebreak
--Vérifiez que le nom du serveur n'est pas erroné.".&\\
+		PecoC.1.2 & 3.1.1.5.2.1.2 & Faire une demande de connexion avec un nom de serveur FTP valide dont le nombre de connexion autorisé par le serveur est atteint.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$: le serveur est surchargé.".&\\
 		\hline
-		ComReC & 3.1.1.5.2.1.2 & Faire une demande de connexion avec un nom de serveur FTP valide dont le nombre de connexion autorisé par le serveur est atteint.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$: le serveur est surchargé.".&\\
-		\hline
-		ComReC & 3.1.1.5.2.1.3 & Faire une demande de connexion avec un nom de serveur FTP valide. Le serveur doit avoir auparavant banni le client du test.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une communication avec le serveur $< nom\_du\_serveur>$:
+		PecoC.1.3  & 3.1.1.5.2.1.3 & Faire une demande de connexion avec un nom de serveur FTP valide. Le serveur doit avoir auparavant banni le client du test.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une communication avec le serveur $< nom\_du\_serveur>$:
 $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
-		ComReC & 3.1.1.5.2.2 & Faire une demande de connexion avec un nom de serveur FTP valide. Les regles du pare-feu doit être configurer pour que toutes les connexions sortant vers des ports supérieurs à 1024 ne soient pas autorisées.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$ sur le port $< numero\_du\_port\_echange>$ : Vérifiez vos règle de pare-feu.".&\\
+		PecoC.2.2 & 3.1.1.5.2.2 & Faire une demande de connexion avec un nom de serveur FTP valide. Les regles du pare-feu doit être configurer pour que toutes les connexions sortant vers des ports supérieurs à 1024 ne soient pas autorisées.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$ sur le port $< numero\_du\_port\_echange>$ : Vérifiez vos règle de pare-feu.".&\\
 		\hline
-		ComReC & 3.1.1.5.2.3 & Vérifier pour les tests de la section 3.1.1.5 que la fenêtre possede bien un bouton "Fermer" fonctionnel :  cliquer sur ce bouton doit fermer la fenêtre.& Cliquer sur le bouton "Fermer" provoque le fermeture de la fenêtre de dialogue .&\\
+		PecoC.2.3 & 3.1.1.5.2.3 & Vérifier pour les tests de la section 3.1.1.5 que la fenêtre possede bien un bouton "Fermer" fonctionnel :  cliquer sur ce bouton doit fermer la fenêtre.& Cliquer sur le bouton "Fermer" provoque le fermeture de la fenêtre de dialogue .&\\
 		\hline
-		ComReC & 3.1.1.5.2.3 & Vérifier pour les tests de la section 3.1.1.5 que la fenêtre possede bien un bouton "Ré-essayer" fonctionnel :  cliquer sur ce bouton doit ré-itérer l'opération échoué.& Cliquer sur le bouton "Ré-essayer" provoque la ré-itération de l'opération échoué.&\\
+		PecoC.2.4 & 3.1.1.5.2.4 & Vérifier pour les tests de la section PecoC.2.* que la fenêtre possede bien un bouton "Ré-essayer" fonctionnel :  cliquer sur ce bouton doit ré-itérer l'opération échoué.& Cliquer sur le bouton "Ré-essayer" provoque la ré-itération de l'opération échoué.&\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -312,9 +295,9 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ComReC & 3.1.1.5.3.1 & Pendant un téléchargement, couper la ligne internet de la machine cliente & Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Connexion interrompue avec le serveur $< nom\_du\_serveur>$.".&\\
+		PecoC.1 & 3.1.1.5.3.1 & Pendant un téléchargement, couper la ligne internet de la machine cliente & Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Connexion interrompue avec le serveur $< nom\_du\_serveur>$.".&\\
 		\hline
-		ComReC & 3.1.1.5.3.2 & Idem que le test 3.1.1.5.2.3. & Idem que le test 3.1.1.5.2.3.\\
+		PccoC.2 & 3.1.1.5.3.2 & Idem que le test PecoC.2.3. & Idem que le test PecoC.2.3.\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -329,7 +312,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ComReC & 3.1.1.5.4.1 & Faire un upload, et faire la commande "netstat -a -p" sur le terminal du client. & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur.&\\
+		PfcoC.1 & 3.1.1.5.4.1 & Faire un upload, et faire la commande "netstat -a -p" sur le terminal du client. & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur.&\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -394,18 +377,6 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		MdstC.1.1.3.6 & 3.1.1.7.2.14 & & En abscisse un nombre est affiché sous chacune des barres. & \\
 		\cline{1-2}\cline{4-5}
 		MdstC.1.1.3.6.1 & 3.1.1.7.2.15 & & Une légende est affichée avec la correspondance numéro de barre/nom du fichier. & \\
-		\hline
-	\end{tabular}
-	\egroup
-\end{center}
-\newpage
-\begin{center}
-	\bgroup
-	\def\arraystretch{1.5}
-	\begin{tabular}{|p{2.5cm}|p{2cm}|p{8cm}|p{8cm}|p{5.5cm}|}
-		\hline
-		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
-		\hline
 		\cline{1-2}\cline{4-5}
 		MdstC.1.2 & 3.1.3.3.1.4 & & Le titre "Statistiques" apparait en haut de la fenêtre. & \\
 		\cline{1-2}\cline{4-5}
@@ -497,7 +468,6 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 	\egroup
 \end{center}
 
-
 \subsection{Gestionnaire de comptes utilisateurs}
 \begin{center}
 	\bgroup
@@ -506,21 +476,21 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GecuS.1 & 3.1.2.3.1 & Se connecter en tant qu'administrateur et essayer de crée un compte & LE compte peut etre crée et les droits donné. & \\
+		GecuS.1 & 3.1.2.3.1 &  & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.2 & 3.1.2.3.2 & Se connecter en tant qu'administrateur et crée un compte et cocher compte temporaire & Un compte temporaire est crée & \\
+		GecuS.2 & 3.1.2.3.2 &  & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.3 & 3.1.2.3.3 & Regarder la liste des membres présente à droite & Elle contient la totalité des comptes crée & \\
+		GecuS.3 & 3.1.2.3.3 &  & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.4 & 3.1.2.3.4 & Cliquer sur un compte & La liste des fichiers auquel il a accès se trouve a droite et un plus est présent en bas a droite. & \\
+		GecuS.4 & 3.1.2.3.4 &  & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.5 & 3.1.2.3.5 & Cliquer sur un compte et cliquer sur le bouton "-" présent en bas a droite de la partie droite & Le compte est banni après confirmation. & \\
-		\cline{1-2}\cline{4-5}
-		GecuS.6 & 3.1.2.3.6 &  & Le compte est supprimé après confirmation. & \\
+		GecuS.5 & 3.1.2.3.5 &  & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		GecuS.6 & 3.1.2.3.6 &  & & \\
 		\hline
 	\end{tabular}
 	\egroup
-\end{center} 
+\end{center}
 
 \subsubsection{Bannissement d’un compte}
 \begin{center}
@@ -589,13 +559,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		StcS.1 & 3.1.2.6.4.1 & Ouvrir les fichiers contenant les comptes & Les mots de passe ne sont pas écrit en clair. & \\
-		\cline{1-2}\cline{4-5}
-		StcS.2 & 3.1.2.6.4.2 & & Sur chaque ligne est présent les droits associé à un compte. & \\
-		\cline{1-2}\cline{4-5}
-		StcS.3 & 3.1.2.6.4.3 & & Les comptes sont dans des fichiers séparés & \\
+		StcS.1 & 3.1.2.6.4.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		StcS.4 & 3.1.2.6.4.4 & Se connecter sur un compte non présent dans l'un des 3 fichiers & Le programme nous indique que le mot de passe et / ou le nom de compte est erroné. & \\
+		StcS.2 & 3.1.2.6.4.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		StcS.3 & 3.1.2.6.4.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		StcS.4 & 3.1.2.6.4.4 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -609,23 +579,23 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CoaS.1 & 3.1.2.6.5.1 & Ouvrir le fichier contenant les comptes administrateurs & Vérifier qu'il n'y a qu'une seule ligne dedans. & \\
-		\cline{1-2}\cline{4-5}
-		CoaS.2 & 2.1.2.6.5.2 & & Seul le compte administrateur est présent dans le fichier. & \\
+		CoaS.1 & 3.1.2.6.5.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.3 & 3.1.2.6.5.3 & Ouvrir le dossier contenant les comptes administrateur & Le fichier ne possède pas d'extension. & \\
-		\cline{1-2}\cline{4-5}
-		CoaS.4 & 3.1.2.6.5.4 & & Le fichier s'appel .shadow & \\
+		CoaS.2 & 2.1.2.6.5.2 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.5 & 3.1.2.6.5.5 & Ouvrir le fichier contenant les comptes administrateurs & Le fichier contient une ligne unique de la forme : "pseudo@motDePasse:/CheminDeReference". & \\
+		CoaS.3 & 3.1.2.6.5.3 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.6 & 3.1.2.6.5.6 & Essayer de donner des droits à partir de la racine. & Imposible d'accéder aux fichier présent avant la racine présente dans le fichier .shadow. & \\
+		CoaS.4 & 3.1.2.6.5.4 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.7 & 3.1.2.6.5.7 & Supprimer un fichier en même temps qu'un utilisateur le visite. & L'utilisateur n'a plus d'accès au fichier. & \\
+		CoaS.5 & 3.1.2.6.5.5 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CoaS.8 & 3.1.2.6.5.8 & Essayer d'accéder au compte administrateur à partir d'un client & Impossibilité de se connecter au compte. & \\
-		\cline{1-2}\cline{4-5}
-		CoaS.9 & 3.1.2.6.5.9 & & Impossibilité de se connecter au compte. & \\
+		CoaS.6 & 3.1.2.6.5.6 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.7 & 3.1.2.6.5.7 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.8 & 3.1.2.6.5.8 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CoaS.9 & 3.1.2.6.5.9 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -639,9 +609,9 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		ConS.1 & 3.1.2.6.6.1 & Ouvrir le dossier contenant les comptes normaux & Vérifier que le fichier à bien pour extension .acc & \\
+		ConS.1 & 3.1.2.6.6.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		ConS.2 & 3.1.2.6.6.2 & Ouvrir le fichier .acc & Les lignes sont de la forme "pseudo@motDePasse:/fichier\#/autrefichier" & \\
+		ConS.2 & 3.1.2.6.6.2 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -655,15 +625,15 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CotS.1 & 3.1.2.6.7.1 & Ouvrir le dossier contenant les comptes temporaires. & L'extension du fichier est .acctmp & \\
+		CotS.1 & 3.1.2.6.7.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.2 & 3.1.2.6.7.2 & Ouvrir le fichier .acctmp & Le fichier contient un timestamp. & \\
+		CotS.2 & 3.1.2.6.7.2 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.3 & 3.1.2.6.7.3 & Accéder a un compte dont le temps est écoulé & Le compte doit être supprimé du fichier .acctmp & \\
-		\cline{1-2}\cline{4-5}
-		CotS.3.1 & 3.1.2.6.7.4 & & Un message indique que le compte temporaire vient d'être supprimé. & \\
+		CotS.3 & 3.1.2.6.7.3 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CotS.4 & 3.1.2.6.7.5 & Ouvrir le fichier .acctmp & Les lignes sont de la forme "DateFinEnSeconde|pseudo@motDePasse:/fichier\#/autrefichier" & \\
+		CotS.4 & 3.1.2.6.7.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CotS.5 & 3.1.2.6.7.5 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -677,15 +647,15 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CobS.1 & 3.1.2.6.8.1 & Ouvrir le dossier contenant les comptes bannis & Le fichier contenant les comptes bannis doit avoir pour extension .accban & \\
+		CobS.1 & 3.1.2.6.8.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CobS.2 & 3.1.2.6.8.2 & Ouvrir le fichier .accban & Chaque ligne contient le motif de bannissemnt. & \\
-		\cline{1-2}\cline{4-5}
-		CobS.3 & 3.1.2.6.8.3 & & Un timestamp est présent dans le fichier. & \\
-		\cline{1-2}\cline{4-5}
-		CobS.4 & 3.1.2.6.8.4 & & Chaque ligne est de la forme "TimestampDeFin|pseudo@motDePasse:/fichier\#/autrefichier" & \\
-		\cline{1-2}\cline{4-5}
-		CobS.5 & 3.1.2.6.8.5 & & Quand le timestamp actuel est égale au timestamp présent dans le fichier, le compte repasse dans le fichier .acc & \\
+		CobS.2 & 3.1.2.6.8.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.3 & 3.1.2.6.8.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.4 & 3.1.2.6.8.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CobS.5 & 3.1.2.6.8.5 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -699,56 +669,45 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		LimiS.1 & 3.1.2.7.1 & Ouvrir le programme & Vérifier la présence du menu "Configuration" dans la barre des menus. & \\
+		LimiS.1 & 3.1.2.7.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.2 & 3.1.2.7.2 & Cliquer sur configuration, puis sur "limiter la vitesse" et mettre en place une limite & Le programme ne télécharge pas plus vite que la vitesse définie. & \\
+		LimiS.2 & 3.1.2.7.2 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.3 & 3.1.2.7.3 & Ouvrir le menu déroulant "Configuration" & La liste déroulante contient un bouton "Limiter vitesse de téléchargement" & \\
+		LimiS.3 & 3.1.2.7.3 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.4 & 3.1.2.7.4 & Cliquer sur configuration, puis sur "limiter la vitesse" & Un curseur précis apparait pour régler la vitesse de téléchargement. & \\
-		\cline{1-2}\cline{4-5}
-		LimiS.5 & 3.1.2.7.5 & & Un curseur apparait pour régler la vitesse de téléchargement. & \\
+		LimiS.4 & 3.1.2.7.4 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.6 & 3.1.2.7.6 &  & La vitesse de téléchargement de l'utilisateur est limitée. & \\
+		LimiS.5 & 3.1.2.7.5 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.7 & 3.1.2.7.7 & Ouvrir le menu déroulant Configuration & Un bouton "Limiter vitesse de téléversement" est présent & \\
+		LimiS.6 & 3.1.2.7.6 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.8 & 3.1.2.7.8 & Cliquer sur "Limiter vitesse de téléversement" & Un curseur apparait. & \\
-		\cline{1-2}\cline{4-5}
-		LimiS.9 & 3.1.2.7.9 & & Le curseur permet de donner une valeur limite. & \\
+		LimiS.7 & 3.1.2.7.7 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.10 & 3.1.2.7.10 & Bloquer les téléchargement sur une plage horaire et tester de télécharger un fichier dans cette plage horaire & Les téléchargement sont bloqué sur la plage horaire définie. & \\
+		LimiS.8 & 3.1.2.7.8 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.11 & 3.1.2.7.11 & Ouvrir le menu déroulant "Configuration" & Un bouton "Plages horaires téléchargement" est présent. & \\
+		LimiS.9 & 3.1.2.7.9 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.12 & 3.1.2.7.12 & Cliquer sur le bouton "Plages horaires téléchargement" & Une liste d’horaires à cocher apparait. & \\
+		LimiS.10 & 3.1.2.7.10 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		\rowcolor{red}LimiS.13 & 3.1.2.7.13 & & & \\
+		LimiS.11 & 3.1.2.7.11 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.14 & 3.1.2.7.14 & Ouvrir le menu "Configuration" & Un bouton "Plage horaire téléversement" est présent dans la liste déroulante. & \\
+		LimiS.12 & 3.1.2.7.12 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.15 & 3.1.2.7.15 & Cliquer sur le bouton "Plage horaire téléversement" & Une liste d’horaires à cocher apparait. & \\
+		LimiS.13 & 3.1.2.7.13 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.16 & 3.1.2.7.16 & Essayer d'uploader un fichier dont l'extension est interdite ( exemple .exe) & Le programme doit refuser l'upload. & \\
+		LimiS.14 & 3.1.2.7.14 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		LimiS.17 & 3.1.2.7.17 & Cliquer sur le menu "Configuration" & Un bouton "Extensions interdites" est présent dans la liste déroulante. & \\
-		\hline
-	\end{tabular}
-	\egroup
-\end{center}
-\newpage
-\begin{center}
-	\bgroup
-	\def\arraystretch{1.5}
-	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
-		\hline
-		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
-		\hline
-		LimiS.18 & 3.1.2.7.18 & Cliquer sur le bouton "Extensions interdites" & Un champ de saisie apparait. & \\
-		\cline{1-2}\cline{4-5}
-		LimiS.19 & 3.1.2.7.19 & & Le champs est pré-rempli avec les extensions déjà interdite. & \\
-		\cline{1-2}\cline{4-5}
-		LimiS.20 & 3.1.2.7.20 & & Un bouton valide est présent en dessous du champs présent. & \\
+		LimiS.15 & 3.1.2.7.15 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.16 & 3.1.2.7.16 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.17 & 3.1.2.7.17 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.18 & 3.1.2.7.18 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.19 & 3.1.2.7.19 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		LimiS.20 & 3.1.2.7.20 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -812,25 +771,11 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		PicoS.1 & 3.1.2.9.1.1 & Lancer le serveur et pingger le port 21 du serveur. & Le serveur répond. & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		PicoS.2 & 3.1.2.9.1.2 & Lancer le serveur. & Vérifier que le port utilisé est supérieur a 1024 pour chaque nouveau client. & \\
-		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		PicoS.3 & 3.1.2.9.1.3 & Faire une demande au serveur à partir d'un client. & Le programme communique par le port définit. & \\
+		PicoS.1 & 3.1.2.9.1.1 & Après le démarrage du serveur, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit indiquer que le port 21 est à l'état "LISTEN" et le nom ou le PID doit correspondre à celui du logiciel serveur & \\
 		\hline
-	\end{tabular}
-	\egroup
-\end{center}
-
-\subsubsection{Procédure de fermeture de la communication Client-Serveur}
-\begin{center}
-	\bgroup
-	\def\arraystretch{1.5}
-	\begin{tabular}{|p{1.5cm}|p{2cm}|p{8.5cm}|p{8.5cm}|p{5cm}|}
-		\hline
-		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
-		\hline
-		PfccS.1 & 3.1.2.9.2 & Lancer un téléchargement a partir du client et fermer le serveur. & Le téléchargement se coupe. & \\
+		PicoS.2 & 3.1.2.9.1.1 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a -p" sur le terminal du serveur & Le terminal doit afficher une connexion avec une adresse IP correspondant au client, dont le port de connexion de l'adresse \textbf{locale} doit être différent de 21 (soit supérieur à 1024, soit égale à 20), l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel serveur.&\\
+		\cline{1-2}
+		PicoS.3 & 3.1.2.9.1.3 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -844,7 +789,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		DoupS.1 & 3.1.2.10.1 & Télécharger puis Téléverser un fichier en étant connecté & Le transférer se fait dans les 2 cas. & \\
+		DoupS.1 & 3.1.2.10.1 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -858,24 +803,23 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		MostS.1 & 3.1.2.11.1.1 & Ouvrir le logiciel et cliquer sur le bouton statistique. & Le programme affiche la fréquence de connexion des utilisateurs. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.2 & 3.1.2.11.1.2 & & Le programme affiche le nombre de téléchargement de chaque fichier. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.3 & 3.1.2.11.1.3 & & Le programme affiche le nombre de téléchargement par utilisateur. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.4 & 3.1.2.11.1.4 & & Le programme affiche le nombre de téléversement effectué par utilisateur. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.5 & 3.1.2.11.1.5 & & Le programme affiche le nombre de téléchargement par tranche de 2 heures. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.6 & 3.1.2.11.1.6 & & Un bouton permet de paramétrer le nombre d'heure entre chaque tranches horaires. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.7 & 3.1.2.11.1.7 & & La programme affiche en temps réel les statistiques suivante : le fichier le plus téléchargé, l'utilisateur qui upload le plus de fichier, l'utilisateur qui télécharge le plus de fichier, un histogramme traçant le nombre de téléchargement de chaque fichier, un histogramme du nombre de fichier téléchargé et téléversé par utilisateur, un histogramme du nombre moyen de téléchargement et téléversement par tranche de 2 heures. & \\
-		\cline{1-2}\cline{4-5}
-		MostS.7.1 & 3.1.2.11.1.7 & & Toutes les 2 semaines un rapport contient les informations listé ci-dessus. & \\
+		MostS.1 & 3.1.2.11.1.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		MostS.8 & 3.1.2.11.1.8 & Ouvrir le logiciel & Un bouton "Temps réel" est présent et génère un fichier. & \\
-		MostS.9 & 3.1.2.11.1.9 & & Le fichier généré aura comme format .html & \\
+		MostS.2 & 3.1.2.11.1.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.3 & 3.1.2.11.1.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.4 & 3.1.2.11.1.4 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.5 & 3.1.2.11.1.5 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.6 & 3.1.2.11.1.6 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.7 & 3.1.2.11.1.7 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.8 & 3.1.2.11.1.8 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		MostS.9 & 3.1.2.11.1.9 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -889,13 +833,13 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. & \\
-		\cline{1-2}\cline{4-5}
-		FhevS.2 & 3.1.2.12.1.2 & & Le fichier contient tout les événement passé entre 0h00 et 23h 59m 59s& \\
-		\cline{1-2}\cline{4-5}
-		FhevS.3 & 3.1.2.12.1.3 & & Le fichier se trouve dans un répertoire log présent dans le répertoire du logiciel. & \\
+		FhevS.1 & 3.1.2.12.1.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		FhevS.4 & 3.1.2.12.1.4 & Ouvrir le logiciel & Un bouton log est présent dans la barre d'outil. & \\
+		FhevS.2 & 3.1.2.12.1.2 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		FhevS.3 & 3.1.2.12.1.3 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		FhevS.4 & 3.1.2.12.1.4 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -911,27 +855,27 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		\rowcolor{red}CrypB.1 & 3.1.3.1.1 & & & \\
+		CrypB.1 & 3.1.3.1.1 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.2 & 3.1.3.1.2 & Ourir le menu de gestion des fichiers. & Un bouton "Cryptage du fichier" est présent. & \\
+		CrypB.2 & 3.1.3.1.2 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.3 & 3.1.3.1.3 & Définir une clé de cryptage pour un fichier. & Le programme indique dans une console de log que le clé de cryptage est sauvegardée. & \\
+		CrypB.3 & 3.1.3.1.3 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.4 & 3.1.3.1.4 & Cliquer sur "Cryptage du fichier" et définir une clé & LE fichier est accessible uniquement avec la clé. & \\
+		CrypB.4 & 3.1.3.1.4 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.5 & 3.1.3.1.5 & Cliquer sur un fichier Crypté et entré la clé. & Le fichier est lisible et décrypté. & \\
+		CrypB.5 & 3.1.3.1.5 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.6 & 3.1.3.1.6 & Cliquer sur "décrypté le fichier." & Le programme décrypte le fichier avec la clé donnée. & \\
+		CrypB.6 & 3.1.3.1.6 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.7 & 3.1.3.1.7 & Téléchargé un fichier crypté. & Un champs de saisie apparait. & \\
-		\cline{1-2}\cline{4-5}
-		CrypB.8 & 3.1.3.1.8 & & Le champs peut être rempli à l'aide d'une clé. & \\
+		CrypB.7 & 3.1.3.1.7 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.9 & 3.1.3.1.9 & Entrer la clé de cryptage et valider. & Le programme indique que la clé à été enregistré dans une console de log. & \\
+		CrypB.8 & 3.1.3.1.8 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.10 & 3.1.3.1.10 & Crypter un fichier sur le serveur et le télécharger sur un client. & Le client entre une clé, si celle ci est en accord avec celle sur le serveur, le fichier est décrypté. & \\
+		CrypB.9 & 3.1.3.1.9 & & & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		CrypB.11 & 3.1.3.1.11 & Ouvrir le fichier contenant les clés. & Les clés ne sont pas écrit en clair. & \\
+		CrypB.10 & 3.1.3.1.10 & & & \\
+		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
+		CrypB.11 & 3.1.3.1.11 & & & \\
 		\hline
 	\end{tabular}
 	\egroup
