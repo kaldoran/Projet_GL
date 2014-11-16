@@ -127,8 +127,9 @@ D'après le patron de conception observateur, la vue est un " observateur " du m
 			\end{center}
 		(cf Annexe.)
 
+\newpage
 		\subsubsection{Description des modules}
-		
+	
 			\paragraph{Modules Client}
 
 				\subparagraph{Module interface graphique}
@@ -176,8 +177,10 @@ Le seul traitement du contrôleur est de déterminer l'origine de chaque événe
 				\end{flushleft}
 	
 				\subparagraph{Module de statistiques}
-				Ce module appartient à la partie modèle du patron MVC.
-	
+				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de statistique regroupe toutes les classes qui réalisent les opérations en rapport avec les graphes. Ce moule interagi avec le module d'upload et de download, pour comptabiliser les transferts. Le module de statistique gere toutes les statistiques ainsi que le stockages de celle ci.
+				\end{flushleft}
+				
 				\subparagraph{Module de communication}
 
 \newpage
@@ -212,15 +215,19 @@ Le seul traitement du contrôleur est de déterminer l'origine de chaque événe
 	
 				\subparagraph{Module de gestion des dossiers}
 				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de gestion regroupe  toutes les classes en rapport avec la gestion des dossiers. L'ensemble de ces classes réalisent les traitements tel que la création d'un répertoire, la suppression de fichiers... (cf Document des spécifications des exigences).\\ 
 				\end{flushleft}
 	
 				\subparagraph{Module de configuration et limitation}	
 				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de configuration et limitation regroupe toutes les classes qui réalisent les configurations du serveur et les limitations des transferts de fichiers du module de communication.
 				\end{flushleft}
 	
 				\subparagraph{Module de statistiques}
 				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de statistique regroupe toutes les classes qui réalisent les opérations en rapport avec les graphes. Ce moule interagi avec le module d'upload et de download, pour comptabiliser les transferts. Le module de statistique gere toutes les statistiques ainsi que le stockages de celle ci.
 				\end{flushleft}
+				
 	
 				\subparagraph{Module des historiques des événements}
 	
