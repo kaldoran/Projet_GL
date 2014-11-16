@@ -60,7 +60,7 @@
 			\hline
 			Version & Date & Description\\
 			\hline
-			V.1 & 03/11/14 & Première version de la conception générale\\
+			V.1 & 16/11/14 & Première version de la conception générale\\
 			\hline
 			 & & \\
 			\hline
@@ -93,77 +93,130 @@
 
 
 \section{Objectif du document}
+\begin{flushleft}
 Ce document présente la conception logicielles et matérielles de la version 1.0 du projet Kould Not Share de l'entreprise Kould Not Konnect. Les responsables de ce projet sont Nicolas Reynaud, Kevin Laoussing et Kevin Bascol.
+\end{flushleft}
 
-\section{Décomposition du système en modules (architecture)}
+\section{Architecture du système Kould Not Share}
 
-\subsection{Schéma du système}
+	\subsection{Architecture MVC}
+		\begin{flushleft}
+		Notre système Kould Not Share est composé en deux sous-système : le client et le serveur. Chacun de ces sous-systèmes utilisent un patron modèle-vue-controleur (MVC).\\
+Ce patron permettra de bien séparer les données, la présentation et les traitements qui correspond respectivement aux trois parties suivantes :le modèle, la vue et le contrôleur (voir section 2.1 Schéma du système).\\
+Pour rappel, lorsqu'un utilisateur interagie avec l'interface graphique de l'application (qui correspond à la vue du patron MVC), celle-ci envoie une requête  :
+			\begin{itemize}
+				\item la requête envoyée depuis la vue est analysée par le contrôleur (par exemple un clic de souris pour lancer un traitement de données) ;
+    			\item le contrôleur demande au modèle approprié d'effectuer les traitements et notifie à la vue que la requête est traitée ;
+    			\item la vue notifiée fait une requête au modèle pour se mettre à jour (par exemple affiche le résultat du traitement "via" le modèle).
 
+			\end{itemize}
+		\textbf{Remarque : }L'implémentation du patron MVC, utilise un autre patron de conception : Observateur.\\
+D'après le patron de conception observateur, la vue est un " observateur " du modèle qui est lui " observable ".
+		\end{flushleft}
+    
 
-\subsection{Description des modules}
+	\subsection{Architecture modulaire du système}
 
-\subsubsection{Modules Client}
+		\subsubsection{Schéma de la décomposition modulaire du système}
+			\begin{flushleft}
+			Ce schéma présente d'une part le patron utilisé par le système et d'autre part la décomposition modulaire du système.\\
+			Il décrit de manière général le fonctionnement du système à travers les interaction entre les modules.
+			\end{flushleft}
+			\begin{center}
+				\includegraphics[scale=0.23]{Ressources/modules_KNS.png}
+			\end{center}
+		(cf Annexe.)
 
-	\paragraph{Module de communication}
-	
-	
-
-	\paragraph{Module de configuration}
-
-		\subparagraph{Administration}
-
-		\subparagraph{Limitation}
+		\subsubsection{Description des modules}
 		
-		
+			\paragraph{Modules Client}
 
-	\paragraph{Module de gestion de dossier}
+				\subparagraph{Module interface graphique}
+				\begin{flushleft}
+				Ce module contiendra toutes les classes Java en rapport avec l'interface graphique du client KNS. Ce module correspond aussi à la vue du patron MVC, il doit par conséquent accomplir les tâches suivantes :\\
+					
+					\begin{itemize}
+						\item Présenter les résultats renvoyés par le modèle.
+						\item Recevoir toute action de l'utilisateur (hover, clic de souris, sélection d'un bouton radio, cochage d'une case, entrée de texte, de mouvements, de voix, etc.).
+						\item Envoyer ces différents événements au contrôleur. 
+					\end{itemize}
+					
+					\textbf{Ce module n'effectue pas de traitement, elle se contente d'afficher les résultats des traitements effectués par le modèle et d'interagir avec l'utilisateur.}\\
+				\end{flushleft}
+						
+				\subparagraph{Module d'administration}
+				
+				\begin{flushleft}
+				Techniquement, le module d'administration est une implémentation du contrôleur du patron MVC, il doit donc contenir toutes les classes permettant d'accomplir les tâches spécifiques d'un contrôleur :
+				
+				\begin{itemize}
+					\item Prendre en charge la gestion des événements de synchronisation pour mettre à jour la vue ou le modèle et les synchroniser. 
+					\item Recevoir tous les événements de la vue et enclencher les actions à effectuer. 
+					\item Si une action nécessite un changement des données, faire une demande de modification des données au modèle afin que les données affichées se mettent à jour. 
+				\end{itemize}
+				
+Ce module n'effectue aucun traitement, ni de modification sur la donnée. Il analyse la requête du client (envoyé depuis la vue) et se contente d'appeler le modèle adéquat et de renvoyer la vue correspondant à la demande.\\
+Le seul traitement du contrôleur est de déterminer l'origine de chaque événement. Ce tri des événements pourrait-être implémenter par le patron de conception Stratégie.
+				\end{flushleft}
+				
+	
+				\subparagraph{Module de gestion des dossiers}
+				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de gestion regroupe  toutes les classes en rapport avec la gestion des dossiers. L'ensemble de ces classes réalisent les traitements tel que la création d'un répertoire, la suppression de fichiers... (cf Document des spécifications des exigences).\\ 
+				\end{flushleft}
+	
+				\subparagraph{Module de configuration et limitation}	
+				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de configuration et limitation regroupe toutes les classes qui réalisent les configurations du client et les limitations des transferts de fichiers du module de communication.
+				\end{flushleft}
+	
+				\subparagraph{Module de upload/download}
+				\begin{flushleft}
+				Ce module appartient à la partie modèle du patron MVC. Le module de upload/download regroupe toutes les classes qui réalisent les opérations d'upload et de download d'un fichier. Pour chacun de ces opérations le module interagit avec le module de communication effectuer le transfert de fichiers, et le module de statistique pour comptabiliser les transferts. (cf Document des spécifications des exigences).
+				\end{flushleft}
+	
+				\subparagraph{Module de statistiques}
+				Ce module appartient à la partie modèle du patron MVC.
+	
+				\subparagraph{Module de communication}
+
+
+			\paragraph{Modules Serveur}
+
+				\subparagraph{Module de l'interface graphique}
 	
 	
-	
-
-	\paragraph{Module de statistiques}
+				\subparagraph{Module d'administration}
 	
 	
-	
-
-	\paragraph{Module de l'interface graphique}
-
-
-
-
-\subsubsection{Modules Serveur}
-
-	\paragraph{Module de communication}
+				\subparagraph{Module de gestion des dossiers}
 	
 	
+				\subparagraph{Module de configuration et limitation}	
+				
+	
+				\subparagraph{Module de statistiques}
 
-	\paragraph{Module de configuration}
-
-		\subparagraph{Administration : gestion des comptes}
-
-		\subparagraph{Limitation}
-		
-		\subparagraph{Historique des événement}
-		
-		
-
-	\paragraph{Module de gestion de dossier}
+	
+				\subparagraph{Module des historiques des événements}
 	
 	
-	
-
-	\paragraph{Module de statistiques}
+				\subparagraph{Module de gestion des comptes clients}
 	
 	
-	
-
-	\paragraph{Module de l'interface graphique}
+				\subparagraph{Module de communication}
 
 \section{Définition des principales structures de données}
 
-\subsection{Structures de données}
+	\subsection{Structures de données}
 
-\subsection{Interactions entre les structures de données} %<--- diagramme de séquence ?%
+	\subsection{Interactions entre les structures de données} %<--- diagramme de séquence ?%
 
+\newpage
 \section{Annexe}
+
+\subsection{Architecture modulaire du système KNS}
+	\begin{center}
+	\rotatebox{270}{\includegraphics[scale=0.35]{Ressources/modules_KNS.png}}	
+	\end{center}
 \end{document}
