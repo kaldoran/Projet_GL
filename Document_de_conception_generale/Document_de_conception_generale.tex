@@ -98,66 +98,62 @@ Ce document présente la conception logicielles et matérielles de la version 1.
 \section{Décomposition du système en modules (architecture)}
 
 \subsection{Schéma du système}
-
-
+\begin{center}
+\includegraphics[scale=0.23]{Ressources/modules_KNS.png}
+\end{center}
+(cf Annexe)
 \subsection{Description des modules}
 
 \subsubsection{Modules Client}
 
-	\paragraph{Module de communication}
+	\paragraph{Module de l'interface graphique}
 	
 	
-
-	\paragraph{Module de configuration}
-
-		\subparagraph{Administration}
-
-		\subparagraph{Limitation}
-		
-		
-
+	\paragraph{Module d'administration}
+	
+	
 	\paragraph{Module de gestion de dossier}
 	
 	
+	\paragraph{Module de configuration et limitation}	
 	
-
+	
+	\paragraph{Module de upload/download}
+	
+	
 	\paragraph{Module de statistiques}
 	
 	
-	
-
-	\paragraph{Module de l'interface graphique}
-
-
+	\paragraph{Module de communication}
 
 
 \subsubsection{Modules Serveur}
 
-	\paragraph{Module de communication}
+	\paragraph{Module de l'interface graphique}
 	
 	
-
-	\paragraph{Module de configuration}
-
-		\subparagraph{Administration : gestion des comptes}
-
-		\subparagraph{Limitation}
-		
-		\subparagraph{Historique des événement}
-		
-		
-
+	\paragraph{Module d'administration}
+	
+	
 	\paragraph{Module de gestion de dossier}
 	
 	
+	\paragraph{Module de configuration et limitation}	
 	
-
+	
+	\paragraph{Module de upload/download}
+	
+	
 	\paragraph{Module de statistiques}
-	
-	
-	
 
-	\paragraph{Module de l'interface graphique}
+	
+	\paragraph{Module des historiques des événements}
+	
+	
+	\paragraph{Module de gestion des comptes clients}
+	
+	
+	\paragraph{Module de communication}
 
 \section{Définition des principales structures de données}
 
@@ -165,5 +161,11 @@ Ce document présente la conception logicielles et matérielles de la version 1.
 
 \subsection{Interactions entre les structures de données} %<--- diagramme de séquence ?%
 
+\newpage
 \section{Annexe}
+
+\subsection{Architecture modulaire du système KNS}
+	\begin{center}
+	\rotatebox{270}{\includegraphics[scale=0.35]{Ressources/modules_KNS.png}}	
+	\end{center}
 \end{document}
