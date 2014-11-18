@@ -90,29 +90,46 @@
 
 \newgeometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
 
+\section{Introduction}
 
 
-\section{Objectif du document}
+\subsection{Portée du document}
+Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou des entreprises l'échange des données de manière contrôler. Par exemple, chaque utilisateurs propriétaires d'un fichier stocké dans le serveur FTP du logiciel, pourront paramétrer les droits de téléchargements sur ce fichier, et ainsi ils disposeront du pouvoir de restreindre ou d'augmenter l'accessibilité de son fichier...
+
+\subsection{Objectif du document}
 \begin{flushleft}
 Ce document présente la conception logicielles et matérielles de la version 1.0 du projet Kould Not Share de l'entreprise Kould Not Konnect. Les responsables de ce projet sont Nicolas Reynaud, Kevin Laoussing et Kevin Bascol.
 \end{flushleft}
 
+\subsection{Définitions, acronymes et abréviations}
+\begin{description}
+\item[KNK] Kould Not Konect.
+\item[KNS] Kould Not Share.
+\item[FTP] File Transfer Protocol, protocole de communication destiné à l'échange informatique de fichiers sur un réseau TCP/IP.
+\item [MVC] : Modèle-Vue-Controleur, est un modèle destiné à répondre aux besoins des applications interactives en séparant les problématiques liées aux différents composants au sein de leur architecture respective.
+\item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
+\item[Client] Logiciel qui envoie des demandes à un serveur.
+\item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
+\item[Downloader] Anglicisme du mot "télécharger".
+\item[Uploader] Anglicisme du mot "téléverser".
+\end{description}
+
+\section{Description générale}
+
+Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.\\
+
 \section{Architecture du système Kould Not Share}
 
-	\subsection{Architecture MVC}
-		\begin{flushleft}
-		Notre système Kould Not Share est composé en deux sous-système : le client et le serveur. Chacun de ces sous-systèmes utilisent un patron modèle-vue-controleur (MVC).\\
-Ce patron permettra de bien séparer les données, la présentation et les traitements qui correspond respectivement aux trois parties suivantes :le modèle, la vue et le contrôleur (voir section 2.1 Schéma du système).\\
-Pour rappel, lorsqu'un utilisateur interagie avec l'interface graphique de l'application (qui correspond à la vue du patron MVC), celle-ci envoie une requête  :
-			\begin{itemize}
-				\item la requête envoyée depuis la vue est analysée par le contrôleur (par exemple un clic de souris pour lancer un traitement de données) ;
-    			\item le contrôleur demande au modèle approprié d'effectuer les traitements et notifie à la vue que la requête est traitée ;
-    			\item la vue notifiée fait une requête au modèle pour se mettre à jour (par exemple affiche le résultat du traitement "via" le modèle).
-
-			\end{itemize}
-		\textbf{Remarque : }L'implémentation du patron MVC, utilise un autre patron de conception : Observateur.\\
-D'après le patron de conception observateur, la vue est un " observateur " du modèle qui est lui " observable ".
-		\end{flushleft}
+		Le logiciel Kould Not Share est composé en deux sous-système : le client et le serveur. Cette partie décrit la conception d'un point de vue modulaire et modèle, du logiciel KNS.
+		
+%		\begin{itemize}
+%						\item Présenter les résultats renvoyés par le modèle.
+%						\item Recevoir toute action de l'utilisateur (hover, clic de souris, sélection d'un bouton radio, cochage d'une case, entrée de texte, de mouvements, de voix, etc.).
+%						\item Envoyer ces différents événements au contrôleur. 
+%					\end{itemize}
+					
+%					\textbf{Ce module n'effectue pas de traitement, elle se contente d'afficher les résultats des traitements effectués par le modèle et d'interagir avec l'utilisateur.}\\
+%				\end{flushleft}
     
 
 	\subsection{Architecture modulaire du système}
@@ -133,78 +150,174 @@ D'après le patron de conception observateur, la vue est un " observateur " du m
 
 				\subparagraph{Module interface graphique}
 				\begin{flushleft}
-				Ce module contiendra toutes les classes Java en rapport avec l'interface graphique du client KNS. Ce module correspond aussi à la vue du patron MVC, il doit par conséquent accomplir les tâches suivantes :\\
+				Le module de l'interface graphique contiendra toutes les classes Java implémentant l'interface graphique du client KNS. Le module utilisera principalement l'API Swing de la bibliothèque JFC. Il doit  accomplir les tâches suivantes :\\
 					
 					\begin{itemize}
-						\item Présenter les résultats renvoyés par le modèle.
+						\item Présenter les informations,les données et les résultats renvoyés par un traitement.
 						\item Recevoir toute action de l'utilisateur (hover, clic de souris, sélection d'un bouton radio, cochage d'une case, entrée de texte, de mouvements, de voix, etc.).
-						\item Envoyer ces différents événements au contrôleur. 
+						\item effectuer correctement le traitement lié à l'événement. 
 					\end{itemize}
 					
-					\textbf{Ce module n'effectue pas de traitement, elle se contente d'afficher les résultats des traitements effectués par le modèle et d'interagir avec l'utilisateur.}\\
+					Ce module ne doit effectue pas de traitement, il doit se contenter d'afficher les résultats des traitements demandés par l'utilisateur.\\
 				\end{flushleft}
 						
 				\subparagraph{Module d'administration}
 				
 				\begin{flushleft}
-				Techniquement, le module d'administration est une implémentation du contrôleur du patron MVC, il doit donc contenir toutes les classes permettant d'accomplir les tâches spécifiques d'un contrôleur :
+				Le module d'administration est l'ensemble des classes qui "administre" et coordonne les traitements selon les actions de l'utilisateur. de  il doit accomplir les tâches suivante:
 				
 				\begin{itemize}
-					\item Prendre en charge la gestion des événements de synchronisation pour mettre à jour la vue ou le modèle et les synchroniser. 
-					\item Recevoir tous les événements de la vue et enclencher les actions à effectuer. 
-					\item Si une action nécessite un changement des données, faire une demande de modification des données au modèle afin que les données affichées se mettent à jour. 
+					\item Prendre en charge la gestion des événements de synchronisation pour mettre à jour l'interface graphique selon le traitement effectué. 
+					\item Recevoir tous les événements de l'interface graphique et enclencher les traitements à effectuer, autrement dit, enclencher le traitement d'un module.
 				\end{itemize}
 				
-Ce module n'effectue aucun traitement, ni de modification sur la donnée. Il analyse la requête du client (envoyé depuis la vue) et se contente d'appeler le modèle adéquat et de renvoyer la vue correspondant à la demande.\\
-Le seul traitement du contrôleur est de déterminer l'origine de chaque événement. Ce tri des événements pourrait-être implémenter par le patron de conception Stratégie.
+Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. Il doit analyser l'action de l'utilisateur et se contenter d'appeler le traitement du module adéquat.
 				\end{flushleft}
 				
 	
 				\subparagraph{Module de gestion des dossiers}
 				\begin{flushleft}
-				Ce module appartient à la partie modèle du patron MVC. Le module de gestion regroupe  toutes les classes en rapport avec la gestion des dossiers. L'ensemble de ces classes réalisent les traitements tel que la création d'un répertoire, la suppression de fichiers... (cf Document des spécifications des exigences).\\ 
+				Le module de gestion regroupe toutes les classes qui implémentent la gestion des dossiers. Ce module doit accomplir les tâches suivantes :
+				\begin{itemize}
+					\item les traitements de manipulation de fichiers et de répertoires (cf Document des spécifications des exigences, section 3.1.1.4).
+					\item les traitements d'affichages (cf Document des spécifications des exigences, section 3.1.1.4).
+				\end{itemize}
+				
+				Par conséquent le module doit interagir avec le système de l'utilisateur (manipulation de fichiers et de répertoires), et le module de communication (pour obtenir l'arborescence d'un répertoire héberger dans un serveur FTP).\\
+				Le module ne doit effectuer de traitement que lorsqu'il est appelé par le module d'administration.
 				\end{flushleft}
 	
 				\subparagraph{Module de configuration et limitation}	
 				\begin{flushleft}
-				Ce module appartient à la partie modèle du patron MVC. Le module de configuration et limitation regroupe toutes les classes qui réalisent les configurations du client et les limitations des transferts de fichiers du module de communication.
+				Le module de configuration et limitation regroupe toutes les classes qui implémentent les configurations du client et les limitations des transferts de fichiers du module de communication (cf Document des spécifications des exigences, section 3.1.1.3).\\
+				Le module doit interagir avec le module de communication pour lui appliquer la configuration décidée par l'utilisateur.\\
+				Le module ne doit effectuer de traitement que lorsqu'il est appelé par le module d'administration.
 				\end{flushleft}
 	
 				\subparagraph{Module de upload/download}
 				\begin{flushleft}
-				Ce module appartient à la partie modèle du patron MVC. Le module de upload/download regroupe toutes les classes qui réalisent les opérations d'upload et de download d'un fichier. Pour chacun de ces opérations le module interagit avec le module de communication effectuer le transfert de fichiers, et le module de statistique pour comptabiliser les transferts. (cf Document des spécifications des exigences).
+				Le module de upload/download regroupe toutes les classes qui implémentent les opérations d'upload et de download d'un fichier (cf Document des spécifications des exigences, section 3.1.1.6). \\
+				Le module doit interagir avec le module de communication et le systeme du client pour effectuer un transfert de fichiers(upload et download).\\
+				Le module doit interagir avec le module de statistiques pour comptabiliser les opérations effectuées par le module de upload/download.\\
+				Le module doit respecter la configuration donnée par le module de configuration et de limitation.
+				Le module ne doit effectuer de traitement que lorsqu'il est appelé par le module d'administration.
 				\end{flushleft}
 	
 				\subparagraph{Module de statistiques}
-				Ce module appartient à la partie modèle du patron MVC.
-	
-				\subparagraph{Module de communication}
-
-
-			\paragraph{Modules Serveur}
-
-				\subparagraph{Module de l'interface graphique}
-	
-	
-				\subparagraph{Module d'administration}
-	
-	
-				\subparagraph{Module de gestion des dossiers}
-	
-	
-				\subparagraph{Module de configuration et limitation}	
+				\begin{flushleft}
+				Le module de statistiques regroupe toutes les classes qui implémentent toutes les opérations de statistiques décrites dans le documents de  spécification des exigences (cf Document des spécifications des exigences, section 3.1.1.7).\\
+				Le module doit effectuer des traitements à chaque opérations de transfert de donnée du module de upload/download, et lorsqu'il est appelé par le module d'administration.
+				\end{flushleft}
 				
 	
-				\subparagraph{Module de statistiques}
-
-	
+				\subparagraph{Module de communication}
+				\begin{flushleft}
+				Le module de communication regroupe toutes les classes qui implémentent la communication de réseau. Le principale traitement de ce module est effectuer tout les types d'opérations réseau du logiciel. Ce module doit accomplir les taches suivantes :
+				\begin{itemize}
+					\item Permettre au client de se connecter à n'importe quel serveur FTP.
+					\item Effectuer toutes les opérations d'authentifications (cf Document des spécifications des exigences, section 3.1.1.5).
+					\item Effectuer toutes les opérations de transfert de fichier en respectant le protocle FTP et la configuration imposée le module de configurations et de limitations (cf Document des spécifications des exigences, section 3.1.1.6).
+				\end{itemize}
+				
+				Le module doit interagir avec le module de upload/download lors d'un transfert de fichiers.\\
+				\end{flushleft}
+				
+				
+			\paragraph{Modules Serveur}
+				Les modules du serveur reprend les même modules que le client, mais possède des modules supplémentaire.
+				
 				\subparagraph{Module des historiques des événements}
 	
 	
 				\subparagraph{Module de gestion des comptes clients}
-	
-	
-				\subparagraph{Module de communication}
+
+				
+	\subsection{Modèle MVC}
+		Notre logiciel utilise un modèle MVC pour la partie client et la partie serveur.
+		\subsubsection{Rappel}
+			
+			\paragraph{Principe de MVC}
+			\begin{flushleft}
+
+			Le modèle MVC permet de bien séparer les données, la présentation et les traitements correspondant respectivement aux trois parties suivantes : le modèle, la vue et le contrôleur (voir section 1.1 Schéma du système).\\
+Pour rappel, lorsqu'un utilisateur interagie avec l'interface graphique de l'application (qui correspond à la vue du patron MVC), celle-ci envoie une requête  :
+				\begin{itemize}
+					\item la requête envoyée depuis la vue est analysée par le contrôleur (par exemple un clic de souris pour lancer un traitement de données) ;
+    				\item le contrôleur demande au modèle approprié d'effectuer les traitements et notifie à la vue que la requête est traitée ;
+    				\item la vue notifiée fait une requête au modèle pour se mettre à jour (par exemple affiche le résultat du traitement "via" le modèle).
+
+				\end{itemize}
+			\end{flushleft}
+			
+		\paragraph{La vue}
+			\subparagraph{Description}
+			\begin{flushleft}
+				Elle fournit une présentation du modèle. En général, la vue reçoit directement du modèle l’état et les données qu’elle doit afficher.
+			\end{flushleft}
+			
+			\subparagraph{Modules composant la vue de MVC}
+			\begin{flushleft}
+				\begin{itemize}
+				 	\item Module de l'interface graphique.
+				\end{itemize}
+			\end{flushleft}
+			
+		\paragraph{Le contrôleur}
+			\subparagraph{Description}
+			\begin{flushleft}
+				Il accepte les entrées des utilisateurs et détermine ce qu’elles
+signifient pour le modèle.
+			\end{flushleft}
+			
+			\subparagraph{Modules composant le contrôleur de MVC}
+			\begin{flushleft}
+				\begin{itemize}
+					\item Module administration.
+				\end{itemize}
+			\end{flushleft}
+			
+		\paragraph{Le modèle}
+			\subparagraph{Description}
+			\begin{flushleft}
+				Le modèle contient les états, les données et la logique applicative. Il n’a pas conscience de la vue ni du contrôleur, même s’il fournit une interface pour accéder à son état et le manipuler et s’il peut informer les observateurs des changements d’état.
+			\end{flushleft}
+			
+			\subparagraph{Modules composant le modèle de MVC}
+			\begin{flushleft}
+			Pour la partie client :
+				\begin{itemize}
+					\item Module de gestion de dossiers/fichiers;
+					\item Module de configuration et limitation;
+					\item Module de gestion de upload/download;
+					\item Module de statistiques;
+				\end{itemize}
+			Pour la partie serveur :
+			\begin{itemize}
+					\item Module de gestion de dossiers/fichiers;
+					\item Module de configuration et limitation;
+					\item Module de gestion de upload/download;
+					\item Module de statistiques;
+					\item Module de gestion des comptes clients;
+					\item Module de gestion des historiques des événements.
+				\end{itemize}
+			\end{flushleft}
+
+			
+		\subsubsection{Conception du modèle MVC}
+		
+		Le modèle MVC est un patron de conception composé : il intègre plusieurs patrons de conceptions décrite dans cette section.
+		
+		\paragraph{Observateur}
+		\begin{flushleft}
+				Le modèle implémente le patron de conception Observateur, afin que les objets intéressés soient mis à jour quand un changement d’état se produit. L’emploi du patron de conception Observateur garantit que le modèle demeure complètement indépendant des vues et des contrôleurs. Il permet également d’utiliser des vues différentes avec le même modèle, voire d’en utiliser plusieurs en même temps.
+
+		\end{flushleft}
+		\paragraph{Stratégie}
+		\begin{flushleft}
+		La vue et le contrôleur mettent en œuvre le patron de conception Stratégie : la vue est un objet qui est configuré avec une stratégie. Le contrôleur fournit la stratégie. La vue n’est concernée que par les aspects visuels de l’application et délègue au contrôleur toutes les décisions sur le  comportement de l’interface. L’emploi du pattern Stratégie permet également de découpler la vue du modèle parce que c’est le contrôleur qui a la responsabilité d’interagir avec le modèle pour exécuter les requêtes des utilisateurs. La vue ne sait absolument pas comment il procède.		
+		\end{flushleft}
+
+
 
 \section{Définition des principales structures de données}
 
