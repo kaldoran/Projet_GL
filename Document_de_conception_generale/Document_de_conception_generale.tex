@@ -214,13 +214,24 @@ Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. I
 				
 				
 			\paragraph{Modules Serveur}
-				Les modules du serveur reprend les même modules que le client, mais possède des modules supplémentaire.
+				Les modules du serveur reprend les même modules que le client, mais possède des modules supplémentaire. 
 				
 				\subparagraph{Module des historiques des événements}
-	
-	
+				\begin{flushleft}
+					Le module des historiques des événements regroupe les classes qui implémentent la gestion d'historique des événements et le stockage de l'historique. Il doit donc accomplir les taches suivantes : 
+					\begin{itemize}
+						\item Insérer dans un fichier les événements qui sont survenu ( création de compte, suppression de compte etc .. )
+						\item Stocker les actions survenue dans un fichier texte.
+						\item Afficher les événements survenu.
+						\item Éditer un rapport une fois par jours contenant les événements de la journée.
+					\end{itemize}
+				\end{flushleft}
+				
 				\subparagraph{Module de gestion des comptes clients}
-
+				\begin{flushleft}
+					
+				\end{flushleft}
+				
 				
 	\subsection{Modèle MVC}
 		Notre logiciel utilise un modèle MVC pour la partie client et la partie serveur.
