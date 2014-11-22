@@ -94,7 +94,7 @@
 
 
 \subsection{Portée du document}
-Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou des entreprises l'échange des données de manière contrôler. Par exemple, chaque utilisateurs propriétaires d'un fichier stocké dans le serveur FTP du logiciel, pourront paramétrer les droits de téléchargements sur ce fichier, et ainsi ils disposeront du pouvoir de restreindre ou d'augmenter l'accessibilité de son fichier...
+Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou des entreprises l'échange de donnée de manière contrôlée. Par exemple, chaque utilisateur propriétaire d'un fichier stocké dans le serveur FTP du logiciel, pourra paramétrer les droits de téléchargements sur ce fichier, et ainsi il disposera du pouvoir de restreindre ou d'augmenter l'accessibilité de son fichier...
 
 \subsection{Objectif du document}
 \begin{flushleft}
@@ -116,11 +116,11 @@ Ce document présente la conception logicielles et matérielles de la version 1.
 
 \section{Description générale}
 
-Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Il pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.\\
+Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Ils pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.\\
 
 \section{Architecture du système Kould Not Share}
 
-		Le logiciel Kould Not Share est composé en deux sous-système : le client et le serveur. Cette partie décrit la conception d'un point de vue modulaire et modèle, du logiciel KNS.
+		Le logiciel Kould Not Share est composé en deux sous-systèmes : le client et le serveur. Cette partie décrit la conception d'un point de vue modulaire et modèle, du logiciel KNS.
 
 	\subsection{Architecture modulaire du système}
 
@@ -145,7 +145,7 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 					\begin{itemize}
 						\item Présenter les informations,les données et les résultats renvoyés par un traitement.
 						\item Recevoir toute action de l'utilisateur (hover, clic de souris, sélection d'un bouton radio, cochage d'une case, entrée de texte, de mouvements, de voix, etc.).
-						\item effectuer correctement le traitement lié à l'événement. 
+						\item Effectuer correctement le traitement lié à l'événement. 
 					\end{itemize}
 					
 					Ce module ne doit effectue pas de traitement, il doit se contenter d'afficher les résultats des traitements demandés par l'utilisateur.\\
@@ -154,7 +154,7 @@ Ce projet consiste en la création d'un serveur FTP chez un particulier ou une e
 				\subparagraph{Module d'administration}
 				
 				\begin{flushleft}
-				Le module d'administration est l'ensemble des classes qui "administre" et coordonne les traitements selon les actions de l'utilisateur. de  il doit accomplir les tâches suivante:
+				Le module d'administration est l'ensemble des classes qui "administrent" et coordonnent les traitements selon les actions de l'utilisateur. Il doit accomplir les tâches suivante:
 				
 				\begin{itemize}
 					\item Prendre en charge la gestion des événements de synchronisation pour mettre à jour l'interface graphique selon le traitement effectué. 
@@ -167,7 +167,7 @@ Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. I
 	
 				\subparagraph{Module de gestion des dossiers}
 				\begin{flushleft}
-				Le module de gestion regroupe toutes les classes qui implémentent la gestion des dossiers. Ce module doit accomplir les tâches suivantes :
+				Le module de gestion des dossiers regroupe toutes les classes qui implémentent la gestion des dossiers. Ce module doit accomplir les tâches suivantes :
 				\begin{itemize}
 					\item les traitements de manipulation de fichiers et de répertoires (cf Document des spécifications des exigences, section 3.1.1.4).
 					\item les traitements d'affichages (cf Document des spécifications des exigences, section 3.1.1.4).
@@ -205,8 +205,8 @@ Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. I
 				Le module de communication regroupe toutes les classes qui implémentent la communication de réseau. Le principale traitement de ce module est effectuer tout les types d'opérations réseau du logiciel. Ce module doit accomplir les taches suivantes :
 				\begin{itemize}
 					\item Permettre au client de se connecter à n'importe quel serveur FTP.
-					\item Effectuer toutes les opérations d'authentifications (cf Document des spécifications des exigences, section 3.1.1.5).
-					\item Effectuer toutes les opérations de transfert de fichier en respectant le protocle FTP et la configuration imposée le module de configurations et de limitations (cf Document des spécifications des exigences, section 3.1.1.6).
+					\item Effectuer toutes les opérations d'authentification (cf Document des spécifications des exigences, section 3.1.1.5).
+					\item Effectuer toutes les opérations de transfert de fichier en respectant le protocle FTP et la configuration imposée par le module de configuration et de limitation (cf Document des spécifications des exigences, section 3.1.1.6).
 				\end{itemize}
 				
 				Le module doit interagir avec le module de upload/download lors d'un transfert de fichiers.\\
@@ -214,26 +214,26 @@ Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. I
 				
 				
 			\paragraph{Modules Serveur}
-				Les modules du serveur reprend les même modules que le client, mais possède des modules supplémentaire. 
+				Le serveur reprend les mêmes modules que le client, mais s'ajoutent des modules supplémentaires. 
 				
 				\subparagraph{Module des historiques des événements}
 				\begin{flushleft}
-					Le module des historiques des événements regroupe les classes qui implémentent la gestion d'historique des événements et le stockage de l'historique. Il doit donc accomplir les taches suivantes : 
+					Le module des historiques des événements regroupe les classes qui implémentent la gestion d'historique des événements et le stockage de l'historique. Il doit donc accomplir les tâches suivantes : 
 					\begin{itemize}
-						\item Insérer dans un fichier les événements qui sont survenu ( création de compte, suppression de compte etc )
-						\item Stocker les actions survenue dans un fichier texte.
-						\item Afficher les événements survenu.
-						\item Éditer un rapport une fois par jours contenant les événements de la journée.
+						\item Insérer dans un fichier les événements qui sont survenus ( création de compte, suppression de compte etc )
+						\item Stocker les actions survenues dans un fichier texte.
+						\item Afficher les événements survenus.
+						\item Éditer un rapport une fois par jour contenant les événements de la journée.
 					\end{itemize}
 				\end{flushleft}
 				
 				\subparagraph{Module de gestion des comptes clients}
 				\begin{flushleft}
-					Le module de gestion de comptes clients regroupe les classes qui implémentent le stockage et les droits des comptes. Elle réalise donc les actions suivante : 
+					Le module de gestion des comptes clients regroupe les classes qui implémentent le stockage et les droits des comptes. Elle réalise donc les actions suivantes : 
 					\begin{itemize}
-						\item Stocker les comptes dans différents fichier texte.
+						\item Stocker les comptes dans différents fichiers textes.
 						\item Vérifier si un compte existe.
-						\item Vérifier si le mot de passe est correcte.
+						\item Vérifier si le mot de passe est correct.
 						\item Crée un compte.
 						\item Supprimer un compte.
 						\item Bannir un compte.
@@ -249,7 +249,7 @@ Ce module ne doit effectuer aucun traitement sur la requête de l'utilisateur. I
 			\begin{flushleft}
 
 			Le modèle MVC permet de bien séparer les données, la présentation et les traitements correspondant respectivement aux trois parties suivantes : le modèle, la vue et le contrôleur (voir section 1.1 Schéma du système).\\
-Pour rappel, lorsqu'un utilisateur interagie avec l'interface graphique de l'application (qui correspond à la vue du patron MVC), celle-ci envoie une requête  :
+Pour rappel, lorsqu'un utilisateur interagit avec l'interface graphique de l'application (qui correspond à la vue du patron MVC), celle-ci envoie une requête  :
 				\begin{itemize}
 					\item la requête envoyée depuis la vue est analysée par le contrôleur (par exemple un clic de souris pour lancer un traitement de données) ;
     				\item le contrôleur demande au modèle approprié d'effectuer les traitements et notifie à la vue que la requête est traitée ;
@@ -318,12 +318,12 @@ signifient pour le modèle.
 		
 		\paragraph{Observateur}
 		\begin{flushleft}
-				Le modèle implémente le patron de conception Observateur, afin que les objets intéressés soient mis à jour quand un changement d’état se produit. L’emploi du patron de conception Observateur garantit que le modèle demeure complètement indépendant des vues et des contrôleurs. Il permet également d’utiliser des vues différentes avec le même modèle, voire d’en utiliser plusieurs en même temps.
+		Le modèle implémente le patron de conception Observateur, afin que les objets intéressés soient mis à jour quand un changement d’état se produit. L’emploi du patron de conception Observateur garantit que le modèle demeure complètement indépendant des vues et des contrôleurs. Il permet également d’utiliser des vues différentes avec le même modèle, voir d’en utiliser plusieurs en même temps.
 
 		\end{flushleft}
 		\paragraph{Stratégie}
 		\begin{flushleft}
-		La vue et le contrôleur mettent en œuvre le patron de conception Stratégie : la vue est un objet qui est configuré avec une stratégie. Le contrôleur fournit la stratégie. La vue n’est concernée que par les aspects visuels de l’application et délègue au contrôleur toutes les décisions sur le  comportement de l’interface. L’emploi du pattern Stratégie permet également de découpler la vue du modèle parce que c’est le contrôleur qui a la responsabilité d’interagir avec le modèle pour exécuter les requêtes des utilisateurs. La vue ne sait absolument pas comment il procède.		
+		La vue et le contrôleur mettent en œuvre le patron de conception Stratégie : la vue est un objet qui est configuré avec une stratégie. Le contrôleur fournit la stratégie. La vue n’est concernée que par les aspects visuels de l’application et délègue au contrôleur toutes les décisions sur le  comportement de l’interface. L’emploi du pattern Stratégie permet également de découpler la vue du modèle puisque le contrôleur a la responsabilité d’interagir avec le modèle pour exécuter les requêtes des utilisateurs. La vue ne sait absolument pas comment il procède.		
 		\end{flushleft}
 
 
