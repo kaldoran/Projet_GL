@@ -103,12 +103,61 @@ Le logiciel de client/serveur FTP est un outil permettant à des particuliers ou
 \item[KNK] Kould Not Konect.
 \item[KNS] Kould Not Share.
 \item[FTP] File Transfer Protocol, protocole de communication destiné à l'échange informatique de fichiers sur un réseau TCP/IP.
-\item [MVC] : Modèle-Vue-Controleur, est un modèle destiné à répondre aux besoins des applications interactives en séparant les problématiques liées aux différents composants au sein de leur architecture respective.
+\item [MVC] Modèle-Vue-Controleur, est un modèle destiné à répondre aux besoins des applications interactives en séparant les problématiques liées aux différents composants au sein de leur architecture respective.
+\item[DCG] Document de Conception Générale.
 \item[Protocole] Spécification de plusieurs règles pour un type de communication particulier.
 \item[Client] Logiciel qui envoie des demandes à un serveur.
 \item[Serveur] Dispositif informatique matériel ou logiciel qui offre des services, à différents clients.
 \item[Downloader] Anglicisme du mot "télécharger".
 \item[Uploader] Anglicisme du mot "téléverser".
 \end{description}
+
+\section{Description générale}
+
+Ce projet consiste en la création d'un serveur FTP chez un particulier ou une entreprise, ayant accès à la machine sur laquelle est installé le programme. Les utilisateurs se verront donner l'accès par l'administrateur à certains dossiers de la machine sur laquelle est installé le serveur. Ils pourront faire alors des échanges de fichiers dans ces répertoires à l'aide du client FTP.\\
+
+\section{Architecture du système Kould Not Share}
+Nous allons préciser les modules décrit dans le document de conception générale grâce à des diagrammes de classe.
+\subsection{Module de gestion des dossiers}
+Module décrit dans la section 3.1.2.1.3 du DCG.
+\begin{center}
+	\includegraphics[scale=0.5]{./Ressources/modules_doss.png}\\
+\end{center}
+
+\subsection{Module de configurations et limitations}
+Module décrit dans la section 3.1.2.1.4 du DCG.
+\begin{center}
+	\includegraphics[scale=0.5]{./Ressources/modules_lim.png}\\
+\end{center}
+
+\subsection{Module d'upload et download}
+Module décrit dans la section 3.1.2.1.5 du DCG.
+\begin{center}
+	\includegraphics{./Ressources/downlaodUpload.jpeg}\\
+\end{center}
+
+\subsection{Module de statistiques}
+Module décrit dans la section 3.1.2.1.6 du DCG.
+\begin{center}
+	%\includegraphics{./Ressources/downl}\\
+\end{center}
+
+\subsection{Module de communication}
+Module décrit dans la section 3.1.2.1.7 du DCG.
+\begin{center}
+	\includegraphics{./Ressources/communication.jpeg}\\
+\end{center}
+
+\subsection{Module des historiques des événements}
+Module décrit dans la section 3.1.2.2.1 du DCG.
+\begin{center}
+	\includegraphics{./Ressources/historiqueEvenement.jpeg}\\
+\end{center}
+
+\subsection{Module de gestion des comptes}
+Module décrit dans la section 3.1.2.2.2 du DCG.
+\begin{center}
+	\rotatebox{90}{\includegraphics{./Ressources/gestionCompte.jpeg}}\\
+\end{center}
 
 \end{document}
