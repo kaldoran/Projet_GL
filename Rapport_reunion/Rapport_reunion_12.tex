@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\geometry{hmargin=3.0cm,vmargin=1.5cm}
+\parindent=0pt
+
+\title{Rapport Reunion \#12}
+\author{Auteur : Kévin \bsc{LAOUSSING}}
+\date{27 Décembre 2014}
+
+	
+\begin{document}
+%--------------------------Page de présentation------------------------------%
+\maketitle
+
+\newpage
+
+Présents à cette réunion : Bascol Kevin, Laoussing Kévin, Reynaud Nicolas.
+
+%--------------------------Ordre du jour------------------------------%
+\subsection*{Ordre du jour}
+\begin{itemize}[label = $\blacktriangleright$]
+\item Avancement de l'implémentation du projet
+\end{itemize}
+
+%--------------------------Bilan du travail réalisé------------------------------%
+\subsection*{Bilan du travail réalisé}
+
+\begin{itemize}[label = $\blacktriangleright$]
+\item L'implémentation de l'interface graphique du client est avancée.
+D'un point vue MVC, la vue est quasiment achevé, le contrôleur et le modèle ont été implémenter pour l'authentification.
+
+\item La fonctionnalité d'authentification fonctionne sur l'interface graphique du client, mais il reste à faire des tests (vérifiez que le comportement du logiciel si l'utilisateur envoie un mot de passe vide, si le pseudo saisi est excessivement long...).
+
+\item Ré-écriture de certaine fonction de l'authentification côté serveur et côté client : utilisation de beans, révision des threads côté serveur...
+\end{itemize}
+
+
+%--------------------------Décision de la réunion------------------------------%
+\subsection*{Décisions prises}
+
+\begin{itemize}[label = $\blacktriangleright$]
+\item Nous avons pris du retard concernant l'implémentation du projet, notamment a cause de l'implémentation du patron de conception MVC.
+
+\item En fonction de l'avancement du projet durant la semaine qui suit, nous choisirons les fonctions qui ne vont pas être implémenter. Il est encore trop tôt pour décider.
+\end{itemize}
+
+%--------------------------Prévision du travail à réaliser------------------------------%
+\subsection*{Prévision du travail à réaliser}
+
+\begin{itemize}[label = $\blacktriangleright$]
+\item Finir l'implémentation MVC du client : interface graphique, contrôleur, modèle.
+\item Commencer l'implémentation MVC du serveur.
+\item Débuter les tests unitaires.
+\end{itemize}
+
+%----------------------------------Prochaine réunion------------------------------------%
+\subsection*{Prochaine réunion : 2 Janvier 2015}
+
+\textbf{Ordre du jour} : état d'avancement du projet.\\
+
+
+\end{document}
