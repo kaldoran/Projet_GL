@@ -15,6 +15,7 @@
 \usepackage[top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
 \definecolor{true}{rgb}{0,0.40,0}
+\definecolor{ukwn}{rgb}{0.50,0,0}
 \definecolor{false}{rgb}{0.60,0,0}
 
 \usepackage{fancyhdr}
@@ -124,19 +125,19 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		AuthC.1 & 3.1.1.1.1.1 3.1.1.1.1.2 3.1.1.1.1.3 3.1.1.1.1.13 & Ouvrir le logiciel. & Le formulaire de connexion apparait en pop-up au centre de la fenêtre, le reste de l'application est grisé (hormis la barre d'action). & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Le pop-up est apparu au centre.} \item \textcolor{false}{Le reste de l'application n'est pas grisé.}\end{itemize}\\
+		AuthC.1 & 3.1.1.1.1.1 3.1.1.1.1.2 3.1.1.1.1.3 3.1.1.1.1.13 & Ouvrir le logiciel. & Le formulaire de connexion apparait en pop-up au centre de la fenêtre, le reste de l'application est grisé (hormis la barre d'action). &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Le pop-up est apparu au centre.} \item \textcolor{false}{Le reste de l'application n'est pas grisé.}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.1 & 3.1.1.1.1.4 3.1.1.1.1.5 & Cliquer sur le bouton de déconnexion. & Le bouton doit être grisé et ne doit rien déclencher. & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Le bouton est désactivé.} \item \textcolor{false}{Le bouton n'est pas grisé.}\end{itemize}\\
+		AuthC.1.1 & 3.1.1.1.1.4 3.1.1.1.1.5 & Cliquer sur le bouton de déconnexion. & Le bouton doit être grisé et ne doit rien déclencher. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Le bouton est désactivé.} \item \textcolor{false}{Le bouton n'est pas grisé.}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.2 & 3.1.1.1.1.6 3.1.1.1.1.7 3.1.1.1.1.8 &  & sur le pop-up, le titre "Authentification" apparait centré et est au dessus d'une barre horizontale. & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
+		AuthC.1.2 & 3.1.1.1.1.6 3.1.1.1.1.7 3.1.1.1.1.8 &  & sur le pop-up, le titre "Authentification" apparait centré et est au dessus d'une barre horizontale. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 3.1.1.1.2.3 3.1.1.1.2.4 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
+		AuthC.1.3 & 3.1.1.1.1.9 3.1.1.1.1.10 3.1.1.1.2.3 3.1.1.1.2.4 & & Les mots "Serveur", "Nom d'utilisateur" et "Mot de passe" sont affichés, chacun suivit d'un champ de saisie de texte. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.4 & 3.1.1.1.1.11 & & Un bouton "Se connecter" est affiché centré en bas du pop-up &  \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
+		AuthC.1.4 & 3.1.1.1.1.11 & & Un bouton "Se connecter" est affiché centré en bas du pop-up &\vspace*{-0.2cm}  \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.1 & 3.1.1.1.1.12 3.1.1.1.2.8 3.1.1.1.2.9 3.1.1.1.2.10 & Remplir incorrectement un ou plusieurs champs de saisie puis cliquer sur le bouton "Se connecter" (à effectuer avec plusieurs combinaison de champs incorrects). & Le(s) champ(s) incorrect(s) possède(nt) une bordure rouge. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		AuthC.1.4.1 & 3.1.1.1.1.12 3.1.1.1.2.8 3.1.1.1.2.9 3.1.1.1.2.10 & Remplir incorrectement un ou plusieurs champs de saisie puis cliquer sur le bouton "Se connecter" (à effectuer avec plusieurs combinaison de champs incorrects). & Le(s) champ(s) incorrect(s) possède(nt) une bordure rouge. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.1.1 & 3.1.1.1.2.11 & Rentrer une adresse serveur autre qu'une adresse IP v4. & La bordure du champ "Serveur" devient rouge et une boite de dialogue avec le texte "Erreur de serveur". & \begin{itemize}[label=$\ast$] \item  \textcolor{true}{Une erreur s'affiche en cas de mauvais serveur} \item \textcolor{false}{Erreur "identifiants invalides"} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
+		AuthC.1.4.1.1 & 3.1.1.1.2.11 & Rentrer une adresse serveur autre qu'une adresse IP v4. & La bordure du champ "Serveur" devient rouge et une boite de dialogue avec le texte "Erreur de serveur". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item  \textcolor{true}{Une erreur s'affiche en cas de mauvais serveur} \item \textcolor{false}{Erreur "identifiants invalides"} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -149,24 +150,24 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		AuthC.1.4.1.2 & 3.1.1.1.2.12 3.1.1.1.2.15.2 & Rentrer un identifiant de plus de 30 caractères. & La bordure du champ "Nom d'utilisateur" devient rouge et une boite de dialogue avec le texte "L'utilisateur entré est invalide". & \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur "L'utilisateur entré est invalide" s'affiche en cas de pseudo trop long} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
+		AuthC.1.4.1.2 & 3.1.1.1.2.12 3.1.1.1.2.15.2 & Rentrer un identifiant de plus de 30 caractères. & La bordure du champ "Nom d'utilisateur" devient rouge et une boite de dialogue avec le texte "L'utilisateur entré est invalide". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur "L'utilisateur entré est invalide" s'affiche en cas de pseudo trop long} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.1.3 & 3.1.1.1.2.13 3.1.1.1.2.15.2 & Rentrer un identifiant de moins de 3 caractères. & La bordure du champ "Nom d'utilisateur" devient rouge et une boite de dialogue avec le texte "L'utilisateur entré est invalide". & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		AuthC.1.4.1.3 & 3.1.1.1.2.13 3.1.1.1.2.15.2 & Rentrer un identifiant de moins de 3 caractères. & La bordure du champ "Nom d'utilisateur" devient rouge et une boite de dialogue avec le texte "L'utilisateur entré est invalide". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.1.4 & 3.1.1.1.2.14 3.1.1.1.2.15.1 & Rentrer un mot de passe de moins de 6 caractères. & La bordure du champ "Mot de passe" devient rouge et une boite de dialogue avec le texte "Erreur de mot de passe". & \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur s'affiche en cas de mot de passe trop court} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
+		AuthC.1.4.1.4 & 3.1.1.1.2.14 3.1.1.1.2.15.1 & Rentrer un mot de passe de moins de 6 caractères. & La bordure du champ "Mot de passe" devient rouge et une boite de dialogue avec le texte "Erreur de mot de passe". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur s'affiche en cas de mot de passe trop court} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
 		
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.1.5 & 3.1.1.1.2.15 3.1.1.1.2.15.1 & Rentrer un mot de passe de plus de 50 caractères. & La bordure du champ "Mot de passe" devient rouge et une boite de dialogue avec le texte "Erreur de mot de passe". & \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur s'affiche en cas de mot de passe trop long} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
+		AuthC.1.4.1.5 & 3.1.1.1.2.15 3.1.1.1.2.15.1 & Rentrer un mot de passe de plus de 50 caractères. & La bordure du champ "Mot de passe" devient rouge et une boite de dialogue avec le texte "Erreur de mot de passe". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item  \textcolor{true}{L'erreur s'affiche en cas de mot de passe trop long} \item \textcolor{false}{Le champ ne devient pas rouge.} \item \textcolor{false}{L'erreur est affichée directement dans le pop-up}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthC.1.4.2 & 3.1.1.1.2.1 3.1.1.1.2.5 3.1.1.1.2.6 & Remplir correctement les champs, puis cliquer sur "Se connecter". & Le programme se connecte au serveur avec l'identifiant donné. & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
+		AuthC.1.4.2 & 3.1.1.1.2.1 3.1.1.1.2.5 3.1.1.1.2.6 & Remplir correctement les champs, puis cliquer sur "Se connecter". & Le programme se connecte au serveur avec l'identifiant donné. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.4.2.1 & 3.1.1.1.2.7 & & Le message "Bonjour [pseudo]" apparait dans la barre de menu. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		AuthC.1.4.2.1 & 3.1.1.1.2.7 & & Le message "Bonjour [pseudo]" apparait dans la barre de menu. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
-		AuthC.1.4.2.2 & 3.1.1.1.2.16 & & Une case à cocher est affiché à côté du message "Bonjour [pseudo]". & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		AuthC.1.4.2.2 & 3.1.1.1.2.16 & & Une case à cocher est affiché à côté du message "Bonjour [pseudo]". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		AuthC.1.4.2.2.1 & 3.1.1.1.2.16 & Cocher la case, fermer le programme et le rouvrir.& Le programme se connecte automatiquement au serveur précédent. & \\
 		\hline
-		AuthC.1.5 & 3.1.1.1.2.2 & & Le programme ne propose aucun moyen de créer ou modifier des identifiants et mots de passe. & \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
+		AuthC.1.5 & 3.1.1.1.2.2 & & Le programme ne propose aucun moyen de créer ou modifier des identifiants et mots de passe. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize}\\
 		\hline
 	\end{tabular}
 	\egroup
@@ -180,7 +181,7 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GdmpC.1 & 3.1.1.2.1 3.1.1.2.2 & Ouvrir le logiciel. & Un menu déroulant "Bookmarks" est présent dans la barre d'action. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		GdmpC.1 & 3.1.1.2.1 3.1.1.2.2 & Ouvrir le logiciel. & Un menu déroulant "Bookmarks" est présent dans la barre d'action. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		GdmpC.1.1 & 3.1.1.2.3 3.1.1.2.7& Dérouler le menu "Bookmarks". & Les boutons "Afficher les marque-pages" et "Mettre un marque-page" sont présents dans le menu. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -208,7 +209,7 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		LimiC.1 & 3.1.1.3.1 & Ouvrir le logiciel. & Le menu déroulant "Configuration est présent dans la barre d'action. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		LimiC.1 & 3.1.1.3.1 & Ouvrir le logiciel. & Le menu déroulant "Configuration est présent dans la barre d'action. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiC.1.1 & 3.1.1.3.3 3.1.1.3.7 3.1.1.3.11 3.1.1.3.14 & Cliquer sur le menu déroulant "Configuration". & Les boutons "Limiter vitesse téléchargement", "Limiter vitesse téléversement", "Plages horaires téléchargement" et "Plages horaires téléversement" sont présent dans le menu déroulant. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -240,11 +241,11 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		UtdoC.1 & 3.1.1.4.1 & Ouvrir le logiciel. & L'arborescence des dossiers dont l'utilisateur a accès sur le serveur est affichée sur la droite de la fenêtre. & \\
+		UtdoC.1 & 3.1.1.4.1 & Ouvrir le logiciel. & L'arborescence des dossiers dont l'utilisateur a accès sur le serveur est affichée sur la droite de la fenêtre. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoC.1.1 & 3.1.1.4.2 3.1.1.4.3 & Cliquer sur les dossiers dans l'arborescence. & Les sous-dossiers et fichiers des dossiers sur lesquels on a cliqué sont affichés dans l'arborescence. & \\
+		UtdoC.1.1 & 3.1.1.4.2 3.1.1.4.3 & Cliquer sur les dossiers dans l'arborescence. & Les sous-dossiers et fichiers des dossiers sur lesquels on a cliqué sont affichés dans l'arborescence. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoC.1.2 & 3.1.1.4.5 3.1.1.4.6 3.1.1.4.10 3.1.1.4.13 & Faire un clic droit sur un dossier. & Un menu de gestion de dossier apparait, les boutons "Nouveau sous-dossier", "Supprimer le dossier", et "Nouveau fichier vide" sont disponible à l'intérieur. & \\
+		UtdoC.1.2 & 3.1.1.4.5 3.1.1.4.6 3.1.1.4.10 3.1.1.4.13 & Faire un clic droit sur un dossier. & Un menu de gestion de dossier apparait, les boutons "Nouveau sous-dossier", "Supprimer le dossier", et "Nouveau fichier vide" sont disponible à l'intérieur. & \vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		UtdoC.1.2.1 & 3.1.1.4.7 3.1.1.4.8 & Cliquer sur "Nouveau sous-dossier". & Une boite de dialogue apparait avec un champ de saisie "nom". & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -258,13 +259,13 @@
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		UtdoC.1.2.3 & 3.1.1.4.12 3.1.1.4.14 & Cliquer sur "Nouveau fichier vide". & Un nouveau fichier "nouveau\_fichier" apparait dans le dossier. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		Utdoc.1.3 & 3.1.1.4.16 3.1.1.4.17 & Faire un clic droit sur un des fichiers dans l'arborescence. & Un menu de gestion de fichier apparait avec un bouton "Supprimer le fichier" à l'intérieur. & \\
+		Utdoc.1.3 & 3.1.1.4.16 3.1.1.4.17 & Faire un clic droit sur un des fichiers dans l'arborescence. & Un menu de gestion de fichier apparait avec un bouton "Supprimer le fichier" à l'intérieur. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoC.1.2.2 & 3.1.1.4.18 3.1.1.4.18.1 & Cliquer sur "Supprimer le fichier". & Une boite de dialogue proposant un bouton "Valider" et un "Annuler" apparait. & \\
+		UtdoC.1.3.2 & 3.1.1.4.18 3.1.1.4.18.1 & Cliquer sur "Supprimer le fichier". & Une boite de dialogue proposant un bouton "Valider" et un "Annuler" apparait. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoC.1.2.2.1 & 3.1.1.4.15 3.1.1.4.18.2 & Cliquer sur "Valider". & La boite de dialogue disparait et le dossier est supprimé. & \\
+		UtdoC.1.3.2.1 & 3.1.1.4.15 3.1.1.4.18.2 & Cliquer sur "Valider". & La boite de dialogue disparait et le dossier est supprimé. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		UtdoC.1.2.2.2 & 3.1.1.4.18.3 & Cliquer sur "Annuler". & La boite de dialogue disparait sans rien déclencher. & \\
+		UtdoC.1.3.2.2 & 3.1.1.4.18.3 & Cliquer sur "Annuler". & La boite de dialogue disparait sans rien déclencher. & \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -281,7 +282,7 @@
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		PicoC.1.1 & 3.1.1.5.1.1 & Après la connexion du client vers le serveur, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être 21, l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel.& \\
+		PicoC.1.1 & 3.1.1.5.1.1 & Après la connexion du client vers le serveur, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être 21, l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel.&\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{ukwn}{Inconnu.}\end{itemize} \\
 		\hline
 		PicoC.1.2 & 3.1.1.5.1.2 3.1.1.5.1.4 & Après le lancement d'un transfert de fichier, lancer la commande "netstat -a -p" sur le terminal du client & Le terminal doit afficher une connexion avec une adresse IP correspondant au serveur, dont le port de connexion doit être différent de 21 (soit supérieur à 1024, soit égale à 20), l'état doit être à "ESTABLISHED" et le nom ou le PID doit être celui du logiciel. & \\
 		\hline
@@ -302,7 +303,7 @@
 		\hline
 		PecoC.1.1.a & 3.1.1.5.2.1.1.a & Débrancher la machine contenant le logiciel client du réseau, et faire une demande de connexion avec un nom de serveur FTP valide.& Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Impossible d'établir une connexion avec le serveur $< nom\_du\_serveur>$:\linebreak
 -Vérifiez l'état de votre connexion Internet.\linebreak
--Vérifiez que le nom du serveur n'est pas erroné.".&\\
+-Vérifiez que le nom du serveur n'est pas erroné.".&\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{ukwn}{Inconnu.}\end{itemize} \\
 		\cline{1-3}\cline{5-5}
 		PecoC.1.1.b & 3.1.1.5.2.1.1.b & Faire une demande de connexion avec un nom de serveur FTP non-valide.& .&\\
 		\hline
@@ -330,7 +331,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		PecoC.1 & 3.1.1.5.3.1 & Pendant un téléchargement, couper la ligne internet de la machine cliente & Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Connexion interrompue avec le serveur $< nom\_du\_serveur>$.".&\\
+		PecoC.1 & 3.1.1.5.3.1 & Pendant un téléchargement, couper la ligne internet de la machine cliente & Une fenêtre de dialogue doit s'ouvrir avec le message suivant :   "Connexion interrompue avec le serveur $< nom\_du\_serveur>$.".&\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{ukwn}{Inconnu.}\end{itemize} \\
 		\hline
 		PccoC.2 & 3.1.1.5.3.2 & Idem que le test PecoC.2.3. & Idem que le test PecoC.2.3.\\
 		\hline
@@ -347,7 +348,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		PfcoC.1 & 3.1.1.5.4.1 & Faire un upload, et faire la commande "netstat -a -p" sur le terminal du client. & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur.&\\
+		PfcoC.1 & 3.1.1.5.4.1 & Faire un upload, et faire la commande "netstat -a -p" sur le terminal du client. & Le terminal ne doit plus afficher une connexion avec une adresse IP correspondant au serveur.&\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{ukwn}{Inconnu.}\end{itemize} \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -362,19 +363,22 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		DwupC.1 & 3.1.1.6.1 & Connecter le client à un serveur FTP autre qu'un serveur KNS. & La connexion doit s'effectuer. & \\
+		DwupC.1 & 3.1.1.6.1 & Connecter le client à un serveur FTP autre qu'un serveur KNS. & La connexion doit s'effectuer. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		DwupC.1.1 & 3.1.1.6.3 & Uploader un fichier. & Le fichier est disponible sur le serveur. & \\
 		\hline
-		DwupC.2 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte invalide & La connexion ne doit pas s'effectuer. & \\
+		DwupC.2 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte invalide & La connexion ne doit pas s'effectuer. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize} \\
 		\hline
-		DwupC.3 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte valide & La connexion doit s'effectuer. & \\
+		DwupC.3 & 3.1.1.6.2 & Connecter le client à un serveur FTP KNS avec un compte valide & La connexion doit s'effectuer. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{true}{Validé.}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		DwupC.3.1 & 3.1.1.6.4 3.1.1.6.6 & Uploader un fichier, dont l'extension n'est pas interdite. & Une barre de progression s'affiche, arrivée au bout le fichier est disponible sur le serveur. & \\
+		DwupC.3.1 & 3.1.1.6.4 3.1.1.6.6 & Uploader un fichier, dont l'extension n'est pas interdite. & Une barre de progression s'affiche, arrivée au bout le fichier est disponible sur le serveur. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		DwupC.3.2 & 3.1.1.6.5 & Uploader un fichier, dont l'extension est interdite. & Un boite de dialogue apparait avec le mention "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater". & \\
+		DwupC.3.2 & 3.1.1.6.5 & Uploader un fichier, dont l'extension est interdite. & Un boite de dialogue apparait avec le mention "Le transfert du \textless fichier\_cible\_a\_télécharger \textgreater n'est pas autorisé par le serveur \textless nom\_du\_serveur \textgreater". &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\hline
-		DwupC.4 & 3.1.1.6.7 & Uploader ou downloader un fichier. & Une boite de dialogue demande si le transfert doit être crypté. & \\		
+		DwupC.4 & 3.1.1.6.7 & Uploader ou downloader un fichier. & Une boite de dialogue demande si le transfert doit être crypté. & \vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+\\		
 		\hline	
 	\end{tabular}
 	\egroup
@@ -389,7 +393,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		MdstC.1 & 3.1.3.3.1.1 & Ouvrir le logiciel et se connecter. & Un bouton "Statistiques" est présent dans la barre d'outil. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		MdstC.1 & 3.1.3.3.1.1 & Ouvrir le logiciel et se connecter. & Un bouton "Statistiques" est présent dans la barre d'outil. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		MdstC.1.1 & 3.1.1.7.1.2 3.1.1.7.2.1 3.1.1.7.2.2 3.1.1.7.2.3 3.1.3.3.1.2 3.1.3.3.1.3 & Cliquer sur le bouton statistique. & Une nouvelle fenêtre apparait avec une partie textuelle dans la moitié haute et une partie graphique dans la moitié basse. & \\
 		\cline{1-2}\cline{4-5}
@@ -446,7 +450,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CrypC.1 & 3.1.3.1.2 & Faire un clic droit sur un fichier. & Le menu de gestion de fichier apparait avec le bouton "Cryptage du fichier" à l'intérieur. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		CrypC.1 & 3.1.3.1.2 & Faire un clic droit sur un fichier. & Le menu de gestion de fichier apparait avec le bouton "Cryptage du fichier" à l'intérieur. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		CrypC.1.1 & 3.1.3.1.1 3.1.3.1.3 3.1.3.1.4 & Cliquer sur le bouton "Cryptage du fichier". & Le fichier est crypté et illisible pour les utilisateurs ne connaissant pas la clé de cryptage. & \\
 		\hline
@@ -481,7 +485,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		AuthS.1 & 3.1.2.1.2.1 & Envoyer une chaine de caractère contenant un pseudo suivit d'un mot de passe & Le programme détecte cette arrivée et l'indique dans une console de log & \\
+		AuthS.1 & 3.1.2.1.2.1 & Envoyer une chaine de caractère contenant un pseudo suivit d'un mot de passe & Le programme détecte cette arrivée et l'indique dans une console de log &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize} \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}		
 		AuthS.2 & 3.1.2.1.2.2 & Après avoir récupéré les informations essayer de les faire correspondre à la liste des pseudo / Mot de passe. & Le programme indique dans une console de log le succès ou l'échec de l'opération & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}		
@@ -524,7 +528,8 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GecuS.1 & 3.1.2.3.1.1 & Ouvrir le logiciel & Une zone est présente à gauche. & \\
+		GecuS.1 & 3.1.2.3.1.1 & Ouvrir le logiciel & Une zone est présente à gauche. & \vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+\\
 		\cline{1-2}\cline{4-5}
 		GecuS.1.1 & 3.1.2.3.1.2 & & Dans cette zone se trouve la liste des comptes. & \\
 		\cline{1-2}\cline{4-5}
@@ -582,17 +587,22 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		GecuS.2 & 3.1.2.3.1 & Se connecter en tant qu'administrateur et essayer de crée un compte & Le compte peut être crée et les droits donné. & \\
+		GecuS.2 & 3.1.2.3.1 & Se connecter en tant qu'administrateur et essayer de créer un compte & Le compte peut être crée et les droits donné. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.3 & 3.1.2.3.2 & Se connecter en tant qu'administrateur et crée un compte et cocher compte temporaire & Un compte temporaire est crée & \\
+		GecuS.3 & 3.1.2.3.2 & Se connecter en tant qu'administrateur et crée un compte et cocher compte temporaire & Un compte temporaire est crée &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.4 & 3.1.2.3.3 & Regarder la liste des membres présente à droite & Elle contient la totalité des comptes crée & \\
+		GecuS.4 & 3.1.2.3.3 & Regarder la liste des membres présente à droite & Elle contient la totalité des comptes crée &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.5 & 3.1.2.3.4 & Cliquer sur un compte & La liste des fichiers auquel il a accès se trouve à droite et un plus est présent en bas à droite. & \\
+		GecuS.5 & 3.1.2.3.4 & Cliquer sur un compte & La liste des fichiers auquel il a accès se trouve à droite et un plus est présent en bas à droite. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
-		GecuS.6 & 3.1.2.3.5 & Cliquer sur un compte et cliquer sur le bouton "-" présent en bas à droite de la partie droite & Le compte est banni après confirmation. & \\
+		GecuS.6 & 3.1.2.3.5 & Cliquer sur un compte et cliquer sur le bouton "-" présent en bas à droite de la partie droite & Le compte est banni après confirmation. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\cline{1-2}\cline{4-5}
-		GecuS.7 & 3.1.2.3.6 & & Le compte est supprimé après confirmation. & \\
+		GecuS.7 & 3.1.2.3.6 & & Le compte est supprimé après confirmation. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}
+ \\
 		\hline
 	\end{tabular}
 	\egroup
@@ -606,7 +616,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		BancS.1 & 3.1.2.4.1 & Cliquer sur un compte. & Un moins est présent dans la zone de droites. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		BancS.1 & 3.1.2.4.1 & Cliquer sur un compte. & Un moins est présent dans la zone de droites. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		BancS.1.1 & 3.1.2.6.1.1 & Cliquer sur le moins & Un pop-up s'ouvre, celui ci contient 2 cases & \\
 		\cline{1-2}\cline{4-5}
@@ -656,7 +666,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		BantS.1 & 3.1.2.5.1 & Cliquer sur un compte puis sur "-" présent sur la zone de gauche. & Un champ permet de donner une durée. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		BantS.1 & 3.1.2.5.1 & Cliquer sur un compte puis sur "-" présent sur la zone de gauche. & Un champ permet de donner une durée. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		BantS.2 & 3.1.2.5.2 & Cliquer sur un compte bannis. & Le temps restant apparait à droite. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -674,7 +684,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		BanpS.1 & 3.1.2.6.3.1 & Ouvrir le logiciel & A droite se trouve la liste de tout les fichiers présent sur le serveur & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		BanpS.1 & 3.1.2.6.3.1 & Ouvrir le logiciel & A droite se trouve la liste de tout les fichiers présent sur le serveur &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		BanpS.2 & 3.1.2.6.3.2 & Cliquer sur un utilisateur & Dans la partie droite seul la liste des fichiers accessible par l'utilisateur est présente. & \\
 		\cline{1-2}\cline{4-5}
@@ -771,7 +781,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CotS.1 & 3.1.2.6.7.1 & Ouvrir le dossier contenant les comptes temporaires. & L'extension du fichier est .acctmp & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		CotS.1 & 3.1.2.6.7.1 & Ouvrir le dossier contenant les comptes temporaires. & L'extension du fichier est .acctmp &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		CotS.2 & 3.1.2.6.7.2 & Ouvrir le fichier .acctmp & Le fichier contient un timestamp. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -793,7 +803,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CobS.1 & 3.1.2.6.8.1 & Ouvrir le dossier contenant les comptes bannis & Le fichier contenant les comptes bannis doit avoir pour extension .accban & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		CobS.1 & 3.1.2.6.8.1 & Ouvrir le dossier contenant les comptes bannis & Le fichier contenant les comptes bannis doit avoir pour extension .accban &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		CobS.2 & 3.1.2.6.8.2 & Ouvrir le fichier .accban & Chaque ligne contient le motif de bannissement. & \\
 		\cline{1-2}\cline{4-5}
@@ -815,7 +825,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		LimiS.1 & 3.1.2.7.1 & Ouvrir le programme & Vérifier la présence du menu "Configuration" dans la barre des menus. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		LimiS.1 & 3.1.2.7.1 & Ouvrir le programme & Vérifier la présence du menu "Configuration" dans la barre des menus. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		LimiS.2 & 3.1.2.7.2 & Cliquer sur configuration, puis sur "limiter la vitesse" et mettre en place une limite & Le programme ne télécharge pas plus vite que la vitesse définie. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
@@ -950,7 +960,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		MostS.1 & 3.1.2.11.1.1 & Ouvrir le logiciel et cliquer sur le bouton statistique. & Le programme affiche la fréquence de connexion des utilisateurs. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		MostS.1 & 3.1.2.11.1.1 & Ouvrir le logiciel et cliquer sur le bouton statistique. & Le programme affiche la fréquence de connexion des utilisateurs. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
 		MostS.2 & 3.1.2.11.1.2 & & Le programme affiche le nombre de téléchargement de chaque fichier. & \\
 		\cline{1-2}\cline{4-5}
@@ -982,7 +992,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		FhevS.1 & 3.1.2.12.1.1 & Lancer le serveur. & Un fichier d'historique d'événement est généré. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\cline{4-5}
 		FhevS.2 & 3.1.2.12.1.2 & & Le fichier contient tout les événement passé entre 0h00 et 23h 59m 59s& \\
 		\cline{1-2}\cline{4-5}
@@ -1003,7 +1013,7 @@ $< nom\_du\_serveur>$ vous a banni !".&\\
 		\hline
 		\rowcolor{gris}Référence & Exigence & Test & Résultat attendu & Résultat/Commentaires\\
 		\hline
-		CrypS.1 & 3.1.3.1.1 & Ouvrir le logiciel & Vérifier la présence des boutons de cryptage dans le menu configuration. & \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
+		CrypS.1 & 3.1.3.1.1 & Ouvrir le logiciel & Vérifier la présence des boutons de cryptage dans le menu configuration. &\vspace*{-0.2cm} \begin{itemize}[label=$\ast$] \item \textcolor{false}{Non impémenté}\end{itemize}\\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
 		CrypS.2 & 3.1.3.1.2 & Ourir le menu de gestion des fichiers. & Un bouton "Cryptage du fichier" est présent. & \\
 		\cline{1-2}\ccline{3-3}{gris}\cline{4-5}
