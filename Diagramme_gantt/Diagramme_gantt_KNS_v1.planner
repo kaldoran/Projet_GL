@@ -135,52 +135,93 @@
         </predecessors>
       </task>
     </task>
-    <task id="32" name="Impl&#xE9;mentation &amp; Test" note="" work="4953600" duration="846000" start="20141130T200000Z" end="20150109T110000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+    <task id="32" name="Impl&#xE9;mentation &amp; Test" note="" work="15091200" duration="2448000" start="20141130T200000Z" end="20150327T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
       <constraint type="start-no-earlier-than" time="20141126T000000Z"/>
       <predecessors>
         <predecessor id="1" predecessor-id="29" type="FS"/>
       </predecessors>
-      <task id="33" name="Impl&#xE9;mentation" note="" work="4896000" duration="806400" start="20141130T200000Z" end="20150107T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="33" name="Impl&#xE9;mentation" note="" work="14169600" duration="1987200" start="20141130T200000Z" end="20150305T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
         <constraint type="start-no-earlier-than" time="20141126T000000Z"/>
-        <task id="34" name="Client" note="" work="4780800" start="20141130T200000Z" end="20150106T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-          <task id="35" name="Module Administration" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="60" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="36" name="Module Gestion des comptes utilisateurs" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="40" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="37" name="Module Gestion de Fichiers" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="60" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="38" name="Module Configuration &amp; Limitation" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="39" name="Module T&#xE9;l&#xE9;chargement &amp; t&#xE9;l&#xE9;versement" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="85" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="40" name="Module Statistique" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="41" name="Module Communication" note="" work="633600" start="20141130T200000Z" end="20141230T170000Z" work-start="20141201T080000Z" percent-complete="70" priority="0" type="normal" scheduling="fixed-work"/>
-          <task id="42" name="Interface graphique" note="" work="345600" start="20141220T000000Z" end="20150106T170000Z" work-start="20141222T080000Z" percent-complete="70" priority="0" type="normal" scheduling="fixed-work">
+        <task id="34" name="Client" note="" work="8812800" start="20141130T200000Z" end="20150126T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="35" name="Module Administration" note="" work="1152000" duration="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="60" priority="0" type="normal" scheduling="fixed-duration"/>
+          <task id="36" name="Module Gestion des comptes utilisateurs" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="40" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="37" name="Module Gestion de Fichiers" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="60" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="38" name="Module Configuration &amp; Limitation" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="39" name="Module T&#xE9;l&#xE9;chargement &amp; t&#xE9;l&#xE9;versement" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="85" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="40" name="Module Statistique" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="41" name="Module Communication" note="" work="1152000" start="20141130T200000Z" end="20150123T170000Z" work-start="20141201T080000Z" percent-complete="70" priority="0" type="normal" scheduling="fixed-work"/>
+          <task id="42" name="Interface graphique" note="" work="748800" start="20141220T000000Z" end="20150126T170000Z" work-start="20141222T080000Z" percent-complete="70" priority="0" type="normal" scheduling="fixed-work">
             <constraint type="start-no-earlier-than" time="20141220T000000Z"/>
           </task>
         </task>
-        <task id="43" name="Serveur" note="" work="28800" duration="777600" start="20141130T200000Z" end="20150106T170000Z" work-start="20141201T080000Z" percent-complete="15" priority="0" type="normal" scheduling="fixed-duration"/>
-        <task id="44" name="Correction de bug" note="" work="86400" start="20150105T000000Z" end="20150107T170000Z" work-start="20150105T080000Z" percent-complete="20" priority="0" type="normal" scheduling="fixed-work">
-          <constraint type="start-no-earlier-than" time="20150105T000000Z"/>
+        <task id="43" name="Tests Client" note="" work="345600" start="20150126T000000Z" end="20150203T170000Z" work-start="20150126T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <task id="44" name="R&#xE9;sulats tests d'int&#xE9;gration Client" note="" work="172800" start="20150126T170000Z" end="20150203T170000Z" work-start="20150127T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+            <constraint type="start-no-earlier-than" time="20150126T000000Z"/>
+            <predecessors>
+              <predecessor id="1" predecessor-id="34" type="FS"/>
+            </predecessors>
+          </task>
+          <task id="45" name="Correction" note="" work="172800" duration="172800" start="20150126T000000Z" end="20150202T170000Z" work-start="20150126T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150126T000000Z"/>
+          </task>
+        </task>
+        <task id="46" name="Serveur" note="" work="5011200" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+          <predecessors>
+            <predecessor id="1" predecessor-id="43" type="FS"/>
+          </predecessors>
+          <task id="47" name="Module Administration" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="48" name="Module Gestion des comptes utilisateurs" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="49" name="Module Gestion de fichiers" note="" work="432000" duration="432000" start="20150203T170000Z" end="20150224T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="50" name="Module Configuration &amp; Limitation" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="51" name="Module T&#xE9;l&#xE9;chargement &amp; t&#xE9;l&#xE9;versement" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="52" name="Module Statistique" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="53" name="Module Communication" note="" work="432000" duration="432000" start="20150203T170000Z" end="20150224T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="54" name="Historique des &#xE9;venements" note="" work="633600" duration="633600" start="20150203T170000Z" end="20150305T170000Z" work-start="20150204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150131T000000Z"/>
+          </task>
+          <task id="55" name="Interface graphique" note="" work="345600" duration="345600" start="20150215T000000Z" end="20150303T170000Z" work-start="20150216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-duration">
+            <constraint type="start-no-earlier-than" time="20150215T000000Z"/>
+          </task>
         </task>
       </task>
-      <task id="45" name="R&#xE9;sulats tests d'int&#xE9;gration" note="" work="28800" duration="28800" start="20150107T170000Z" end="20150108T150000Z" work-start="20150107T170000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
-        <constraint type="start-no-earlier-than" time="20150107T000000Z"/>
+      <task id="56" name="Tests Serveur" note="" work="345600" start="20150305T170000Z" end="20150313T170000Z" work-start="20150306T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="33" type="FS"/>
+          <predecessor id="1" predecessor-id="46" type="FS"/>
         </predecessors>
+        <task id="57" name="R&#xE9;sultats tests d'int&#xE9;gration Serveur" note="" work="172800" start="20150305T170000Z" end="20150313T170000Z" work-start="20150306T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="58" name="Correction" note="" work="172800" start="20150305T170000Z" end="20150313T170000Z" work-start="20150306T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
-      <task id="46" name="R&#xE9;sultat tests de recettes" note="" work="28800" duration="28800" start="20150108T150000Z" end="20150109T110000Z" work-start="20150108T150000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
-        <constraint type="start-no-earlier-than" time="20141222T000000Z"/>
+      <task id="59" name="Tests Systeme Client-Serveur" note="" work="576000" start="20150313T170000Z" end="20150327T170000Z" work-start="20150316T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="45" type="FS"/>
+          <predecessor id="1" predecessor-id="56" type="FS"/>
         </predecessors>
+        <task id="60" name="Tests de recettes" note="" work="288000" start="20150313T170000Z" end="20150327T170000Z" work-start="20150316T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+        <task id="61" name="Correction tests de recettes" note="" work="288000" start="20150313T170000Z" end="20150327T170000Z" work-start="20150316T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
       </task>
     </task>
-    <task id="47" name="Manuel Utilisateur et Bilan" note="" work="50400" start="20150109T110000Z" end="20150109T200000Z" work-start="20150109T110000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="62" name="Manuel Utilisateur et Bilan" note="" work="172800" start="20150327T170000Z" end="20150401T170000Z" work-start="20150330T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <constraint type="start-no-earlier-than" time="20141229T000000Z"/>
       <predecessors>
         <predecessor id="1" predecessor-id="32" type="FS"/>
       </predecessors>
-      <task id="48" name="R&#xE9;daction manuel utilisateur" note="" work="25200" duration="25200" start="20150109T110000Z" end="20150109T200000Z" work-start="20150109T110000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="63" name="R&#xE9;daction manuel utilisateur" note="" work="86400" duration="86400" start="20150327T170000Z" end="20150401T170000Z" work-start="20150330T080000Z" percent-complete="30" priority="0" type="normal" scheduling="fixed-duration">
         <constraint type="start-no-earlier-than" time="20141229T000000Z"/>
       </task>
-      <task id="49" name="R&#xE9;daction du bilan" note="" work="25200" duration="25200" start="20150109T110000Z" end="20150109T200000Z" work-start="20150109T110000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
+      <task id="64" name="R&#xE9;daction du bilan" note="" work="86400" duration="86400" start="20150327T170000Z" end="20150401T170000Z" work-start="20150330T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-duration">
         <constraint type="start-no-earlier-than" time="20141229T000000Z"/>
       </task>
     </task>
@@ -192,17 +233,27 @@
     <resource id="3" name="Reynaud Nicolas" short-name="R.N" type="1" units="0" email="" note="" std-rate="0" calendar="2"/>
   </resources>
   <allocations>
+    <allocation task-id="62" resource-id="1" units="100"/>
+    <allocation task-id="56" resource-id="1" units="100"/>
+    <allocation task-id="59" resource-id="1" units="100"/>
+    <allocation task-id="34" resource-id="1" units="100"/>
+    <allocation task-id="43" resource-id="1" units="100"/>
+    <allocation task-id="46" resource-id="1" units="100"/>
     <allocation task-id="31" resource-id="1" units="100"/>
     <allocation task-id="22" resource-id="1" units="100"/>
     <allocation task-id="15" resource-id="1" units="100"/>
     <allocation task-id="6" resource-id="1" units="100"/>
     <allocation task-id="7" resource-id="1" units="100"/>
-    <allocation task-id="49" resource-id="1" units="33"/>
-    <allocation task-id="46" resource-id="1" units="100"/>
     <allocation task-id="33" resource-id="1" units="33"/>
     <allocation task-id="30" resource-id="1" units="33"/>
     <allocation task-id="24" resource-id="1" units="23"/>
     <allocation task-id="3" resource-id="1" units="17"/>
+    <allocation task-id="62" resource-id="2" units="100"/>
+    <allocation task-id="56" resource-id="2" units="100"/>
+    <allocation task-id="59" resource-id="2" units="100"/>
+    <allocation task-id="34" resource-id="2" units="100"/>
+    <allocation task-id="43" resource-id="2" units="100"/>
+    <allocation task-id="46" resource-id="2" units="100"/>
     <allocation task-id="28" resource-id="2" units="100"/>
     <allocation task-id="27" resource-id="2" units="50"/>
     <allocation task-id="21" resource-id="2" units="100"/>
@@ -211,21 +262,23 @@
     <allocation task-id="18" resource-id="2" units="100"/>
     <allocation task-id="8" resource-id="2" units="100"/>
     <allocation task-id="9" resource-id="2" units="100"/>
-    <allocation task-id="49" resource-id="2" units="33"/>
     <allocation task-id="33" resource-id="2" units="33"/>
     <allocation task-id="30" resource-id="2" units="33"/>
     <allocation task-id="26" resource-id="2" units="50"/>
     <allocation task-id="3" resource-id="2" units="17"/>
     <allocation task-id="1" resource-id="2" units="100"/>
+    <allocation task-id="62" resource-id="3" units="100"/>
+    <allocation task-id="56" resource-id="3" units="100"/>
+    <allocation task-id="59" resource-id="3" units="100"/>
+    <allocation task-id="34" resource-id="3" units="100"/>
+    <allocation task-id="43" resource-id="3" units="100"/>
+    <allocation task-id="46" resource-id="3" units="100"/>
     <allocation task-id="27" resource-id="3" units="50"/>
     <allocation task-id="23" resource-id="3" units="100"/>
     <allocation task-id="14" resource-id="3" units="100"/>
     <allocation task-id="12" resource-id="3" units="100"/>
     <allocation task-id="13" resource-id="3" units="100"/>
     <allocation task-id="5" resource-id="3" units="100"/>
-    <allocation task-id="49" resource-id="3" units="33"/>
-    <allocation task-id="48" resource-id="3" units="100"/>
-    <allocation task-id="45" resource-id="3" units="100"/>
     <allocation task-id="33" resource-id="3" units="33"/>
     <allocation task-id="30" resource-id="3" units="33"/>
     <allocation task-id="26" resource-id="3" units="50"/>
